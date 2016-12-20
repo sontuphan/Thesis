@@ -1,11 +1,11 @@
 \chapter{Giới thiệu đề tài}
 \section{Tính cấp thiết của đề tài}
-BITCOIN - một loại tiền mã hóa (hay tiền điện tử) được xuất hiện lần đầu tiên 
+Bitcoin - một loại tiền mã hóa (hay tiền điện tử) được xuất hiện lần đầu tiên 
 vào năm 2009 bởi Satoshi Nakamoto \cite{Bitcoin}, với những đặc tính ưu việt hơn cả tiền tệ 
 truyền thống hiện nay khiến cho sự tăng lên nhanh chóng về giá trị. Nhận thấy 
 được sức mạnh của tiền mã hóa có thể sẽ là tương lai của kinh tế và chính trị 
-nên việc hiểu rõ cũng như đầu tư vào BITCOIN là việc đáng để suy ngẫm.\\\\
-Hiển nhiên, đối với nước ta BITCOIN là rất mới và việc đầu tư là hết sức rủi ro
+nên việc hiểu rõ cũng như đầu tư vào Bitcoin là việc đáng để suy ngẫm.\\\\
+Hiển nhiên, đối với nước ta Bitcoin là rất mới và việc đầu tư là hết sức rủi ro
 khi không có nền tảng kiến thức và kinh nghiệm đầu tư. Nhận thấy vấn đề này, 
 bản thân đã đặt ra vấn đề``Tại sao không tạo ra một công cụ để cho nhà đầu tư 
 có thể dựa vào như một yếu tố tham khảo tin cậy''.\\\\
@@ -16,23 +16,23 @@ tự nhiên... và điều đó đang đi đúng với mục tiêu của vấn �
 vi luận văn này.
 
 \section{Đặc tả đề tài}
-Trên một sàn giao dịch tiền mã hóa điển hình, quá trình mua bán BITCOIN được chia ra 
+Trên một sàn giao dịch tiền mã hóa điển hình, quá trình mua bán Bitcoin được chia ra 
 thành các giai đoạn thời gian và được gọi là phiên giao dịch. Một phiên giao dịch 
 được diễn tả bởi các giá trị điển hình như sau:
 \begin{itemize}
-\item Giá mở phiên: giá bán (mua) BITCOIN của (các) giao dịch ngay tại thời 
+\item Giá mở phiên: giá bán (mua) Bitcoin của (các) giao dịch ngay tại thời 
 điểm mở phiên.
-\item Giá đóng phiên: giá bán (mua) BITCOIN của (các) giao dịch tại thời điểm 
+\item Giá đóng phiên: giá bán (mua) Bitcoin của (các) giao dịch tại thời điểm 
 kết thúc phiên.
-\item Giá cao nhất: giá bán (mua) BITCOIN cao nhất của giao dịch trong khoảng 
+\item Giá cao nhất: giá bán (mua) Bitcoin cao nhất của giao dịch trong khoảng 
 thời gian mở phiên đến kết thúc phiên.
-\item Giá thấp nhất: giá bán (mua) BITCOIN thấp nhất của giao dịch trong khoảng 
+\item Giá thấp nhất: giá bán (mua) Bitcoin thấp nhất của giao dịch trong khoảng 
 thời gian mở phiên đến kết thúc phiên.
 \end{itemize}
 Thời gian của một phiên giao dịch thường được chọn là 5 phút, 30 phút, 1 tiếng, 2 tiếng, 
 4 tiếng hoặc 1 ngày, ... 
 Trong phạm vi luận văn chúng ta chọn thời gian một phiên giao dịch là 30 phút.
-Ở đây, bài toán là đi dự đoán giá trị BITCOIN trong phiên tiếp theo sẽ tăng 
+Ở đây, bài toán là đi dự đoán giá trị Bitcoin trong phiên tiếp theo sẽ tăng 
 hay giảm so với phiên hiện tại. Cụ thể, gọi n là phiên hiện tại và n(close) 
 là giá đóng phiên hiện tại, n+1 là phiên tiếp theo và n+1(close) là giá đóng 
 phiên tiếp theo. Nếu n+1(close) > n(close) thì giá tăng (Up), ngược lại thì 
@@ -44,13 +44,13 @@ sẽ sử dụng giải thuật phân lớp để dự đoán nhãn của phiên
 \section{Mục tiêu của đề tài}
 Vấn đề cơ bản của việc đầu tư là lợi nhuận, bám sát với mục tiêu này phương hướng 
 đề ra sẽ đi giải quyết bài toán cụ thể như sau:\\\\
-Sử dụng USD để mua/bán BITCOIN, với mỗi phiên giao dịch là 30 phút, chúng 
-ta sẽ đi dự đoán giá trị BITCOIN trong phiên tiếp theo sẽ tăng hay giảm - bài
+Sử dụng USD để mua/bán Bitcoin, với mỗi phiên giao dịch là 30 phút, chúng 
+ta sẽ đi dự đoán giá trị Bitcoin trong phiên tiếp theo sẽ tăng hay giảm - bài
 toán phân lớp trong Machine Learning.\\\\
 Để thực hiện được điều đó chúng ta cần vạch ra những bước đi cụ
 thể để hiện thực mục tiêu:
 \begin{itemize}
-  \item Thu thập, xử lí dữ liệu BITCOIN.
+  \item Thu thập, xử lí dữ liệu Bitcoin.
   \item Áp dụng các giải thuật phân lớp vào tập dữ liệu có được.
   \item Đánh giá trên lý thuyết hệ thống.
   \item Vận hành, khảo sát và đánh giá hệ thống trên thực tế.
@@ -59,7 +59,7 @@ thể để hiện thực mục tiêu:
 Sản phẩm hoàn thiện mà người dùng được sử dụng sẽ là một Ứng dụng nền Web cung 
 cấp các thông tin, quan điểm để tham khảo cho việc đầu tư.
 \section{Phương pháp thực hiện đề tài}
-Vì bài toán dự đoán về xu hướng giá trị BITCOIN hầu như chưa có bất kì 
+Vì bài toán dự đoán về xu hướng giá trị Bitcoin hầu như chưa có bất kì 
 công trình hoặc bài báo nào được công bố công khai (theo tìm hiểu của cá nhân) 
 nên việc phải tham khảo các hướng giải quyết đã từng có là bất khả thi. Thay vào 
 đó chúng ta sẽ đi tham khảo các bài báo, công trình có mức độ liên quan khá cao 
@@ -67,7 +67,7 @@ như dự đoán xu hướng giá vàng và giá cổ phiếu - các tài liệu
 phần tài liệu tham khảo.
 Từ những kinh nghiệm của các bài báo, bản thân sẽ đúc kết một vài phương pháp 
 tổng quát, từ đó áp dụng ngược trở lại cho vấn đề dự đoán xu hướng giá trị 
-BITCOIN.\\\\
+Bitcoin.\\\\
 Đồng thời, ngoài việc tham khảo các công trình liên quan, bản thân còn phải 
 sử dụng chính những kinh nghiệm về khai phá dữ liệu và kiến thức Machine Learning, 
 để áp dụng vào nhằm đem lại kết quả tốt nhất. Việc tìm ra lời giải tốt nhất sẽ 

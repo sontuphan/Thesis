@@ -8,7 +8,7 @@ chúng ta có tập dữ liệu về loài chim thì có thể feature chính l�
 về độ dài sải cánh, màu lông, vùng sinh sống... Một giải thuật có thể học được 
 "kinh nghiệm" nhanh hay chậm, chính xác hay sai lệch phụ thuộc rất nhiều vào yếu 
 tố feature. Vì vậy quá trình khai phá dữ liệu là hết sức cần chú ý.\\\\
-Tập dữ liệu về các phiên giao dịch BITCOIN được thu thập từ ngày 20/2/2015 đến 
+Tập dữ liệu về các phiên giao dịch Bitcoin được thu thập từ ngày 20/2/2015 đến 
 ngày 29/10/2016 và có tổng cộng 29634 phiên giao dịch.\\\\
 Gọi S là đại diện cho một phiên giao dịch, các feature được xây dựng như sau:
 \begin{itemize}
@@ -26,7 +26,7 @@ Gọi S là đại diện cho một phiên giao dịch, các feature được x�
 Ở đây, ta đã chủ ý chọn mỗi feature vector được hình thành bởi 10 phiên giao 
 dịch. Các giá trị SO và ROC đều được tính trong thời gian là 10 phiên giao dịch.
 Sau khi đã có feature, ta cần label để phân lớp tập luện tập. Ở đây đơn giản, 
-nếu giá BITCOIN ở phiên thứ 11 lớn hơn phiên thứ 10 thì label sẽ là 1, ngược
+nếu giá Bitcoin ở phiên thứ 11 lớn hơn phiên thứ 10 thì label sẽ là 1, ngược
 lại sẽ là 0. (Phiên 11 chính là phiên thứ 1 của nhóm 10 phiên liền sau nhóm 
 10 phiên hiện đang xét).\\\\
 \[
@@ -132,19 +132,19 @@ ngữ để phát triển hệ thống này.\\\\
 \subsection{ Hệ thống Backend Server}
 Vì bản thân hệ thống Machine Learning Server không có các khối chức năng 
 liên quan đến việc  
-lấy dữ liệu giá BITCOIN cũng như khai phá dữ liệu nên hệ thống Backend Server
+lấy dữ liệu giá Bitcoin cũng như khai phá dữ liệu nên hệ thống Backend Server
 được xây dựng để thực hiện các chức năng này. Đồng thời, Backend Server còn là 
 cầu nối giữa trải nghiệm người dùng (hệ thống UI Frontend Server) và hệ thống 
 Machine Learning Server.\\\\
 Để thực hiện được công việc trên, hệ thống bao gồm được xây dựng các chức năng:\\
 \begin{enumerate}
-\item Cập nhật giá BITCOIN: thông qua các public API được các sàn giao dịch 
-BITCOIN cung cấp, các hàm lấy giá được chạy liên tục để cập nhật giá BITCOIN 
+\item Cập nhật giá Bitcoin: thông qua các public API được các sàn giao dịch 
+Bitcoin cung cấp, các hàm lấy giá được chạy liên tục để cập nhật giá Bitcoin 
 mới nhất nhằm phục vụ cho quá trình dự đoán.
-\item Khai phá dữ liệu: dữ liệu được các hàm cập nhật giá BITCOIN lấy được vẫn 
+\item Khai phá dữ liệu: dữ liệu được các hàm cập nhật giá Bitcoin lấy được vẫn 
 còn ở dạng thô, chưa qua xử lý. Khai phá dữ liệu là biến đổi các dữ liệu này 
 về các bộ tham số có ý nghĩa với Machine Learning, các giá trị này mới đích thực 
-dùng để làm đầu vào dự đoán xu hướng giá trị BITCOIN.
+dùng để làm đầu vào dự đoán xu hướng giá trị Bitcoin.
 \item Giao tiếp với hệ thống Machine Learning Server: truyền tham số đi và nhận 
 kết quả trả về từ hệ thống Machine Learning Server thông qua API.
 \item Lưu trữ và thống kê dữ liệu: thực hiện việc lưu trữ dữ liệu, từ đó tạo nên 
@@ -161,7 +161,7 @@ trong cấu trúc dữ liệu và khả năng mở rộng cao.\\\\
 Hệ thồng UI Frontend Server là một giao diện người dùng, nó cho phép người 
 dùng có thể tiếp cận với các chức năng của toàn bộ hệ thống một cách dễ dàng. 
 Hệ thống bao gồm nhiều biểu đồ, cũng như tham số cung cấp các thông tin có ý 
-nghĩa đầu tư - dự đoán xu hướng giá trị BITCOIN - đồng thời với đó, là các 
+nghĩa đầu tư - dự đoán xu hướng giá trị Bitcoin - đồng thời với đó, là các 
 thông tin về độ tin cậy của hệ thống, các thống kê về lịch sử dự đoán...\\\\
 Một số hình ảnh về hệ thống thực tế.\\
 \begin{figure}[h!]

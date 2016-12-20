@@ -1,318 +1,70 @@
 \chapter{Nền tảng lý thuyết}
-\section{Kiến thức nền tảng}
-Trong phần này chúng ta sẽ đi vào việc ôn tập, nhắc lại một số định nghĩa, kiến
-thức của các môn nền tảng về Xác suất thống kê, Giải tích và Đại số tuyến tính.
-Đó là các kiến thức tối quan trọng được sử dụng rất nhiều trong việc xây dựng
-cũng như tối ưu thuật toán trong Machine Learning \cite{MachineLearningLec, MachineLearningSec}. \\\\  
-Sau đó, chúng ta sẽ đi đến trình bày các kiến thức vận dụng chính yếu về 
-Machine Learning và Kinh tế, nó được sử dụng để xây dựng nên mô hình phương 
-pháp giải quyết vấn đề phân lớp.
-\subsection{Đại số tuyến tính}
-\begin{itemize}
-\item Ma trận A cấp $m \times n$ là một mảng hình chữ nhật gồm m hàng và n cột
-với các phần tử là số hoặc các đối tượng toán học được biễu diễn như sau:\\
-\[
-\begin{bmatrix}
-    a_{11} & \dots  & a_{1n} \\
-    \vdots & \ddots & \vdots \\
-    a_{m1} & \dots  & a_{mn}
-\end{bmatrix}
-= (a_{ij}),\: \forall\: i = \overline{1,m},\: j = \overline{1,n}
-\]
-Trong đó:\\
-\tab $a_{ij} \in R$: là phần tử thuộc dòng i và cột j của ma trận A.\\
-\tab $m$: số dòng của ma trận A. \\
-\tab $n$: số cột của ma trận A.\\ 
-Ký hiệu $M_{m \times n}$ là tập hợp các ma trận $m \times n$.\\ 
-\item Vector là một ma trận $A_{m1}$ có một cột và m dòng.
-\[
-A = 
-\begin{bmatrix}
-a_{11}\\
-\vdots\\
-a_{m1}
-\end{bmatrix}
-\]
-\item Phép cộng và phép trừ hai ma trận. Để cộng và trừ hai ma trận ta thực hiện
-việc cộng và trừ lần lượt cho từng phần tử tương ứng nhau của hai ma trận. Lưu ý, hai
-ma trận cần có cùng chiều, nghĩa là số hàng và số cột của hai ma trận là như
-nhau.\\
-\[
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-+
-\begin{bmatrix}
-w & x\\
-y & z
-\end{bmatrix}
-=
-\begin{bmatrix}
-a+w & b+x\\
-c+y & d+z
-\end{bmatrix}
-\]
-\item Phép nhân vô hướng là phép nhân giữa một ma trận và một số, ta thực hiện
-phép nhân vô hướng bằng cách nhân số đó cho tất cả các phần tử trong ma trận.\\
-\[
-\begin{bmatrix}
-a & b\\
-c & d
-\end{bmatrix}
-\times x =
-\begin{bmatrix}
-a\times x & b\times x\\
-c\times x & d\times x
-\end{bmatrix}
-\]
-\item Nhân hai ma trận: Cho $A \in M_{m\times k}$ và $B \in M_{k\times n}$. Gọi
-$A_1, A_2, \dots,A_m$ là m dòng của A; $B^{(1)}, B^{(2)}, \dots, B^{(n)} $ là n cột
-của B.\\
-Ta viết:
-\[
-A = 
-\begin{bmatrix}
-A_{1}\\
-\vdots\\
- A_{m}
-\end{bmatrix} ;\quad
-B = 
-\begin{bmatrix}
-B^{(1)} & \dots & B^{(n)}
-\end{bmatrix}
-\]\\
-Với 
-\[
-A_i = 
-\begin{bmatrix}
-a_{i1} & a_{i2} & \dots & a_{ik}
-\end{bmatrix} ;\quad
-B^{(j)} = 
-\begin{bmatrix}
-b_{1j}\\ b_{2j} \\ \vdots \\ b_{kj}
-\end{bmatrix}
-\]\\
-Khi đó $C=A\times B$ gọi là ma trận tích của A với B và phần tử  của $C_{ij}$
-được xác định như sau:
-$c_{ij} = A_i \times B^{(j)} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots +
-a_{ik}b_{kj}$
-Một số tính chất của phép nhân hai ma trận:
-\begin{itemize}
-  \item Không có tính giao hoán: $A \times B \neq B \times A$
-  \item Tính kết hợp: $(A\times B) \times C = A\times (B\times C)$
-\end{itemize}
-\item Ma trận đảo của A được ký hiệu là $A^{-1}$ với tích của hai ma trận là một
-ma trận đơn vị.
-\item Ma trận chuyển vị của ma trận A là ma trận có được từ A bằng cách viết các
-hàng của ma trận A theo thứ tự thành cột, ký hiệu là $A^T$.
-\[
-A = 
-\begin{bmatrix}
-a & b\\
-c & d\\
-e & f
-\end{bmatrix}
-\Rightarrow A^T =
-\begin{bmatrix}
-a & c & e\\
-b & d & f
-\end{bmatrix}
-\]
-\item Ma trận đối xứng: Gọi $a_{ij}$  là phần tử của ma trận đối xứng A, thì
-$\forall\:i,j:\:a_{ij} = a_{ji}$\\
-Tính chất liên quan: Gọi x là một vector n chiều $(n \times 1)$ và $A=x.x^T$
-thì A là một ma trận đối xứng $(n \times n)$
-\item Ma trận bán định dương (positive semi-definite): Ma trận M $(n \times n)$
-được định nghĩa là ma trận bán định dương khi vào chỉ khi với vetor V bất kỳ có
-n chiều ta luôn có: $V^T MV>0$
-\end{itemize}
+\section{Bitcoin}
+Các hình thức thương mại trên Internet ngày này hầu như đều dựa vào một tổ chức 
+thứ ba đáng tin cậy để xử lý các hoạt động thanh toán điện tử. Tuy rằng sau nhiều 
+năm phát triển, các tổ chức bên thứ ba này đều đã nâng cao mức độ tin cậy, an 
+toàn nhưng đa số vẫn còn tồn tại những điểm yếu: không thể tránh khỏi những tranh 
+chấp, phí trung gian, đòi hòi phải cung cấp các thông tin cá nhân... Và Bitcoin - 
+hệ thống tiền điện tử ngang hàng (A Peer-to-Peer Electronic Cash System) được 
+sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.
+\subsection{Giao dịch - Transaction (trên Blockchain)}
+Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
+địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
+chuyển một lượng BTC cho một chủ sở hữu khác - người thụ hưởng - bằng cách ký 
+lên giá trị băm (hash), trong đó giá trị băm là kết quả sau khi đi qua hàm băm
+của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ hưởng.
+\subsection{Máy chủ nhãn thời gian - Timestamp Server}
+Máy chủ nhãn thời gian hoạt động bằng cách lấy giá trị băm của block liền trước 
+và thông tin của block hiện tại, cho qua hàm băm để được một giá trị băm mới. 
+Giá trị băm sau khi được tính toán sẽ được công bố rộng rãi và giá trị băm này 
+chứng minh rằng block tồn tại, các block được nối với nhau thành một chuỗi xác 
+định.
+\subsection{Proof-of-Work}
+Proof-of-Work được hiểu là bằng chứng để chứng minh quá trình lao động, nó dùng 
+để kiểm tra quá trình để tạo ra kết quả hợp lệ là một quá trình ``lao động'' có 
+sử dụng và tiêu tốn tài nguyên.\\\\
+Proof-of-Work được sử dụng trong Bitcoin có cơ chế dựa trên hàm băm, ví dụ như 
+SHA-256. Quá trình proof-of-work là quá trình đi tăng một con số - gọi là số 
+$nonce$ - sao cho giá trị băm đầu ra phải thỏa mãn tồn tại $n$ bit 0 ở vị trí 
+đầu, với $n$ xác định và được gọi là số bit 0 yêu cầu.
+\subsection{Blockchain}
+Blockchain được hình thành dựa trên sự kết hợp giữa máy chủ nhãn thời gian và proof-of-work. Blockchain 
+là một chuỗi các block được kết nối một cách luận lý với nhau thông qua các mỗi
+quan hệ toán học và mật mã, các quan hệ này đảm bảo cho hệ thống luôn đúng đắn,
+không thể sửa và dễ dàng để kiểm tra. Block mới được sinh ra phải dựa trên quá
+trình proof-of-work.\\\\
+Quá trình hình thành blockchain được bắt đầu bằng proof-of-work, các peer sẽ đi
+tìm số $nonce$ sao cho sau khi cho qua hàm băm kết quả đạt được là một giá trị 
+băm thỏa mãn số bit 0 yêu cầu. Số $nonce$ vừa được tìm ra sẽ được đưa và block
+mới cùng với các thông tin khác như: thông tin các giao dịch, giá trị băm của 
+block kề trước... Tiếp tục như vậy, các block mới được sinh ra và được kết nối 
+với block cuối cùng của chuỗi.\\\\
+Vì hệ thống có tính phân tán nên trên toàn mạng sẽ có nhiều phiên bản của blockchain,
+cũng chính vì thế để giải quyết tính đồng nhất, chỉ blockchain có độ dài lớn 
+nhất mới được xem là blockchain hợp lệ. Đồng thời để kiểm soát được tốc độ sinh
+block mới, hệ thống sẽ quy định một độ khó, nếu toàn mạng có tốc độ sinh block 
+(số block được sinh ra trong một giờ đồng hồ) cao hơn mức quy định, độ khó sẽ tăng lên 
+để điều chỉnh lại tốc độ của toàn mạng.
+\subsection{Mạng - Network}
+Mỗi thành viên (máy tính, phần cứng ASIC, thiết bị di dộng... ) khi tham gia vào quá 
+trình tính toán của toàn mạng thì sẽ được xem như một node. Toàn mạng sẽ hiện thực hệ 
+thống bằng cách thực hiện các bước như sau:
+\begin{enumerate}
+\item Một gia dịch mới được truyền đi cho tất cả các node (broadcast).
+\item Mỗi node sẽ lựa chọn và thu thập các giao dịch để đưa vào block.
+\item Mỗi node sẽ thực hiện proof-of-work, tìm ra số $nonce$.
+\item Khi một node hoàn thành proof-of-work, node này sẽ đóng block và truyền 
+đi toàn tất cả các node khác.
+\item Các node khác sẽ kiểm tra thông tin của block nhận được (thông tin các 
+transaction, thông tin proof-of-work...) và chấp nhận block này nếu tất cả 
+các thông tin đều được kiểm tra chính xác.
+\item Các node sẽ thể hiện sự chấp nhận của mình bằng cách thực hiện proof-of-work 
+để sinh ra block mới block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
+(thêm giá trị băm của block trước mà node chấp nhận vào trong block mới sinh ra).
+\end{enumerate}
 
-\subsection{ Đại số tuyến tính mở rộng đối với ma trận}
-\begin{itemize}
-  \item Phép toán trace: Phép toán trace được ký hiệu là “tr” và nó thực hiện
-  phép tính tổng đường chéo của ma trận vuông.
-  \[ trA = \sum_{i=1}^{n} A_{ii} \]
-  Các tính chất của phép toán trace với A, B, C là ma trận vuông và a là
-  hằng số:
-  \begin{enumerate}
-    \item $trABC = trCAB = trBCA$
-    \item $trA = trA^T$
-    \item $tr(A+B) = trA + trB$
-    \item $tr(a.A) = a.trA$
-  \end{enumerate}
-  \item Đạo hàm của hằng số theo ma trận (scalar-by-matrix):
-  Với ma trận $A (m \times n)$
-  \[  A =
-  \begin{bmatrix}
-  \frac{\partial f}{\partial A_{11}} & \dots & \frac{\partial f}{\partial
-  A_{1n}}\\
-  \vdots & \ddots & \vdots \\
-  \frac{\partial f}{\partial A_{m1}} & \dots & \frac{\partial f}{\partial
-  A_{mn}}  
-   \end{bmatrix} \]
-   Thì 
-   \[ \nabla_A f(A) = 
-   \begin{bmatrix}
-  \frac{\partial f}{\partial A_{11}} & \dots & \frac{\partial f}{\partial
-  A_{m1}}\\
-  \vdots & \ddots & \vdots \\
-  \frac{\partial f}{\partial A_{1n}} & \dots & \frac{\partial f}{\partial
-  A_{mn}}  
-   \end{bmatrix}  \]
-  Ví dụ: Cho ma trận A = $ \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22}
-  \end{bmatrix} $ và $f(A) = A_{11} + 2A_{12}^{2} + 3A_{21}A_{22}$ suy ra
-  \[ \nabla_A f(A) = \begin{bmatrix} 1 & 3A_{22} \\ 4A_{12} & 3A_{21}
-  \end{bmatrix} \]
-  Các tính chất của đạo hàm ma trận với A, B, C là ma trận vuông nxn và x là
-  vector n chiều:
-  \begin{enumerate}
-    \item $\nabla_A trAB = B^T$
-    \item $\nabla_{A^T} f(A) = (\nabla_A f(A))^T$
-    \item $\nabla_A trABA^TC = CAB + C^TAB^T$
-    \item $\nabla_A |A|=|A|(A^{-1})^T$
-    \item $\nabla_x (x^TAx) = x^T(A + A^T)$. Nếu ma trận A đối xứng thì
-    $\nabla_x (x^TAx) = 2x^TA$
-  \end{enumerate}
-  \item Eigenvalues và Eigenvectors:
-  \[ Av=\lambda v \]
-  Trong đó\\
-  \tab A là ma trận $(n\times n)$\\
-  \tab v là vector n chiều $(n\times 1)$\\
-  \tab $\lambda$ là một eigenvalue của A\\
-  \tab v là một eigenvector của A\\
-  Mệnh đề liên quan:
-  \begin{enumerate}
-    \item Một ma trận A có thể có nhiều eigenvalue và nhiều eigenvector
-    \item Cho các eigenvector của A là $v_1,v_2,\dots,v_n$ không phụ thuộc tuyến
-    tính vào nhau, và $\lambda_1,\lambda_2,\dots,\lambda_n$ là các eigenvalue
-    tương ứng. Khi đó ta có:
-    \[ A = PDP^{-1} \]
-    Với:
-    \[ P = \begin{bmatrix} v_1 & v_2 & \dots & v_n \end{bmatrix} \]
-    \[ D = 
-    \begin{bmatrix} 
-    \lambda_1 & 0 & \dots & 0 \\
-    0 & \lambda_2 & \dots & 0 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 & \dots & \lambda_n 
-    \end{bmatrix} \]
-  \end{enumerate}
-  \item Ma trận trực giao\\
-  Một ma trận A được gọi là trực giao nếu tích của ma trận A và chuyển vị của nó
-  là một ma trận đơn vị. Ví dụ
-  \[ \begin{bmatrix} 
-    1 & 0 & 0 \\
-    0 & \frac{3}{5} & -\frac{4}{5} \\
-    0 & \frac{4}{5} & \frac{3}{5}
-    \end{bmatrix} \]
-  \[ AA^T = 
-  \begin{bmatrix} 
-    1 & 0 & 0 \\
-    0 & \frac{3}{5} & -\frac{4}{5} \\
-    0 & \frac{4}{5} & \frac{3}{5}
-    \end{bmatrix}
-    \begin{bmatrix} 
-    1 & 0 & 0 \\
-    0 & \frac{3}{5} & \frac{4}{5} \\
-    0 & -\frac{4}{5} & \frac{3}{5}
-    \end{bmatrix} = 
-    \begin{bmatrix} 
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-    \end{bmatrix}
-     \]
-     \item Ma trận đường chéo\\
-     Ma trận đường chéo là ma trận có các giá trị $a_{ij} = 0$ nếu $i \neq j$ và
-     các giá trị còn lại của ma trận là khác 0
-     \[\begin{bmatrix} 
-    a_{11} & 0 & \dots & 0 \\
-    0 &  a_{22} & \dots & 0 \\
-    \vdots & \vdots & \ddots & \vdots \\
-    0 & 0 &  \dots & a_{nn}
-    \end{bmatrix}
-     \]
-\end{itemize}
 
-\subsection{Xác suất thống kê}
-\begin{itemize}
-  \item Xác suất có điều kiện: Cho hai biến cố A và B. Ta gọi xác suất của biến
-  cố A khi biến cố B đã xảy ra là xác suất của A với điều kiện B, ký hiệu là P(A|B).
-  \item Công thức xác suất đầy đủ: Cho $A_1, A_2, \dots,A_m$ là nhóm đầy đủ các
-  biến cố, với mọi biến cố F ta có:\\
-  \[
-  P(F) = P(A_1).P(F|A_1) + P(A_2).P(F|A_2) + \dots + P(A_n).P(F|A_n) 
-  \]
-  \item Công thức Bayes: Cho $A_1, A_2, \dots,A_m$ là nhóm đầy đủ các biến cố,
-  với mỗi $k (k = \overline{1,n})$, ta có:
-  \[
-  P(A_k|F) = \frac{P(A_k).P(F|A_k)}{P(F)} = \frac{P(A_k).P(F|
-  A_k)}{\sum_{i=1}^{n} P(A_i).P(F| A_i)}
-  \]
-  \item Kỳ vọng: Cho X là đại lượng ngẫu nhiên rời rạc có các bảng phân phối xác
-  suất.
-  \begin{table}[h]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|c|}
-  \hline
-  X & $X_1$ & $X_2$ & \dots & $X_n$ & \dots\\
-  \hline
-  P & $P_1$ & $P_2$ & \dots & $P_n$ & \dots\\
-  \hline
-  \end{tabular}
-  \caption{Bảng phân phối xác suất}
-  \end{table}\\
-  Khi đó ta gọi kỳ vọng của X là số:
-  \[
-  E(X) = x_1p_1 + x_2p_2 + \dots + x_np_n + \dots = \sum_{n=1}^{\infty} x_np_n
-  \]
-  Nếu X là đại lượng ngẫu nhiên liên tục có hàm mật độ f(x) thì kỳ vọng của X
-  là:
-  \[
-  E(X) = \int_{-\infty}^{+\infty} xf(x) dx
-  \]
-  \item Phương sai: Cho X là một đại lượng ngẫu nhiên có kỳ vọng E(X). Khi đó ta
-  ký hiệu phương sai của X là D(X):
-  \[ D(X) = E[(X-E(X))^2] \]
-  \item Phân phối nhị thức: Đại lượng ngẫu nhiên rời rạc $X={0,1,2,\dots,n}$ gọi
-  là có phân phối nhị thức nếu tồn tại số $p \in (0,1)$ sao cho:
-  \[ p_k = P(X=k) = C_{n}^{k}p^kq^{n-k},\:q=1-p,\:k=\overline{0,n} \]
-  Ta ký hiệu: $X \sim B(n,p)$ 
-  \item Phân phối chuẩn: Đại lượng ngẫu nhiên X gọi là có phân phối chuẩn nếu
-  hàm mật độ của X có dạng:
-  \[ f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-a)^2}{2\sigma^2}},\:\sigma
-  > 0
-  \]
-  Ta ký hiệu: $X \sim \mathcal{N}(a,\sigma^2)$
-  \item Phân phối chuẩn tắc: Đại lượng : $X \sim \mathcal{N}(0,1)$ gọi là
-  có phân phối chuẩn tắc. Nếu X có phân phối chuẩn tắc thì hàm mật độ của X là:
-  \[ f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} \]
-  \item Phân phối Gaussian: Phân phối chuẩn với n chiều còn được gọi với tên
-  khác là phân phối Gaussian, nó được tổng quát hóa từ phân phối chuẩn của số
-  thực lên cho vector nhiều chiều. Phân phối này được tham số hóa bằng hai đại
-  lượng: một vector trung bình $\mu \in R^n$ và một ma trận tương quan
-  (Covariance matrix) $\Sigma \in R^{n \times n}$ với $\Sigma \geq 0$ là một ma
-  trận đối xứng (symmetric) và bán định dương (positive semi-definite). Ký hiệu:
-  $\mathcal{N} (\mu, \Sigma)$.\\
-  Ta định nghĩa, một vector x có quy luật phân phối chuẩn $\mathcal{N} (\mu,
-  \Sigma)$ khi và chỉ khi hàm mật độ của X được biểu diễn dưới dạng:
-  \[ p(x;\mu,\Sigma) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}} exp\left(
-  -\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu) \right) \] Từ đó ta suy ra kỳ vọng của
-  vector X chính là $\mu$:
-  \[ E[X] = \int_x xp(x;\mu,\Sigma)dx = \mu \]
-  Tổng quát hóa Covariance của một biến giá trị thực ngẫu nhiên ta có Covariance
-  của một biến giá trị vector ngẫu nhiên và được định nghĩa:
-  \[ Cov(Z) = E[(Z-E[Z])(Z-E[Z]^T)] = E[Z.Z^T] - (E[Z])(E[Z])^T \]
-  Mặc khác, nếu $X \sim \mathcal{N}(\mu,\Sigma)$ thì: 
-  \[ Cov(X) = \Sigma \]
-  \item Relative Difference Percentage: Cho bộ số $\{ x_1, x_2,..., x_n \}$ khi đó
-  \[
-    RDP_i(n)=\frac{x_n-x_{n-i}}{x_{n-i}}
-  \]
-\end{itemize}
-
-\section{Kinh tế}
+\section{Một số khái niệm về tài chính}
 Vì luận văn này đang giải quyết một bài toán về kinh tế nên để hiểu được công 
 việc, ta cần nắm được các ý niệm cơ bản về kinh tế.
 \subsection{Phiên giao dịch và các giá trị cơ bản}
@@ -335,8 +87,7 @@ mở phiên) đến thời gian 9:30 am (thời điểm đóng phiên) có một
 \$801.
 \item Giá phiên thấp nhất: là giá bán thấp nhất của một giao dịch trong khoảng thời gian diễn ra phiên 
 giao dịch, cụ thể là từ thời điểm T đến thời điểm T + P.
-\item Lượng giao dịch: số lượng BTC chênh lệch giữa giá phiên cao nhất và giá phiên 
-thấp nhất của một phiên giao dịch.
+\item Lượng giao dịch: tổng giá trị USD được dùng để  mua/bán BTC trong một phiên giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
