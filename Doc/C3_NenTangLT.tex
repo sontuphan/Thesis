@@ -62,8 +62,44 @@ các thông tin đều được kiểm tra chính xác.
 để sinh ra block mới block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
 (thêm giá trị băm của block trước mà node chấp nhận vào trong block mới sinh ra).
 \end{enumerate}
-
-
+Lưu ý, một giao dịch mới không nhất thiết phải được truyền đến tất cả các node. 
+Chỉ cần việc truyền đến số node đủ nhiều để đảm bảo việc sẽ được đưa vào một block 
+và được đóng trong blockchain với độ dài lớn nhất. Cũng như vậy đối với block, 
+block không nhất thiết phải được truyền đến tất cả các node, khi một node nhận 
+được một block kế block bị thiếu, bằng quá trình kiểm tra node có thể biết được 
+và yêu cầu các node khác trong mạng gửi cho node này block bị thiếu sót.
+\subsection{Phần thưởng khích lệ}
+Trong tập các giao dịch được đóng trong một block sẽ luôn tồn tại một giao dịch 
+đặc biệt, giao dịch khác với các giao dịch bình thường, nó không có người chủ 
+sở hữu mà chỉ có người thụ hưởng. Điều này giải thích cách mà BTC mới được sinh 
+ra, cứ mỗi block được tìm ra nhờ quá trình proof-of-work sẽ có một lượng BTC 
+được sinh ra và chính là phần thưởng cho người tạo ra block, điều này đồng nghĩa 
+địa chỉ người thụ hưởng chính là địa chỉ của người tạo ra block.\\\\
+Ngoài ra, phần thưởng khích lệ khi tạo ra được một block còn bao gồm cả phí giao 
+dịch từ các giao dịch đã được đóng trong block. Phí giao dịch thường rất nhỏ và
+không đáng kể ở thời điểm hiện tại.\\\\
+\subsection{Tổ chức lưu trữ thông tin giao dịch}
+Đối với các node là các hệ thống máy tính lớn, khả năng lưu trữ và xử lý mạnh thì 
+việc lưu một block với đầy đủ các thông tin không gặp nhiều vấn đề. Nhưng đối 
+với các thiết bị di động hoặc các thiết bị khác với tài nguyên lưu trữ và xử lý 
+tương đối hạn hẹp thì việc lưu một blockchain đầy đủ là khá khó khăn.\\\\
+Cây Merkle là một cấu trúc tổ chức dữ liệu, trong đó giá trị của node cha sẽ 
+là kết quả hàm băm tất cả các giá trị (nhãn hoặc dữ liệu) của nốt con. Các nốt 
+không phải lá thì giá trị sẽ là nhãn - kết quả hàm băm, các nốt lá sẽ có giá trị 
+là dữ liệu cần được tổ chức.\\\\
+Bitcoin sử dụng cây Merkle để tổ chức các giao dịch, nốt cao nhất của cây được 
+gọi là giá trị băm gốc (Root hash) và giá trị này sẽ được lưu vào block. Ở đây,
+ta thấy việc thay đổi bất kỳ một giá trị nào trong cây cũng sẽ dẫn đến việc thay 
+đổi giá trị băm gốc, vì thế giá trị băm gốc khi được lưu vào block nó có chức 
+năng dùng để kiểm tra lại các giao dịch trong block đó là toàn vẹn hay không.\\\\
+Một node với tài nguyên hạn chế khi muốn lưu blockchain không nhất thiết phải 
+lưu đầy đủ thông tin của từng block trong blockchain, thay vào đó node có thể 
+lược bỏ các thông tin về giao dịch được đóng trong block và chỉ lưu giá trị băm 
+gốc của các giao dịch này. Điều này làm giảm chi phí về lưu trữ nhưng vẫn đảm 
+bảo được tính toàn vẹn, khi muốn xác minh bất kỳ giao dịch nào, node chỉ cần 
+yêu cầu các giao dịch trong block và tính toán lại giá trị băm gốc, nếu giá trị 
+băm nào giống với giá trị băm gốc được lưu nghĩa là các giao dịch hoàn toàn hợp 
+lệ.
 \section{Một số khái niệm về tài chính}
 Vì luận văn này đang giải quyết một bài toán về kinh tế nên để hiểu được công 
 việc, ta cần nắm được các ý niệm cơ bản về kinh tế.
