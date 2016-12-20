@@ -1,0 +1,112 @@
+\documentclass[12pt,a4paper]{report} 
+\usepackage{vntex}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{tocbibind} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\allowdisplaybreaks
+\usepackage[unicode]{hyperref}
+\DeclareUnicodeCharacter{00A0}{ }
+%================================= header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{}{\thesection~#1}}
+\renewcommand{\subsectionmark}[1]{}
+\fancyhf{} % xoá các định dạng hiện tại đối với phần tựa đề trang
+\fancyfoot[RO,RE]{\small{\thepage}}
+\fancyhead[LO,LE]{\textit{\rightmark}}
+
+%\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\addtolength{\headheight}{1cm} % tạo khoảng trống cho vạch ngang
+\fancypagestyle{plain}{%
+\fancyhead{} % chỉnh phần tựa đề cho trang trắng
+\renewcommand{\headrulewidth}{0pt} % và đường kẻ ngang
+}
+%================================ add subsubsection 
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4} 
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%================================ set title format
+\usepackage{titlesec}
+\newcommand\tab[1][1cm]{\hspace*{#1}} 
+
+\addtolength{\voffset}{-1.5cm}
+\addtolength{\textheight}{1.5cm}
+
+%==============================
+%\setlength{\parindent}{2pt}
+\begin{document}
+\pagenumbering{roman}
+\input{title_page_1} 
+
+\include{LoiNoiDau}
+
+%===============================
+%=========== gioi thieu =============
+%==============================
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak 
+\listoftables  
+\pagebreak
+
+\chapter*{Danh mục chữ viết tắt}
+\thispagestyle{plain} 
+\addcontentsline{toc}{chapter}{Danh mục chữ viết tắt}
+\begin{tabbing}
+\hspace{3cm}\= \kill
+MNN\>Multilayer Neural Network\\
+KNN\>K-Nearest Neighbors\\
+LR\>Logistic Regression\\
+SVM\>Support Vector Machine\\
+GDA\>Gaussian Discriminant Analysis\\
+QDA\>Quadratic Discriminant Analysis\\
+BTC\>BITCOIN\\
+ROC\>Rate of Change\\
+SO\>Stochastic Oscillator\\
+RDP\>Relative Difference Percentage\\
+UI\>User Interface\\
+
+\end{tabbing}
+
+\pagebreak 
+
+\pagenumbering{arabic}
+%======================Introduction=============
+\include{C1_GioiThieu}
+\include{C2_CTLienQuan} 
+% %====================== Ly thuyet ==================
+\include{C3_NenTangLT}
+\include{C4_ThietKe}
+\include{C5_KLHuongPhatTrien}
+
+ 
+\pagebreak
+\begin{thebibliography}{9}
+
+\bibitem{Bitcoin}
+https://vi.wikipedia.org/wiki/Bitcoin. \emph{Wikipedia - BITCOIN}. Trích dẫn vào
+tháng 11/2016
+\bibitem{PredictingGoldPrices}
+Megan Potoski. \emph{Predicting Gold Prices}. CS229, Autumn 2013
+\bibitem{StockPriceTrendForecasting}
+Yuqing Dai \& Yuning Zhang. \emph{Machine Learning in Stock Price Trend Forecasting}. 2013 
+\bibitem{MachineLearningLec}
+Andrew Ng. \emph{Lecture Notes – CS229 Machine Learning}. 2012
+\bibitem{MachineLearningSec}
+Andrew Ng. \emph{Section Notes – CS229 Machine Learning}. 2012
+\bibitem{NeuralNetworksandDeepLearning}
+Michael Nielsen. \emph{Neural Networks and Deep Learning - Free Online Book}. Jan 2016
+\end{thebibliography}
+\end{document}

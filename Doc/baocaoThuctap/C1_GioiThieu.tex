@@ -1,0 +1,64 @@
+\chapter{Giới thiệu đề tài}
+\section{Tính cấp thiết của đề tài}
+Machine learning là một lĩnh vực của trí tuệ nhân tạo liên quan đến việc nghiên
+cứu và xây dựng các kĩ thuật cho phép các hệ thống “học” tự động từ dữ liệu để
+giải quyết những vấn đề cụ thể. Ví dụ như các máy có thể “học” cách phân loại
+thư điện tử xem có phải thư rác (spam) hay không và tự động xếp thư vào thư mục
+tương ứng. Thế nhưng machine learning đã đi xa hơn những khái niệm ban đầu rất
+nhiều.\\\\ 
+Chúng em chọn đề tài này vì nó khá mới mẻ ở Việt Nam và nhận
+thấy những lợi ích mà học máy đem lại khi giải quyết những vấn đề thực tiễn
+trong cuộc sống, ứng dụng trong nhiều lĩnh vực của đời sống xã hội. Bên cạnh đó,
+cơ hội việc làm về lĩnh vực học máy hay trí tuệ nhân tạo ở Việt Nam hiện nay là
+khá lớn, chúng em muốn nghiên cứu đề tài không chỉ tìm hiểu thêm cái mới mà còn
+để định hướng cho tương lai khi ra trường.\\\\ 
+Hiện nay đã có một số lĩnh
+vực áp dụng thành công kĩ thuật học máy để giải quyết công việc như: Bệnh án
+điện tử, dự đoán thị trường chứng khoán, dự báo thời tiết, \dots. Ngoài ra, việc
+áp dụng học máy trong bảo mật thông tin đang là đề tài mới ở Việt Nam mà nếu áp
+dụng thành công học máy thì sẽ giúp các doanh nghiệp Việt Nam dự báo được các
+cuộc tấn công an ninh mạng từ đó có giải pháp bảo vệ tài sản thông tin tốt hơn.
+\section{Mục tiêu của đề tài}
+Trong lĩnh vực Học máy có các phương pháp học sau: Học có giám sát (supervised
+learning), Học không có giám sát (unsupervised learning), Học bán giám sát
+(semi-supervised learning), Học tăng cường (reinforcement learning). Đề tài của
+nhóm chúng em sẽ tập trung vào kĩ thuật học không giám sát cụ thể là tìm hiểu
+các kĩ thuật gom cụm trong học máy từ đó áp dụng vào một ví dụ cụ thể đó là phân
+cụm một sự kiện xảy ra trong máy tính có phải là một cuộc tấn công an ninh mạng
+hay không. Để thực hiện được điều đó nhóm chúng em cần vạch ra những mục tiêu cụ
+thể để thực hiện đề tài:
+\begin{itemize}
+  \item Tìm hiểu các kĩ thuật gom cụm phổ biến
+  \item Tìm hiểu giải thuật thu giảm thuộc tính của ma trận trước khi đưa học
+  máy vào để phân cụm
+  \item Tìm hiểu các công cụ áp dụng học máy và vận dụng vào một tập dữ liệu mẫu
+  \item Khảo sát và đánh giá độ hiệu quả của từng giải thuật học máy.
+  \item Tìm hiểu framework mã nguồn mở về bảo mật thông tin OSSEC HIDS.
+\end{itemize} 
+  Nhóm chúng em đã tìm hiểu được ba giải thuật gom cụm là Kmeans, EM và
+SOM, sử dụng giải thuật PCA, SVD để thu giảm số chiều của ma trận thuộc tính, áp
+dụng các kiến thức đó vào việc phân cụm cuộc tấn công an ninh mạng, đánh giá kết quả và
+sử dụng một vài chức năng của OSSEC HIDS.\\\\ 
+Trong giới hạn kiến thức tìm hiểu, nhóm dừng lại ở việc tìm hiểu giải thuật, sử
+dụng công cụ có sẵn để áp dụng các giải thuật gom cụm vào tập dữ liệu. Nhóm chưa
+áp dụng các kĩ thuật học máy vào OSSEC HIDS để xây dựng luật mà chỉ dừng lại ở
+việc tìm hiểu một số chức năng có sẵn của công cụ. Đồng thời kết quả của việc
+phân cụm của tập dữ liệu chưa đạt được hiệu quả như mong muốn.
+\section{Phương pháp thực hiện đề tài}
+Mục tiêu đề ra ở phần trên gồm 2 nội dung chính: nghiên cứu về học máy và tìm
+hiểu về công cụ phát hiện xâm nhập.\\\\ 
+Với nội dung đầu, nhóm tiếp cận theo hướng tìm các tài liệu liên quan, nghiên
+cứu sau về lý thuyết từng giải thuật, hiểu rõ bản chất, và đánh giá cơ bản. Sau
+đó tìm tập dữ liệu thực tế, sử dụng các công cụ để áp dụng những giải thuật
+đã tìm hiểu vào tập dữ liệu, tiến hành đánh giá, và cải tiến giải thuật nếu
+cần.\\\\ 
+Với nội dung sau, nhóm tập trung vào tìm hiểu sâu các module có trong hệ thống.
+Hiểu rõ hệ thống từ đó có thể sửa đổi theo nhu cầu đề tài.
+\section{Bố cục}
+Bố cục báo cáo được trình bày theo hướng để người đọc có thể dễ dàng tiếp
+cận và nắm bắt vấn đề. Nên trong phần tiếp theo sẽ trình bày những công
+trình liên quan và rút ra những kết luận về công trình này. Sau đó sẽ là nền
+tảng về lý thuyết để người đọc hiểu được phương pháp tiếp cận, hiện thực, ý
+tưởng của nhóm đưa ra và các kết quả đạt được. Phần tiếp theo là thiết kế, giải
+pháp, ý tưởng dựa vào những kiến thức nền tảng trên. Cuối cùng nhóm sẽ kết luận lại những gì
+đã đạt được, và đề ra hướng phát triển kế tiếp. 

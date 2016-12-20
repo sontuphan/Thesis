@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun May 22 15:05:33 ICT 2016
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=baocaoThuctap.tex
+outputFile=baocaoThuctap.pdf
+langSpell=vi
+markDer=true
+srcDir=

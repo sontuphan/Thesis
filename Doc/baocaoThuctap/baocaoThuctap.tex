@@ -1,0 +1,141 @@
+\documentclass[12pt,a4paper]{report} 
+\usepackage{vntex}
+\usepackage{graphicx}
+ \usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{tocbibind} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\allowdisplaybreaks
+\usepackage[unicode]{hyperref}
+\DeclareUnicodeCharacter{00A0}{ }
+%================================= header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{}{\thesection~#1}}
+\renewcommand{\subsectionmark}[1]{}
+\fancyhf{} % xoá các định dạng hiện tại đối với phần tựa đề trang
+\fancyfoot[RO,RE]{\bfseries\thepage}
+\fancyhead[LO,LE]{\bfseries\rightmark}
+\fancyfoot[LO,LE]{\small{Trường đại học Bách Khoa \\ Khoa khoa học và kỹ thuật
+máy tính}}
+%\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\addtolength{\headheight}{1cm} % tạo khoảng trống cho vạch ngang
+\fancypagestyle{plain}{%
+\fancyhead{} % chỉnh phần tựa đề cho trang trắng
+\renewcommand{\headrulewidth}{0pt} % và đường kẻ ngang
+}
+%================================ add subsubsection 
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4} 
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%================================ set title format
+\usepackage{titlesec}
+\newcommand\tab[1][1cm]{\hspace*{#1}} 
+
+\addtolength{\voffset}{-1.5cm}
+\addtolength{\textheight}{1.5cm}
+
+%==============================
+%\setlength{\parindent}{2pt}
+\begin{document}
+\pagenumbering{roman}
+\input{title_page_1} 
+
+\include{LoiNoiDau}
+
+%===============================
+%=========== gioi thieu =============
+%==============================
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak 
+\listoftables  
+\pagebreak
+
+\chapter*{Danh mục chữ viết tắt}
+\thispagestyle{plain} 
+\addcontentsline{toc}{chapter}{Danh mục chữ viết tắt}
+\begin{tabbing}
+\hspace{3cm}\= \kill
+PCA\>Principal Component Analysis\\
+SVD\>Singular Value Decomposition\\
+EM\>Expectation Maximization\\
+SOM\>Self Organizing Maps\\
+SVM\>Support Vector Machine\\
+BMU\>Best Matching Unit\\
+IDS\>Intrusion Detection Systems\\
+IPS\>Intrusion Prevention Systems\\
+NIDS\>Network-based Intrusion Detection Systems\\
+HIDS\>Host-based Intrusion Detection Systems\\
+OSSEC\>Open Source HIDS SECurity\\
+ADFA\>Australian Defence Force Academy\\
+ACL\>Access Control List\\
+BSD\>Berkeley Software Distribution\\
+HTTP\>Hyper-Text Transfer Protocol
+\end{tabbing}
+
+\pagebreak 
+
+\pagenumbering{arabic}
+%======================Introduction=============
+\include{C1_GioiThieu}
+\include{C2_CTLienQuan} 
+%====================== Ly thuyet ==================
+\include{C3_NenTangLT}
+\include{C4_GTGomCum}
+\include{C5_OSSEC}
+\include{C6_ThietKe}
+\include{C7_KLHuongPhatTrien}
+
+ 
+\pagebreak
+\begin{thebibliography}{9}  
+
+\bibitem{JohnSOM}
+John A. Bullinaria, \emph{Self Organizing Maps: Fundamentals- Introduction to
+Neural Networks: Lecture 16}. 2004
+
+\bibitem{KohonenSOM}
+Shyam M. Guthikonda, \emph{Kohonen Self-Organizing Maps}. Wittenberg
+University. 2005
+
+\bibitem{MehotraMohanRankaSOM}
+Mehotra, K., Mohan, C. K., Ranka. S, \emph{Self-Organizing Maps (SOMs)}.
+Elements of Artificial Neural Networks. MIT Press. 1997.
+
+\bibitem{SVD} 
+Kirk Baker, \emph{Singular Value Deomposition Tutorial}. 2005.
+
+\bibitem{Modeling Syscall}
+Eleazar Eskin, Wenke Lee, Salvatore J. Stolfo, \emph{Modeling System Calls
+for Intrusion Detection with Dynamic Window Sizes}. DARPA Information
+Survivability Conference \& Exposition II, 2001. DISCEX '01. Proceedings. 2001.
+
+\bibitem{Bottou95convergenceproperties}
+ Léon Bottou, Yoshua Bengio. \emph{Convergence Properties of the K-Means
+ Algorithms}. MIT Press. 1995.
+ 
+ \bibitem{XplaformHIDS}
+Gideon Creech. \emph{Developing a high-accuracy cross platform Host-Based
+Intrusion Detection System capable of reliably detecting zero-day attacks}. 
+2014.
+
+\bibitem{MachineLearningLec}
+Andrew Ng. \emph{Lecture Notes – CS229 Machine Learning}. 2012
+
+\bibitem{ossec}
+Andrew Hay, Daniel Cid, Rory Bay, \emph{OSSEC Host-Based Intrusion Detection
+Guide}. Syngress. 2008
+
+\end{thebibliography}
+\end{document}

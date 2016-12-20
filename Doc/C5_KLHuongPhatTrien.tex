@@ -1,0 +1,56 @@
+\chapter{Kết luận và hướng phát triển}
+
+\section{Kết luận}
+Kết thúc đề tài, sản phẩm cuối cùng được hoàn thiện là một công cụ nền Web hỗ 
+trợ, cung cấp các thông tin có giá trị tham khảo để đầu tư BITCOIN. Dựa trên 
+các con số lý thuyết, khả năng dự đoán chính xác là rất khả quan và đặc biệt, 
+giải thuật được tối ưu cho phù hợp với góc nhìn của một người đầu tư.\\\\
+Với không nhiều sai lệch khi so sánh bên cạnh các con số lý thuyết, khi hệ thống được cho chạy 
+thực tế trong vòng 4 ngày liên tiếp (Cụ thể từ 22:30:00 13/11/2016 đến 
+20:30:00 17/11/2016) đã cho ra kết quả:\\
+\begin{table}[h]
+\centering
+\begin{tabular}{ |c|c|c| }
+\hline
+Accuracy & Precision & Recall \\
+\hline
+64.4\% & 77.6\% & 45.5\% \\
+\hline
+\end{tabular}
+\caption{Bảng đánh giá hệ thống thực tế }
+\end{table}\\
+Các tham số đánh giá chạy thực tế như vậy, có thể thấy với một lần đầu tư 
+ta có tới hơn 70\% là có lợi nhuận. Tuy vậy, bất kỳ một hệ thống cũng vẫn 
+sẽ có những điểm thiếu sót.\\\\
+Vì giới hạn của thời gian thực hiện đề tài, phạm vi của đề tài cũng được thu 
+hẹp để phù hợp nên vì thế đã bỏ qua một số yếu tố thị trường ảnh hưởng khá lớn 
+đối với hướng giải quyết. Trong lúc này, bản thân có thể nhận ra hai vấn đề:
+\begin{itemize}
+\item Phí giao dịch: ở tất cả các sàn giao dịch, đều có một khoảng phí trung gian 
+từ 0.1\% đến 0.3\% và phí này được trừ trực tiếp vào các giao dịch. Hướng tiếp 
+cận của đề tài bỏ qua hoàn toàn yếu tố này và có thể hiểu là phí bằng 0\%
+\item Biên độ lợi nhuận và thua lỗ: chúng ta cũng đã bỏ qua yếu tố này, mặc dù 
+dựa theo đánh giá thì số lần đầu tư lợi nhuận sẽ nhiều hơn thua lỗ. Nhưng, chúng 
+ta không thể kết luận việc đầu tư sẽ chắc chắn đem về lợi nhuận. Hãy nói đến một 
+trường hợp xấu, biên độ lợi nhuận chỉ có \$1 cho mỗi lần nhưng biên độ thua lô 
+lại là \$100, tại đây chúng ta có thể thấy là việc đầu tư không hề có lợi.
+\end{itemize}
+Việc nhìn nhận được các vấn đề trên không hẳn là điều tồi tệ, mà ngược lại giúp 
+chúng ta có thể hiểu rõ bài toán và đưa ra những hướng phát triển tiếp theo.
+
+\section{Hướng phát triển}
+Với các vấn đề còn tồn tại được nêu ra bên trên (Mục 5.1), giai đoạn tiếp theo 
+của đề tài là đi giải quyết vẫn đề tài như hiện giờ nhưng thêm vào đó là yếu 
+tố phí giao dịch. Tuy là một yếu tố nhỏ nhưng nó dẫn đến việc thay đổi hoàn toàn 
+bộ dữ liệu ban đầu, điều này đồng nghĩa toàn bộ hệ thống hiện giờ sẽ không 
+tương thích. Vì thế, cần thực hiện lại quá trình xây dựng giải thuật từ đầu.\\\\
+Mặc khác, việc chỉ học duy nhất từ tập dữ liệu về giá BITCOIN là không đủ để 
+đưa ra một dự đoán chính xác cao. Ngày nay, mạng xã hội đang phát triển như vũ 
+bão, đây là một kênh thông tin cực kỳ quý giá, chính vì vậy mà hệ thống ở giai 
+đoạn phát triển tiếp theo sự tận dụng tài nguyên này.\\\\
+Phát triển hệ thống xử lý ngôn ngữ tự nhiên, xây dựng hệ thống lắng nghe các 
+thông tin tài chính, chính trị có ảnh hưởng tới giá trị BITCOIN, phân tích, 
+đánh giá và cho cân bằng với hệ thống học từ dữ liệu giá BITCOIN để cho ra một 
+dự đoán tổng quát và chính xác hơn.\\\\
+Đồng thời, hệ thống có thể mở rộng ra cho nhiều cryptocurrency khác như Ethereum,
+Zcash, Monero...

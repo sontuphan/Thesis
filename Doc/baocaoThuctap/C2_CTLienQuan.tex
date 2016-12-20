@@ -1,0 +1,66 @@
+\chapter{Những công trình liên quan}
+Ngày nay, vấn đề bảo mật dữ liệu đang rất cần thiết, số lượng các cuộc xâm nhập
+tấn công ngày càng gia tăng, cách thức tấn công cũng hết sức đa dạng và các cuộc
+tấn công với cách thức chưa xuất hiện bao giờ ngày càng nhiều. Lấy ý tưởng từ hệ
+thống phát hiện xâm nhập, từ rất sớm, các nhà khoa học đã mong muốn xây dựng một
+hệ thống kết hợp với học máy để có thể nhận biết các xâm nhập bất thường mà
+không cần định nghĩa hành vi xâm nhập một cách cụ thể.\\\\  
+ Một trong những
+công trình gần đây có thể kể đến là “Developing a high-accuracy cross platform
+Host-Based Intrusion Detection System capable of reliably detecting zero-day
+attacks” – Gideon Creech. Tổng quan về công trình này, đây là một bài luận văn,
+xây dựng hệ thống HIDS dựa trên việc học từ tập dữ liệu về systemcall có tên là
+ADFA. Trong công trình này, sử dụng hai hướng tiếp cận:
+\begin{itemize}
+  \item Sử dụng giải thuật học máy One-Class SVM với độ chính xác cao, 15\%
+   với tỉ lệ báo sai và 80\% với tỉ lệ báo đúng. Nhưng, vấn đề ở đây là giải
+   thuật mất khá nhiều thời gian dành cho việc chạy giải thuật và gần như
+   không thực tế trong công nghiệp.
+   \item Sử dụng giải thuật học máy K-mean, vì giải thuật này tương đối đơn
+   giản nên việc học là rất nhanh, cho ra kết quả trong thời gian ngắn. Nhưng,
+   đánh đổi ở đây là độ chính xác, độ chính xác cho ra lại quá thấp và thiếu
+   chính xác, điều này cũng dẫn đến việc không thể để hiện thực trong công nghiệp. Tỉ lệ báo đúng là 60\% và tỉ lệ báo sai là 20\%.
+\end{itemize}
+Nhìn nhận hướng tiếp cận này đã được giải quyết tốt bởi một chuyên gia – Creech
+– nhưng vẫn chưa thể áp dụng được vào công nghiệp mà chỉ mang tính chất nguyên
+cứu, học thuật nên nhóm quyết định thay đổi hướng tiếp cận với bài toán ban
+đầu.\\\\ 
+Ở đây, bài toán của chúng ta là xây dựng một hệ thống phát hiện
+xâm nhập mà không cần định nghĩa các hành vi xâm nhập một cách rõ ràng bằng cách
+dựa vào cơ sở học máy.\\\\ 
+Hướng tiếp cận cổ điển gồm các bước:
+\begin{enumerate}
+  \item Thu thập dữ liệu mẫu.
+  \item Sử dụng giải thuật gom cụm (unsupervised) để phân loại (không nhãn)
+  đối với dữ liệu mẫu.
+  \item Dùng chuyên gia để gán nhãn.
+  \item Dùng giải thuật phân lớp (supervised) để phân loại (có nhãn) đối với dữ
+  liệu đã được chuyên gia xử lý.
+  \item Kiểm tra, đánh giá, tối ưu và áp dụng mô hình cuối cùng vào hệ thống
+  HIDS.
+\end{enumerate}
+  Hướng tiếp cận của nhóm:
+\begin{enumerate}
+  \item Thu thập dữ liệu mẫu.
+  \item Sử dụng giải thuật gom cụm (unsupervised) để phân loại (không nhãn) đối
+  với dữ liệu mẫu.
+  \item Dùng chuyên gia gán nhãn.
+  \item Đánh giá, tối ưu và tạo ra mô hình học máy.
+\end{enumerate}
+  Trong mô hình cổ điển, ta thấy các giải thuật gom cụm chủ yếu chỉ để giúp
+chuyên gia trong việc giảm tải khối lượng phải đánh nhãn, việc tạo ra mô hình
+học máy vẫn là nằm ở giải thuật phân lớp. Còn trong mô hình nhóm đề xuất, nhóm đã đưa
+giải thuật gom cụm thành giải thuật chính và sử dụng vào việc tạo ra mô hình học
+máy.\\\\ 
+Nhóm cũng nhận thấy rằng, với hướng tiệp cận này chi phí phát
+triển cho toàn bộ quá trình được rút ngắn đi rất nhiều. Đồng thời, việc sử dụng 
+cùng một giải thuật gom cụm ở cả quá trình tiền xử lý và quá trình học cũng giúp
+hạn chế thay đổi tính chất cụm và có thể nâng cao độ chính xác ở một mức độ
+nào đó.\\\\ 
+Vì hướng tiếp cận này tương đối mới nên nhóm tập trung vào việc
+tìm ra một “đường học” có thể cân bằng được giữa tốc độ và độ chính
+xác.\\\\ 
+Với tất cả những sự nhìn nhận trên, nhóm quyết định xây dựng một
+hướng tiếp cận mới và cố gắng phát huy những ưu điểm đang có của hướng tiếp cận
+này và hạn chế mắc phải những nhược điểm mà hướng tiếp cận cổ điển đã mắc trước
+đó.   
