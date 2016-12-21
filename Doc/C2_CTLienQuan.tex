@@ -10,12 +10,12 @@ Hai công trình cụ thể được tham khảo trong luận văn là:
 Yuning Zhang \cite{StockPriceTrendForecasting} 
 \end{enumerate}
 Ở bài báo thứ nhất - Predicting Gold Prices - đã đề cập đến hai giải thuật phân lớp 
-là SVM và Logistic Regression. Trong đó, vì va vấp với vấn đề mất cân đối trong tập 
+là SVM và LR. Trong đó, vì va vấp với vấn đề mất cân đối trong tập 
 dữ liệu (nhãn positive lớn hơn rất nhiều sao với nhãn negative) nên SVM chỉ được 
 đề cập như một phép so sánh và không được sử dụng trong quá trình giải quyết vấn 
-đề chính. Thay vào đó, Logistic Regression được sử dụng để giải quyết bài toán 
+đề chính. Thay vào đó, LR được sử dụng để giải quyết bài toán 
 phân lớp với kết quả khá khả quan.\\\\
-Logistic Regression (Optimal Feature Set):
+LR (Optimal Feature Set):
 \begin{table}[h]
 \centering
 \begin{tabular}{ |c|c| }
@@ -34,10 +34,10 @@ Accuracy & 69.30\% \\
 đương với giái thuật càng được xem là tốt. Chi tiết ba tham số này sẽ được nhắc 
 đến ở phần Nền tảng lý thuyết.\\\\
 Bước qua bài báo thứ hai - Machine Learning in Stock Price Trend Forecasting - 
-nhóm tác giả đã sử dụng bốn giải thuật đó là:\\
+nhóm tác giả đã sử dụng bốn giải thuật đó là:
 \begin{itemize}
 \item GDA
-\item Logistic Regression
+\item LR
 \item SVM 
 \item QDA
 \end{itemize}
@@ -46,7 +46,7 @@ Kết quả đánh giá của 4 giải thuật được nhóm tác giả trình 
 \centering
 \begin{tabular}{ |c|c|c|c|c| }
 \hline
-Model & Logistic Regression & GDA & QDA & SVM \\
+Model & LR & GDA & QDA & SVM \\
 \hline
 Accuracy & 44.5\% & 46.4\% & 58.2\% & 55.2\% \\
 \hline
@@ -64,8 +64,8 @@ Tổng quan qua hai công trình và tham khảo một số công trình khác, 
 cơ bản như:
 \begin{enumerate}
 \item Xây dựng không gian vector thuộc tính phù hợp với tính chất bài toán
-\item Sử dụng các giải thuật phân lớp điển hình trong Machine Learning như là 
-SVM, Logistic Regression ...
+\item Sử dụng các giải thuật phân lớp điển hình trong Máy học như là 
+SVM, LR ...
 \item Đánh giá giải thuật bằng các tham số Accuracy, Recall, Precision.
 \end{enumerate}
 Từ những đục kết trên, bản thân nhận thấy các bước trên cũng chính là phương pháp 

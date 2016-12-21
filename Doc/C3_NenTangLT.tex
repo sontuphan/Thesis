@@ -1,44 +1,60 @@
 \chapter{Nền tảng lý thuyết}
 \section{Bitcoin}
 Các hình thức thương mại trên Internet ngày này hầu như đều dựa vào một tổ chức 
-thứ ba đáng tin cậy để xử lý các hoạt động thanh toán điện tử. Tuy rằng sau nhiều 
-năm phát triển, các tổ chức bên thứ ba này đều đã nâng cao mức độ tin cậy, an 
-toàn nhưng đa số vẫn còn tồn tại những điểm yếu: không thể tránh khỏi những tranh 
-chấp, phí trung gian, đòi hòi phải cung cấp các thông tin cá nhân... Và Bitcoin - 
-hệ thống tiền điện tử ngang hàng (A Peer-to-Peer Electronic Cash System) được 
-sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.
-\subsection{Giao dịch - Transaction (trên Blockchain)}
-Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
-địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
-chuyển một lượng BTC cho một chủ sở hữu khác - người thụ hưởng - bằng cách ký 
-lên giá trị băm (hash), trong đó giá trị băm là kết quả sau khi đi qua hàm băm
-của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ hưởng.
+bên thứ ba đáng tin cậy để xử lý các hoạt động thanh toán điện tử. Tuy rằng sau 
+nhiều năm phát triển, các tổ chức bên thứ ba này đều đã nâng cao mức độ tin cậy, 
+an toàn nhưng đa số vẫn còn tồn tại những điểm yếu: không thể tránh khỏi những 
+tranh chấp, phí trung gian, đòi hòi phải cung cấp các thông tin cá nhân... Và 
+Bitcoin - hệ thống tiền điện tử ngang hàng (A Peer-to-Peer Electronic Cash System) 
+được sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.
 \subsection{Máy chủ nhãn thời gian - Timestamp Server}
 Máy chủ nhãn thời gian hoạt động bằng cách lấy giá trị băm của block liền trước 
 và thông tin của block hiện tại, cho qua hàm băm để được một giá trị băm mới. 
 Giá trị băm sau khi được tính toán sẽ được công bố rộng rãi và giá trị băm này 
 chứng minh rằng block tồn tại, các block được nối với nhau thành một chuỗi xác 
-định.
+định.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=1.45in, keepaspectratio=true]{timestampserver.png}
+\caption{Máy chủ nhãn thời gian}
+\end{figure}\\
+\subsection{Giao dịch - Transaction (trên Blockchain)}
+Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
+địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
+chuyển một lượng BTC cho một chủ sở hữu khác - người thụ hưởng - bằng cách ký 
+lên giá trị băm (hash), trong đó giá trị băm là kết quả sau khi đi qua hàm băm
+của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ hưởng.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2.45in, keepaspectratio=true]{transaction.png}
+\caption{Giao dịch}
+\end{figure}\\
 \subsection{Proof-of-Work}
 Proof-of-Work được hiểu là bằng chứng để chứng minh quá trình lao động, nó dùng 
-để kiểm tra quá trình để tạo ra kết quả hợp lệ là một quá trình ``lao động'' có 
+để kiểm tra quá trình tạo ra kết quả hợp lệ là một quá trình ``lao động'' có 
 sử dụng và tiêu tốn tài nguyên.\\\\
 Proof-of-Work được sử dụng trong Bitcoin có cơ chế dựa trên hàm băm, ví dụ như 
 SHA-256. Quá trình proof-of-work là quá trình đi tăng một con số - gọi là số 
-$nonce$ - sao cho giá trị băm đầu ra phải thỏa mãn tồn tại $n$ bit 0 ở vị trí 
-đầu, với $n$ xác định và được gọi là số bit 0 yêu cầu.
+$nonce$ - sao cho giá trị băm của số $nonce$ này cho kết quả đầu ra phải thỏa 
+mãn tồn tại $n$ bit 0 ở vị trí đầu, với $n$ xác định và được gọi là số bit 0 
+yêu cầu.
 \subsection{Blockchain}
-Blockchain được hình thành dựa trên sự kết hợp giữa máy chủ nhãn thời gian và proof-of-work. Blockchain 
-là một chuỗi các block được kết nối một cách luận lý với nhau thông qua các mỗi
-quan hệ toán học và mật mã, các quan hệ này đảm bảo cho hệ thống luôn đúng đắn,
-không thể sửa và dễ dàng để kiểm tra. Block mới được sinh ra phải dựa trên quá
-trình proof-of-work.\\\\
+Blockchain được hình thành dựa trên sự kết hợp giữa máy chủ nhãn thời gian và 
+proof-of-work. Blockchain là một chuỗi các block được kết nối một cách luận lý 
+với nhau thông qua các mỗi quan hệ toán học và mật mã, các quan hệ này đảm bảo 
+cho hệ thống luôn đúng đắn, không thể sửa và dễ dàng để kiểm tra. Block mới được 
+sinh ra phải dựa trên quá trình proof-of-work.\\\\
 Quá trình hình thành blockchain được bắt đầu bằng proof-of-work, các peer sẽ đi
 tìm số $nonce$ sao cho sau khi cho qua hàm băm kết quả đạt được là một giá trị 
 băm thỏa mãn số bit 0 yêu cầu. Số $nonce$ vừa được tìm ra sẽ được đưa và block
 mới cùng với các thông tin khác như: thông tin các giao dịch, giá trị băm của 
 block kề trước... Tiếp tục như vậy, các block mới được sinh ra và được kết nối 
-với block cuối cùng của chuỗi.\\\\
+với block cuối cùng của chuỗi.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=1.5in, keepaspectratio=true]{blockchain.png}
+\caption{Blockchain}
+\end{figure}\\
 Vì hệ thống có tính phân tán nên trên toàn mạng sẽ có nhiều phiên bản của blockchain,
 cũng chính vì thế để giải quyết tính đồng nhất, chỉ blockchain có độ dài lớn 
 nhất mới được xem là blockchain hợp lệ. Đồng thời để kiểm soát được tốc độ sinh
@@ -77,7 +93,7 @@ ra, cứ mỗi block được tìm ra nhờ quá trình proof-of-work sẽ có m
 địa chỉ người thụ hưởng chính là địa chỉ của người tạo ra block.\\\\
 Ngoài ra, phần thưởng khích lệ khi tạo ra được một block còn bao gồm cả phí giao 
 dịch từ các giao dịch đã được đóng trong block. Phí giao dịch thường rất nhỏ và
-không đáng kể ở thời điểm hiện tại.\\\\
+không đáng kể ở thời điểm hiện tại.
 \subsection{Tổ chức lưu trữ thông tin giao dịch}
 Đối với các node là các hệ thống máy tính lớn, khả năng lưu trữ và xử lý mạnh thì 
 việc lưu một block với đầy đủ các thông tin không gặp nhiều vấn đề. Nhưng đối 
@@ -91,7 +107,17 @@ Bitcoin sử dụng cây Merkle để tổ chức các giao dịch, nốt cao nh
 gọi là giá trị băm gốc (Root hash) và giá trị này sẽ được lưu vào block. Ở đây,
 ta thấy việc thay đổi bất kỳ một giá trị nào trong cây cũng sẽ dẫn đến việc thay 
 đổi giá trị băm gốc, vì thế giá trị băm gốc khi được lưu vào block nó có chức 
-năng dùng để kiểm tra lại các giao dịch trong block đó là toàn vẹn hay không.\\\\
+năng dùng để kiểm tra lại các giao dịch trong block đó là toàn vẹn hay không.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2.25in, keepaspectratio=true]{merkletree.png}
+\caption{Cây Merkle}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\includegraphics[height=3.75in, keepaspectratio=true]{block.png}
+\caption{Cấu trúc tổ chức giao dịch trong một block}
+\end{figure}\\
 Một node với tài nguyên hạn chế khi muốn lưu blockchain không nhất thiết phải 
 lưu đầy đủ thông tin của từng block trong blockchain, thay vào đó node có thể 
 lược bỏ các thông tin về giao dịch được đóng trong block và chỉ lưu giá trị băm 
@@ -144,11 +170,11 @@ Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng mua vào 
 80 thì thị trường đang có xu hướng bán ra.
 
 
-\section{Machine Learning}
+\section{Máy học}
 
 \subsection{Khái niệm cơ bản}
-\subsubsection{Machine Learning}
-Machine Learning có hai cách định nghĩa chính và đang được chấp nhận phổ biến:
+\subsubsection{Máy học}
+Máy học có hai cách định nghĩa chính và đang được chấp nhận phổ biến:
 \begin{itemize}
   \item Theo Arthur Samuel: \textit{``Là một lĩnh vực nghiên cứu mà nó cung cấp cho
   máy tính khả năng học hỏi mà không cần lập trình một cách tường minh.''}
@@ -178,7 +204,7 @@ mối quan hệ giữa các thuộc tính của dữ liệu. Các hướng tiế
 phương pháp như vậy thường được gọi là “Clustering”.
 
 \subsection{Thông số đánh giá}
-Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Machine Learning.
+Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Máy học.
 Gọi:
 \begin{itemize}
 \item True positive là TP
@@ -203,7 +229,7 @@ Thì:\\
 \end{figure}\\
 \subsection{Neural Network - Deep Learning}
 Deep Learning nói chung và Neural Network nói riêng là hai phạm trù xuất hiện 
-không lâu đối với Machine Learning, đại diện cho hướng tiếp cận gần với 
+không lâu đối với Máy học, đại diện cho hướng tiếp cận gần với 
 cái nhìn thực tế, học nhiều cấp và học từ bản chất dữ liệu. Deep Learning 
 thường giải quyết rất tốt với các loại dữ liệu mang tính ``con người'' như 
 hình ảnh, âm thanh ... \cite{NeuralNetworksandDeepLearning} 
@@ -227,7 +253,7 @@ nhị phân.\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1.5in, keepaspectratio=true]{perceptron.png}
-\caption{Multilayer Neural Network}
+\caption{Perceptron}
 \end{figure}\\
 Một ví dụ đơn giản dựa vào hình trên, ta thấy perceptron này có 3 input là 
 $x_1, x_2, x_3$ , giả sử đi kèm với mỗi input sẽ có một giá trị trọng 
@@ -250,7 +276,7 @@ có thể đưa ra một quyết định tương tự như bộ não người c�
 \begin{figure}[h!]
 \centering
 \includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
-\caption{Perceptron}
+\caption{Multilayer Neural Network}
 \end{figure}\\
 Multilayer Neural Network được cấu thành bằng cách sắp xếp các perceptron thành 
 từng lớp. Các perceptron ở mỗi lớp sẽ kết nối với tất cả các perceptron ở các 

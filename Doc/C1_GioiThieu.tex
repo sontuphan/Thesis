@@ -1,56 +1,57 @@
 \chapter{Giới thiệu đề tài}
 \section{Tính cấp thiết của đề tài}
-Bitcoin - một loại tiền mã hóa (hay tiền điện tử) được xuất hiện lần đầu tiên 
+Bitcoin - một hệ thống tiền mã hóa (hay tiền điện tử) được xuất hiện lần đầu tiên 
 vào năm 2009 bởi Satoshi Nakamoto \cite{Bitcoin}, với những đặc tính ưu việt hơn cả tiền tệ 
 truyền thống hiện nay khiến cho sự tăng lên nhanh chóng về giá trị. Nhận thấy 
 được sức mạnh của tiền mã hóa có thể sẽ là tương lai của kinh tế và chính trị 
 nên việc hiểu rõ cũng như đầu tư vào Bitcoin là việc đáng để suy ngẫm.\\\\
 Hiển nhiên, đối với nước ta Bitcoin là rất mới và việc đầu tư là hết sức rủi ro
 khi không có nền tảng kiến thức và kinh nghiệm đầu tư. Nhận thấy vấn đề này, 
-bản thân đã đặt ra vấn đề``Tại sao không tạo ra một công cụ để cho nhà đầu tư 
-có thể dựa vào như một yếu tố tham khảo tin cậy''.\\\\
-Đồng thời, trong lĩnh vực Công nghệ thông tin nói riêng, Machine Learning đang là 
+bản thân đã đặt ra vấn đề ``Tại sao không tạo ra một công cụ để cho nhà đầu tư 
+có thể dựa vào như một yếu tố tham khảo tin cậy?''.\\\\
+Đồng thời, trong lĩnh vực công nghệ thông tin nói riêng, Máy học đang là 
 nền tảng cho hàng loạt các sản phẩm công nghệ mang tính dự đoán thông minh, ngoài 
 ra còn ứng dụng trong các lĩnh vực về trí thông minh nhân tạo, xử lý ngôn ngữ 
 tự nhiên... và điều đó đang đi đúng với mục tiêu của vấn đề được đưa ra trong phạm 
 vi luận văn này.
 
 \section{Đặc tả đề tài}
-Trên một sàn giao dịch tiền mã hóa điển hình, quá trình mua bán Bitcoin được chia ra 
+Trên một sàn giao dịch tiền mã hóa điển hình, quá trình mua bán BTC được chia ra 
 thành các giai đoạn thời gian và được gọi là phiên giao dịch. Một phiên giao dịch 
 được diễn tả bởi các giá trị điển hình như sau:
 \begin{itemize}
-\item Giá mở phiên: giá bán (mua) Bitcoin của (các) giao dịch ngay tại thời 
+\item Giá mở phiên: giá bán (mua) BTC của (các) giao dịch ngay tại thời 
 điểm mở phiên.
-\item Giá đóng phiên: giá bán (mua) Bitcoin của (các) giao dịch tại thời điểm 
+\item Giá đóng phiên: giá bán (mua) BTC của (các) giao dịch tại thời điểm 
 kết thúc phiên.
-\item Giá cao nhất: giá bán (mua) Bitcoin cao nhất của giao dịch trong khoảng 
+\item Giá cao nhất: giá bán (mua) BTC cao nhất của giao dịch trong khoảng 
 thời gian mở phiên đến kết thúc phiên.
-\item Giá thấp nhất: giá bán (mua) Bitcoin thấp nhất của giao dịch trong khoảng 
+\item Giá thấp nhất: giá bán (mua) BTC thấp nhất của giao dịch trong khoảng 
 thời gian mở phiên đến kết thúc phiên.
 \end{itemize}
 Thời gian của một phiên giao dịch thường được chọn là 5 phút, 30 phút, 1 tiếng, 2 tiếng, 
 4 tiếng hoặc 1 ngày, ... 
-Trong phạm vi luận văn chúng ta chọn thời gian một phiên giao dịch là 30 phút.
-Ở đây, bài toán là đi dự đoán giá trị Bitcoin trong phiên tiếp theo sẽ tăng 
-hay giảm so với phiên hiện tại. Cụ thể, gọi n là phiên hiện tại và n(close) 
-là giá đóng phiên hiện tại, n+1 là phiên tiếp theo và n+1(close) là giá đóng 
-phiên tiếp theo. Nếu n+1(close) > n(close) thì giá tăng (Up), ngược lại thì 
-giá giảm (Down).\\\\
+Trong phạm vi luận văn chúng ta chọn thời gian một phiên giao dịch là 30 phút.\\\\
+Vậy, bài toán cần giải quyết là đi dự đoán giá trị BTC trong phiên tiếp theo sẽ tăng 
+hay giảm so với phiên hiện tại. Cụ thể, gọi $n$ là phiên hiện tại và $n_{close}$ 
+là giá đóng phiên hiện tại, $(n+1)$ là phiên tiếp theo và $(n+1)_{close}$ là giá đóng 
+phiên tiếp theo. Nếu $(n+1)_{close} > n_{close}$ thì giá tăng - $Up$, ngược lại thì 
+giá giảm - $Down$.\\\\
 Sau khi cụ thể được yêu cầu bài toán, ta sẽ đi đặc tả hướng tiếp cận giải quyết 
-vấn đề. Machine Learning là lựa chọn của luận văn này, cụ thể phương pháp giải quyết 
-sẽ sử dụng giải thuật phân lớp để dự đoán nhãn của phiên giao dịch sẽ là Up hay Down.
+vấn đề. Máy học là lựa chọn của luận văn này, cụ thể phương pháp giải quyết 
+sẽ sử dụng giải thuật phân lớp để dự đoán nhãn của phiên giao dịch sẽ là $Up$ 
+hay $Down$.
 
 \section{Mục tiêu của đề tài}
 Vấn đề cơ bản của việc đầu tư là lợi nhuận, bám sát với mục tiêu này phương hướng 
 đề ra sẽ đi giải quyết bài toán cụ thể như sau:\\\\
-Sử dụng USD để mua/bán Bitcoin, với mỗi phiên giao dịch là 30 phút, chúng 
-ta sẽ đi dự đoán giá trị Bitcoin trong phiên tiếp theo sẽ tăng hay giảm - bài
-toán phân lớp trong Machine Learning.\\\\
+Sử dụng USD để mua/bán BTC, với mỗi phiên giao dịch là 30 phút, chúng 
+ta sẽ đi dự đoán giá trị BTC trong phiên tiếp theo sẽ tăng hay giảm - bài
+toán phân lớp trong Máy học.\\\\
 Để thực hiện được điều đó chúng ta cần vạch ra những bước đi cụ
 thể để hiện thực mục tiêu:
 \begin{itemize}
-  \item Thu thập, xử lí dữ liệu Bitcoin.
+  \item Thu thập, xử lí dữ liệu BTC.
   \item Áp dụng các giải thuật phân lớp vào tập dữ liệu có được.
   \item Đánh giá trên lý thuyết hệ thống.
   \item Vận hành, khảo sát và đánh giá hệ thống trên thực tế.
@@ -59,7 +60,7 @@ thể để hiện thực mục tiêu:
 Sản phẩm hoàn thiện mà người dùng được sử dụng sẽ là một Ứng dụng nền Web cung 
 cấp các thông tin, quan điểm để tham khảo cho việc đầu tư.
 \section{Phương pháp thực hiện đề tài}
-Vì bài toán dự đoán về xu hướng giá trị Bitcoin hầu như chưa có bất kì 
+Vì bài toán dự đoán về xu hướng giá trị BTC hầu như chưa có bất kì 
 công trình hoặc bài báo nào được công bố công khai (theo tìm hiểu của cá nhân) 
 nên việc phải tham khảo các hướng giải quyết đã từng có là bất khả thi. Thay vào 
 đó chúng ta sẽ đi tham khảo các bài báo, công trình có mức độ liên quan khá cao 
@@ -67,9 +68,9 @@ như dự đoán xu hướng giá vàng và giá cổ phiếu - các tài liệu
 phần tài liệu tham khảo.
 Từ những kinh nghiệm của các bài báo, bản thân sẽ đúc kết một vài phương pháp 
 tổng quát, từ đó áp dụng ngược trở lại cho vấn đề dự đoán xu hướng giá trị 
-Bitcoin.\\\\
+BTC.\\\\
 Đồng thời, ngoài việc tham khảo các công trình liên quan, bản thân còn phải 
-sử dụng chính những kinh nghiệm về khai phá dữ liệu và kiến thức Machine Learning, 
+sử dụng chính những kinh nghiệm về khai phá dữ liệu và kiến thức Máy học, 
 để áp dụng vào nhằm đem lại kết quả tốt nhất. Việc tìm ra lời giải tốt nhất sẽ 
 tiến hành theo phương pháp so sánh các giải thuật, chúng ta sẽ đi chạy các giải 
 thuật phân lớp khác nhau từ đó đánh giá xem giải thuật nào là tốt hơn và từ đó 
@@ -84,9 +85,9 @@ bắt nội dung.\\\\
 Trước hết, chúng ta sẽ đi tìm hiểu qua công trình liên quan nhằm hiểu được công việc 
 chúng ta sẽ làm là gì? Và những hướng giải quyết tổng quát đã được sử dụng ra 
 sao?\\\\
-Sau đó, phần Nền tảng lý thuyết sẽ trang bị các kiến thức về Đại số, Giải tích và Kinh tế để 
+Sau đó, phần Nền tảng lý thuyết sẽ đề cập đến các kiến thức liên quan đến Bitcoin, một số 
+khái niệm về tài chính, cũng như lý thuyết giải thuật MNN dùng cho phân lớp để 
 phục vụ cho việc đọc hiểu nội dung các chương sau, đặc biệt là phục vụ cho quá 
-trình phân tích giải thuật phân lớp trong Machine Learning - cụ thể là sử dụng 
-Multilayer Neural Network để phân lớp.\\\\
+trình phân tích giải thuật phân lớp trong Máy học.\\\\
 Cuối cùng, thu thập dữ liệu và khai phá dữ liệu cho phù hợp với giải thuật, 
 chạy giải thuật, đánh giá giải thuật và hiện thực sản phẩm.
