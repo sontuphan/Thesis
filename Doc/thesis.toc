@@ -28,26 +28,25 @@
 \contentsline {section}{\numberline {3.3}M\IeC {\'a}y h\IeC {\d o}c}{12}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Kh\IeC {\'a}i ni\IeC {\d \ecircumflex }m c\IeC {\ohorn } b\IeC {\h a}n}{12}{subsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.1.1}M\IeC {\'a}y h\IeC {\d o}c}{12}{subsubsection.3.3.1.1}
-\contentsline {subsubsection}{\numberline {3.3.1.2}Supervised Learning - H\IeC {\d o}c c\IeC {\'o} gi\IeC {\'a}m s\IeC {\'a}t}{13}{subsubsection.3.3.1.2}
-\contentsline {subsubsection}{\numberline {3.3.1.3}Unsupervised Learning - H\IeC {\d o}c kh\IeC {\^o}ng gi\IeC {\'a}m s\IeC {\'a}t}{13}{subsubsection.3.3.1.3}
+\contentsline {subsubsection}{\numberline {3.3.1.2}H\IeC {\d o}c c\IeC {\'o} gi\IeC {\'a}m s\IeC {\'a}t - Supervised Learning}{13}{subsubsection.3.3.1.2}
+\contentsline {subsubsection}{\numberline {3.3.1.3}H\IeC {\d o}c kh\IeC {\^o}ng gi\IeC {\'a}m s\IeC {\'a}t - Unsupervised Learning}{13}{subsubsection.3.3.1.3}
 \contentsline {subsection}{\numberline {3.3.2}Th\IeC {\^o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{13}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Neural Network - Deep Learning}{14}{subsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.1}\IeC {\'Y} t\IeC {\uhorn }\IeC {\h \ohorn }ng gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{14}{subsubsection.3.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.3.2}C\IeC {\'\acircumflex }u tr\IeC {\'u}c m\IeC {\d \ocircumflex }t Perceptron}{14}{subsubsection.3.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3.3}Multilayer Neural Network}{16}{subsubsection.3.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.4}Sigmoid Function - H\IeC {\`a}m Sigmoid}{17}{subsubsection.3.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.3.5}Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t Backpropagation}{18}{subsubsection.3.3.3.5}
-\contentsline {chapter}{\numberline {4}Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{22}{chapter.4}
-\contentsline {section}{\numberline {4.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng Multilayer Neural Network}{22}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Feature Selection - D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n t\IeC {\d \acircumflex }p}{22}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Training - H\IeC {\d o}c gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{23}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Validation - \IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{23}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng - Web Application}{25}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}T\IeC {\h \ocircumflex }ng quan h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{25}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Machine Learning Server}{25}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3} H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Backend Server}{26}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng UI Frontend Server}{27}{subsection.4.2.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{30}{section.5.2}
-\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{31}{chapter*.5}
+\contentsline {subsection}{\numberline {3.3.3}M\IeC {\d a}ng neural - Neural Network}{14}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}C\IeC {\'\acircumflex }u tr\IeC {\'u}c m\IeC {\d \ocircumflex }t Perceptron}{15}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.2}Multilayer Neural Network}{15}{subsubsection.3.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3.3}Sigmoid Function - H\IeC {\`a}m Sigmoid}{16}{subsubsection.3.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.4}Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t lan truy\IeC {\`\ecircumflex }n ng\IeC {\uhorn }\IeC {\d \ohorn }c}{18}{subsubsection.3.3.3.4}
+\contentsline {chapter}{\numberline {4}Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng Multilayer Neural Network}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Feature Selection - D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n t\IeC {\d \acircumflex }p}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Training - H\IeC {\d o}c gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{22}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Validation - \IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{22}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng - Web Application}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}T\IeC {\h \ocircumflex }ng quan h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Machine Learning Server}{24}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3} H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Backend Server}{25}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng UI Frontend Server}{26}{subsection.4.2.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{28}{section.5.1}
+\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{29}{section.5.2}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{30}{chapter*.5}

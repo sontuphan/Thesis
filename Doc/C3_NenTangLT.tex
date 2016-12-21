@@ -66,13 +66,13 @@ Mỗi thành viên (máy tính, phần cứng ASIC, thiết bị di dộng... ) 
 trình tính toán của toàn mạng thì sẽ được xem như một node. Toàn mạng sẽ hiện thực hệ 
 thống bằng cách thực hiện các bước như sau:
 \begin{enumerate}
-\item Một gia dịch mới được truyền đi cho tất cả các node (broadcast).
+\item Một giao dịch mới được truyền đi cho tất cả các node (broadcast).
 \item Mỗi node sẽ lựa chọn và thu thập các giao dịch để đưa vào block.
 \item Mỗi node sẽ thực hiện proof-of-work, tìm ra số $nonce$.
 \item Khi một node hoàn thành proof-of-work, node này sẽ đóng block và truyền 
 đi toàn tất cả các node khác.
 \item Các node khác sẽ kiểm tra thông tin của block nhận được (thông tin các 
-transaction, thông tin proof-of-work...) và chấp nhận block này nếu tất cả 
+giao dịch, thông tin proof-of-work...) và chấp nhận block này nếu tất cả 
 các thông tin đều được kiểm tra chính xác.
 \item Các node sẽ thể hiện sự chấp nhận của mình bằng cách thực hiện proof-of-work 
 để sinh ra block mới block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
@@ -127,51 +127,50 @@ yêu cầu các giao dịch trong block và tính toán lại giá trị băm g�
 băm nào giống với giá trị băm gốc được lưu nghĩa là các giao dịch hoàn toàn hợp 
 lệ.
 \section{Một số khái niệm về tài chính}
-Vì luận văn này đang giải quyết một bài toán về kinh tế nên để hiểu được công 
-việc, ta cần nắm được các ý niệm cơ bản về kinh tế.
 \subsection{Phiên giao dịch và các giá trị cơ bản}
-Gọi T là một mốc thời gian bất kỳ, P là khoảng thời gian được chọn là một phiên 
-giao dịch. Ta có thể nói một cách đơn giản là phiên giao dịch được mở tại thời 
-điểm T và được kết thúc tại thời điểm T + P.\\\\
-Cụ thể, giả sử chọn mốc mở phiên là 9:00 am và phiên giao dịch có thời hạn là 
-30 phút, điều đó có nghĩa là kết thúc phiên giao dịch sẽ là 9:30 am.\\\\
-Ngoài ra:
+Gọi $T$ là một mốc thời gian bất kỳ, $P$ là khoảng thời gian được chọn là một 
+phiên giao dịch. Ta có thể nói một cách đơn giản là phiên giao dịch được mở tại 
+thời điểm $T$ và được kết thúc tại thời điểm $T + P$.\\\\
+Cụ thể, giả sử chọn mốc mở phiên là 9:00am và phiên giao dịch có thời hạn là 
+30 phút, điều đó có nghĩa là kết thúc phiên giao dịch sẽ là 9:30am.\\\\
+Các thông tin của một phiên giao dịch:
 \begin{itemize}
-\item Giá mở phiên: là giá bán của một giao dịch gần nhất sau thời điểm T. Ví dụ tại thời 
-điểm 9:01 am có một giao dịch bán 1 BTC là \$779 và trong khoảng thời gian 9:00 am 
-đến 9:01 am không hề có bất kỳ giao dịch nào khác ngoại trừ giao dịch này, thì ta có thể 
-nói giá mở phiên sẽ là \$779.
-\item Giá đóng phiên: là giá bán của một giao dịch gần nhất trước thời điểm T + P.
-\item Giá phiên cao nhất: là giá bán cao nhất của một giao dịch trong khoảng thời gian diễn ra phiên 
-giao dịch, cụ thể là từ thời điểm T đến thời điểm T + P. Ví dụ, trong khoảng thời gian 9:00 am (thời điểm 
-mở phiên) đến thời gian 9:30 am (thời điểm đóng phiên) có một giao dịch BTC với giá là 
-\$801 và là giao dịch có giá trị cao nhất. Vậy ta có thể nó giá phiên cao nhất là 
-\$801.
-\item Giá phiên thấp nhất: là giá bán thấp nhất của một giao dịch trong khoảng thời gian diễn ra phiên 
-giao dịch, cụ thể là từ thời điểm T đến thời điểm T + P.
-\item Lượng giao dịch: tổng giá trị USD được dùng để  mua/bán BTC trong một phiên giao dịch.
+\item Giá mở phiên: là giá bán của một giao dịch gần nhất sau thời điểm $T$. Ví 
+dụ tại thời điểm 9:01am có một giao dịch bán 1 BTC là \$779 và trong khoảng thời 
+gian 9:00am đến 9:01am không hề có bất kỳ giao dịch nào khác ngoại trừ giao dịch 
+này, thì ta có thể nói giá mở phiên sẽ là \$779.
+\item Giá đóng phiên: là giá bán của một giao dịch gần nhất trước thời điểm 
+$T + P$.
+\item Giá phiên cao nhất: là giá bán cao nhất của một giao dịch trong khoảng 
+thời gian diễn ra phiên giao dịch, cụ thể là từ thời điểm $T$ đến thời điểm 
+$T + P$. Ví dụ, trong khoảng thời gian 9:00am (thời điểm mở phiên) đến thời gian 
+9:30am (thời điểm đóng phiên) có một giao dịch BTC với giá là \$801 và là giao 
+dịch có giá trị cao nhất. Vậy ta có thể nó giá phiên cao nhất là \$801.
+\item Giá phiên thấp nhất: là giá bán thấp nhất của một giao dịch trong khoảng 
+thời gian diễn ra phiên giao dịch, cụ thể là từ thời điểm $T$ đến thời điểm $T + P$.
+\item Lượng giao dịch: tổng giá trị USD được dùng để  mua/bán BTC trong một phiên 
+giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
 \subsection{Rate of Change}
-Đại lượng đo sự khác nhau của giá tại phiên thứ x so với n phiên trước đó. 
+Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
 Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
 \[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
 Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
 Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
 \subsection{Stochastic Oscillator}
-Đại lượng dùng để đo xu hướng mua/bán của thị trường tại thời điểm phiên x thông 
-qua n phiên trước đó. Giả sử:\\\\
-\tab $L_{n} = $ giá phiên thấp nhất trong n phiên\\
-\tab $H_{n} = $ giá phiên cao nhất trong n phiên\\
-\tab $P(x) = $ giá của ngày x\\
+Đại lượng dùng để đo xu hướng mua/bán của thị trường tại thời điểm phiên $x$ 
+thông qua $n$ phiên trước đó. Giả sử:\\\\
+\tab $L_{n} = $ giá phiên thấp nhất trong $n$ phiên\\
+\tab $H_{n} = $ giá phiên cao nhất trong $n$ phiên\\
+\tab $P(x) = $ giá của ngày $x$\\
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
 Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng mua vào và nếu lớn hơn 
 80 thì thị trường đang có xu hướng bán ra.
 
 
 \section{Máy học}
-
 \subsection{Khái niệm cơ bản}
 \subsubsection{Máy học}
 Máy học có hai cách định nghĩa chính và đang được chấp nhận phổ biến:
@@ -183,34 +182,34 @@ Máy học có hai cách định nghĩa chính và đang được chấp nhận 
   năng P, nếu và chỉ nếu việc thực thi các tác vụ trong T được đo bởi phép đo P
   đem lại kết quả là kinh nghiệm E được cải thiện.''}
 \end{itemize}
-\subsubsection{Supervised Learning - Học có giám sát}
-Chúng ta được cho một tập dữ liệu đã biết với các input và output tương ứng
-nhau. Ý tưởng là chúng ta sẽ đi tìm mối quan hệ giữa input và output đó chính là
-Supervised Learning.\\\\
-Vấn đề của Supervised Learning được phân loại thành hai
-vấn đề chính là “Regression” và “Classification”. Trong vấn đề “Regression”,
-chúng ta sẽ cố gắng dự đoán kết quả output tiếp theo một cách liên tục, nghĩa là
-chúng ta đi tìm ra một hàm đầu ra liên tục tổng quát với biến là các thuộc tính
-đầu vào. Còn với vấn đề “Classification”, chúng ta thay vì cố gắng dự đoán kết
+\subsubsection{Học có giám sát - Supervised Learning}
+Chúng ta được cho một tập dữ liệu đã biết với các đầu vào và đầu ra tương ứng
+nhau. Ý tưởng là chúng ta sẽ đi tìm mối quan hệ giữa đầu vào và đầu ra, đó 
+chính là học có giám sát.\\\\
+Vấn đề của học có giám sát được phân loại thành hai
+vấn đề chính là hồi quy - regression và phân lớp - classification. Trong vấn đề 
+hồi quy, chúng ta sẽ cố gắng dự đoán kết quả đầu ra tiếp theo một cách liên tục, 
+nghĩa là chúng ta đi tìm ra một hàm đầu ra liên tục tổng quát với biến là các 
+đặc trưng đầu vào. Còn với vấn đề phân lớp, chúng ta thay vì cố gắng dự đoán kết
 quả liên tục thì ta sẽ đi dự đoán chúng theo hướng rời rạc, hiểu theo một cách
-khác là chúng ta đi tìm một phép phân loại rời rạc cho output với các biến
-input.
-\subsubsection{Unsupervised Learning - Học không giám sát}
+khác là chúng ta đi tìm một phép phân loại rời rạc cho các biến đầu ra với các 
+biến đầu vào.
+\subsubsection{Học không giám sát - Unsupervised Learning}
 Học không giám sát cho phép chúng ta tiếp cận các vấn đề mà ta chưa hề hoặc biết
 rất ít kết quả của chúng ta sẽ trông như thế nào. Chúng ta có thể xây dựng cấu
-trúc của dữ liệu mà không cần thiết phải biết ảnh hưởng của các biến đó.\\\\
+trúc của dữ liệu mà không cần thiết phải biết mối quan hệ của các biến đó.\\\\
 Chúng ta thực hiện việc này dựa trên ý tưởng gom cụm dữ liệu bằng cách xem xét
-mối quan hệ giữa các thuộc tính của dữ liệu. Các hướng tiếp cận dựa trên nhưng 
-phương pháp như vậy thường được gọi là “Clustering”.
+mối quan hệ giữa các đặc trưng của dữ liệu. Các hướng tiếp cận dựa trên nhưng 
+phương pháp như vậy thường được gọi là gom cụm - clustering.
 
 \subsection{Thông số đánh giá}
 Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Máy học.
 Gọi:
 \begin{itemize}
-\item True positive là TP
-\item False positive là FP
-\item True negative là TN
-\item False negative là FN
+\item True positive là $TP$
+\item False positive là $FP$
+\item True negative là $TN$
+\item False negative là $FN$
 \end{itemize}
 Thì:\\
 \[
@@ -224,29 +223,19 @@ Thì:\\
 \]\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=7in, keepaspectratio=true]{precision_recall.png}
-\caption{Validation Parameters}
+\includegraphics[height=4.3in, keepaspectratio=true]{precision_recall.png}
+\caption{Thông số đánh giá}
 \end{figure}\\
-\subsection{Neural Network - Deep Learning}
-Deep Learning nói chung và Neural Network nói riêng là hai phạm trù xuất hiện 
-không lâu đối với Máy học, đại diện cho hướng tiếp cận gần với 
-cái nhìn thực tế, học nhiều cấp và học từ bản chất dữ liệu. Deep Learning 
-thường giải quyết rất tốt với các loại dữ liệu mang tính ``con người'' như 
-hình ảnh, âm thanh ... \cite{NeuralNetworksandDeepLearning} 
-\subsubsection{Ý tưởng giải thuật}
-Bộ não con người là một trong những phát minh vĩ đại nhất của tự nhiên, nó 
-có thể giải quyết các bài toán mà đối với máy tính là cực kỳ phức tạp chỉ trong 
-vài giây hoặc kể cả là vài phần giây, các khả năng phán đoán, học hỏi, tích lũy 
-kinh nghiệm đó chính là điều tuyệt diệu của bộ não con người. Và các nhà khoa học 
-khao khát một thứ gì đó trong giới máy tính có khả năng như vậy.\\\\
-Dựa trên ý tưởng kết cấu của bộ não gồm hàng tỷ neural liên kết lại với nhau, 
-mỗi neural chỉ đưa ra một tín hiệu hết sức đơn giản, nhưng khi hàng tỷ neural liên kết 
-hình thành nên một hệ thống phức tạp thì từ đó có khả năng giải quyết các vấn đề 
-phức tạp. Các nhà khoa học máy tính, đã cố gắng định nghĩa một neural đơn lẻ 
-trong phạm trù máy tính và được gọi là perceptron, từ đó kết nối lại với nhau 
-để tạo nên một hệ thống hữu hạn các perceptron có khả năng giả lập một bộ não 
-người - mạng neural nhân tạo.
-
+\subsection{Mạng neural - Neural Network}
+Học sâu - Deep Learning - là một nhánh của Máy học, đại diện cho hướng tiếp 
+cận gần với cái nhìn thực tế, học nhiều cấp và học từ bản chất dữ liệu. Học 
+sâu thường giải quyết rất tốt với các loại dữ liệu mang tính ``con người'' 
+như hình ảnh, âm thanh ... Để có được những tính chất này, Học sâu đã đưa ra 
+các giải thuật mạng neural với cấu tạo nhiều lớp, mỗi lớp lại được cấu tạo từ 
+nhiều phần tử nhỏ hơn. Mỗi phần tử bên trong đi giải quyết các phép toán rất 
+đơn giản, nhưng khi được ghép nối lại thành một mạng neural hoàn chỉnh chúng có 
+thể giải quyết các bài toán phức tạp hơn rất nhiều, điều này hoàn toàn tương tự 
+với các hoạt động của bộ não người. \cite{NeuralNetworksandDeepLearning} 
 \subsubsection{Cấu trúc một Perceptron}
 Một perceptron sẽ có các input $x_1, x_2, ...$ và output sẽ là một giá trị 
 nhị phân.\\
@@ -276,7 +265,7 @@ có thể đưa ra một quyết định tương tự như bộ não người c�
 \begin{figure}[h!]
 \centering
 \includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
-\caption{Multilayer Neural Network}
+\caption{MNN}
 \end{figure}\\
 Multilayer Neural Network được cấu thành bằng cách sắp xếp các perceptron thành 
 từng lớp. Các perceptron ở mỗi lớp sẽ kết nối với tất cả các perceptron ở các 
@@ -299,7 +288,7 @@ Ví dụ:\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1in, keepaspectratio=true]{exmln.png}
-\caption{Perceptron with Bias example}
+\caption{Ví dụ perceptron với giá trị bias}
 \end{figure}\\
 Ta có $w_1=w_2=-2$ và $b=3$, khi đó nếu input $x_1=1,\, x_2=0$ suy ra $ 
 w_1*x_1+w_2*x_2+b=(-2)*1+(-2)*0+3=1$, ta có thể chọn $threshold=0$ vì $1>0$
@@ -327,21 +316,19 @@ Lúc này ta có một activation function có giá trị được giới hạn 
 từ 0 đến 1. Nhưng chú ý, giá trị của activation function là liên tục, để rời 
 rạc hóa giá trị của activation function ta có thể sử dụng một phương pháp 
 quen thuộc - sử dụng threshold. Điển hình ta chọn threshold = 0.5, nếu lớn hơn 
-thì activation function sẽ nhận 1 và ngược lại sẽ nhận 0.\\\\
-Để hiểu rõ hơn tại sao chúng ta quan sát hai đồ thị của sigmoid function và 
-activation function có dạng sigmoid và đã được rời rạc hóa giá trị:\\
+thì activation function sẽ nhận 1 và ngược lại sẽ nhận 0.\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=2.5in, keepaspectratio=true]{sigmoid.jpg}
-\caption{Sigmoid Function}
+\includegraphics[height=3.85in, keepaspectratio=true]{sigmoid.png}
+\caption{Đồ thị hàm sigmoid}
 \end{figure}\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=2.5in, keepaspectratio=true]{step.jpg}
-\caption{Step Function}
+\includegraphics[height=3.5in, keepaspectratio=true]{step.png}
+\caption{Đồ thị rời rác hóa hàm sigmoid}
 \end{figure}\\
 
-\subsubsection{Giải thuật Backpropagation}
+\subsubsection{Giải thuật lan truyền ngược}
 Sau khi đã có xây dựng thành công một mô hình Multilayer Neural Network, công 
 việc cuối cùng là cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể 
 tự xây dựng mô hình và đưa ra các quyết định cụ thể.\\\\
@@ -349,9 +336,9 @@ Cụ thể, khi nhìn lại một Multilayer Neural Network với activation fun
 sigmoid function thì các tham sô $w, b$ là chưa biết và việc cung cấp khả năng 
 tự học hỏi chính là cung cấp một giải thuật giúp mạng tìm được các tham số 
 $w, b$ với một tập kinh nghiệm - hay tập huấn luyện - ${x, y}$ cụ thể, trong 
-đó $x$ là input và $y$ là output tương ứng với từng bộ $x$. Giải thuật backpropagation 
-là một trong nhưng giải thuật chúng ta cần tìm.\\\\
-Trước tiên chúng ta cần đi qua một số ký hiệu:\\\\
+đó $x$ là input và $y$ là output tương ứng với từng bộ $x$. Giải thuật lan truyền 
+ngược là một trong nhưng giải thuật chúng ta cần tìm.\\\\
+Trước tiên chúng ta cần đi qua một số ký hiệu:
 \begin{itemize}
 \item $w$ là vector của các giá trị trọng số\\ 
 \[ w =
@@ -398,9 +385,9 @@ Với ký hiệu vector ta có thể tổng quát phát biểu với dạng:\\
 \[
   a^l=\sigma(w^l a^{l-1} + b^l)
 \]
-\textbf{Cost function:} Trước khi đi vào hiểu được backpropagation có thể làm gì, 
-chúng ta cần phải biết một định nghĩa cost function. Vậy cost function là gì? 
-Đúng theo tên của hàm, nó dùng để đo lường chi phí của thuật toán. Chi tiết:\\
+\textbf{Cost function:} Trước khi đi vào hiểu được giải thuật lan truyền ngược 
+có thể làm gì, chúng ta cần phải biết một định nghĩa cost function. Vậy cost 
+function là gì? Đúng theo tên của hàm, nó dùng để đo lường chi phí của thuật toán. Chi tiết:\\
 \[
   C=\frac{1}{2n}\sum_x\|y(x)-a^L(x)\|^2
 \]
@@ -424,4 +411,4 @@ tốc độ và độ chính xác phụ thuộc vào tỉ lệ này.\\\\
 Vậy, đi qua một quá trình tìm hiểu về Multilayer Neural Network, ta có thể hiểu 
 được việc học hỏi kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ 
 tương ứng với ${x, y}$ của bộ dữ liệu luyện tập, và để tìm ra được $w$ và $b$ 
-ta có thể sử dụng giải thuật backpropagation.
+ta có thể sử dụng giải thuật lan truyền ngược.
