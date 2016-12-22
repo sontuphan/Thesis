@@ -3,19 +3,22 @@ Như đã nhắc tới trước đó, các công trình về dự đoán xu hư�
 hầu như chưa có hoặc chưa được công khai vì thế mà việc tiếp cận chính xác vấn 
 đề là điều không thể. Thay vào đó chúng ta sẽ đi sử dụng các vấn đề liên quan 
 khác như là dự đoán xu hướng giá trị vàng và dự đoán xu hướng giá trị cổ phiếu.
-Hai công trình cụ thể được tham khảo trong luận văn là:
-\begin{enumerate}
-\item Predicting Gold Prices - Megan Potoski \cite{PredictingGoldPrices}
-\item Machine Learning in Stock Price Trend Forecasting - Yuqing Dai \& 
-Yuning Zhang \cite{StockPriceTrendForecasting} 
-\end{enumerate}
-Ở bài báo thứ nhất - Predicting Gold Prices - đã đề cập đến hai giải thuật phân lớp 
-là SVM và LR. Trong đó, vì va vấp với vấn đề mất cân đối trong tập 
-dữ liệu (nhãn positive lớn hơn rất nhiều sao với nhãn negative) nên SVM chỉ được 
-đề cập như một phép so sánh và không được sử dụng trong quá trình giải quyết vấn 
-đề chính. Thay vào đó, LR được sử dụng để giải quyết bài toán 
-phân lớp với kết quả khá khả quan.\\\\
-LR (Optimal Feature Set):
+Hai công trình cụ thể được tham khảo trong luận văn là: 
+``Predicting Gold Prices'' \cite{PredictingGoldPrices} và 
+``Machine Learning in Stock Price Trend Forecasting'' 
+\cite{StockPriceTrendForecasting} \\\\ 
+Bài báo \cite{PredictingGoldPrices} liên quan đến ứng dụng Máy học cho việc dự đoán 
+giá vàng, tác giả đã chọn hướng tiếp cận học có giám sát và cụ thể là bài toán 
+phân lớp. Tập dữ liệu mà tác giả sử dụng là tập dữ liệu giá vàng từ năm đầu 2007 
+đến cuối năm 2013 với khoảng 1700 mẫu và được lấy từ trang web của USA Gold, 
+đồng thời sử dụng hai giải thuật phân lớp là SVM và LR.
+Trong đó, khi gặp phải vấn đề mất cân đối trong tập dữ liệu 
+(nhãn positive lớn hơn rất nhiều sao với nhãn negative) tác giả đã sử dụng giải 
+thuật SVM với nhiều trường hợp như: sử dụng kernel RBF, sử dụng kernel tuyến tính 
+với L1,... nhưng đều cho ra kết quả thấp (Accuracy nằm trong khoảng 50\% - 51\%). 
+Với kết quả như vậy, tác giả đã quyết định sử dụng SVM như một giải thuật dùng 
+để so sánh và đánh giá với giải thuật còn lại. Với một hướng tiếp cận khác, LR 
+được sử dụng để giải quyết bài toán, kết quả được ghi nhận như bảng sau.
 \begin{table}[h]
 \centering
 \begin{tabular}{ |c|c| }
@@ -29,19 +32,19 @@ Accuracy & 69.30\% \\
 \end{tabular}
 \caption{Bảng đánh giá - Predicting Gold Prices}
 \end{table}\\
-Ở đây, ta nhận thấy bài báo sử dụng ba tham số đánh giá, chưa vội quan tâm đến 
-ý nghĩa từng tham số ta có thể hiểu rằng các tham số này càng cao thì tương 
-đương với giái thuật càng được xem là tốt. Chi tiết ba tham số này sẽ được nhắc 
-đến ở phần Nền tảng lý thuyết.\\\\
-Bước qua bài báo thứ hai - Machine Learning in Stock Price Trend Forecasting - 
-nhóm tác giả đã sử dụng bốn giải thuật đó là:
-\begin{itemize}
-\item GDA
-\item LR
-\item SVM 
-\item QDA
-\end{itemize}
-Kết quả đánh giá của 4 giải thuật được nhóm tác giả trình bày:
+Với kết quả trên, các tham số đánh giá cho kết quả trong khoảng gần bằng 70\% 
+và tác giả xem đây là một kết quả có ý nghĩa.\\\\
+Bài báo \cite{StockPriceTrendForecasting} liên quan đến ứng dụng Máy học cho việc 
+dự đoán giá trị cổ phiếu (cụ thể là công ty 3M), nguồn dữ liệu được sử dụng là 
+Bloomberg Data Terminal với khoảng 1400 mẫu. Nhóm tác giả đã sử dụng bốn 
+giải thuật trong quá trình phân tích và giải quyết bài toán đó là: GDA, LR, SVM, 
+QDA.\\\\
+Ngoài ra, tìm ra một hướng giải quyết tối ưu, nhóm tác giả tiếp cận vấn đề dựa 
+trên hai mô hình. Thứ nhất, mô hình Ngày tiếp theo (Next-Day Model) với mục 
+tiêu đi dự đoán xu hướng giá trị của cổ phiếu trong ngày tiếp theo. Và thứ hai, 
+mô hình Dài hạn (Long-Term Model) với mục tiêu đi dự đoán xu hướng giá trị của 
+$n$ ngày tiếp theo.\\\\
+Kết quả đánh giá của 4 giải thuật cho mô hình Ngày tiếp theo:
 \begin{table}[h]
 \centering
 \begin{tabular}{ |c|c|c|c|c| }
@@ -51,14 +54,22 @@ Model & LR & GDA & QDA & SVM \\
 Accuracy & 44.5\% & 46.4\% & 58.2\% & 55.2\% \\
 \hline
 \end{tabular}
-\caption{Bảng đánh giá - Machine Learning in Stock Price Trend Forecasting }
+\caption{Bảng đánh giá mô hình Ngày tiếp theo }
 \end{table}\\
-Thật sự kết quả cho ra không tốt so với bài báo thứ nhất và tham số đánh giá 
-chỉ sử dụng một tham số đó là Accuracy, chúng ta không thể dựa vào đó để đánh giá 
-một cách toàn diện về độ hiệu quả của giải thuật. Nhưng riêng trong công trình 
-này, nhóm tác giả có nêu ra Next-Day Model nhằm dự đoán xu hướng giá cổ phiếu 
-trong ngày tiếp theo và có vẻ khá tương đồng với vấn đề đặt ra trong phạm vi 
-luận văn này.\\\\
+Đồ thị đánh giá của 4 giải thuật cho mô hình Dài hạn:
+\begin{figure}[h!]
+\centering
+\includegraphics[height=3.5in, keepaspectratio=true]{longtermmodel.png}
+\caption{Đồ thị đánh giá mô hình Dài hạn}
+\end{figure}\\
+Hai mô hình với hai kết quả, ta thấy ở mô hình Dài hạn hai giải thuật SVM và 
+QDA cho kết quả accuracy gần bằng 80\% với $n=44$ ngày, so sánh với mô hình 
+Ngày tiếp theo accuracy gần bằng 60\% ta có thể thấy mô hình dài hạn cho kết 
+quả có ý nghĩa hơn. Nhưng một hạn chế rất lơn của công trình này, nhóm tác giả 
+chỉ sử dụng một tham số đánh giá duy nhất là accuracy mà bỏ qua precision và 
+recall. Việc đánh giá chỉ dựa trên duy nhất một tham số sẽ không thể tổng quát 
+được kết quả đầu ra, vì vậy mà dẫn đến nguy cơ không phát hiện các vấn đề về 
+lệch dữ liệu hoặc overfitting.\\\\ 
 Tổng quan qua hai công trình và tham khảo một số công trình khác, nhận thấy 
 đa số các hướng tiếp cận đều đi theo một phương pháp tổng quát chung, nó bao gồm các bước 
 cơ bản như:

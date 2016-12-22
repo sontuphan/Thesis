@@ -1,7 +1,6 @@
 \chapter{Phân tích và thiết kế hệ thống}
-
-\section{Xây dựng Multilayer Neural Network}
-\subsection{Feature Selection - Dữ liệu luyện tập}
+\section{Xây dựng MNN}
+\subsection{Xây dựng dữ liệu luyện tập}
 Một trong những yếu tố hết sức quan trọng trong Máy học đó chính Feature. 
 Feature chính là các giá trị thuộc tính đại diện cho tập dữ liệu luyện tập, ví dụ 
 chúng ta có tập dữ liệu về loài chim thì có thể feature chính là các thông số 
@@ -32,24 +31,24 @@ lại sẽ là 0. (Phiên 11 chính là phiên thứ 1 của nhóm 10 phiên li�
 \[
     label_i = \bigg \{ _{0 \quad if \: P_i(10) \: \leq \: P_{i+1}(1)} ^{1 \quad if \: P_i(10) \: > \: P_{i+1}(1)}
 \]
-\subsection{Training - Học giải thuật}
+\subsection{Học giải thuật}
 Bên cạnh chạy giải thuật Multilayer Neural Network, chúng ta sẽ chạy các giải 
 thuật khác nhằm so sánh và đánh giá giải thuật chính.\\\\
-Các giải thuật được chọn chạy:\\
+Các giải thuật được chọn chạy:
 \begin{itemize}
-\item Multilayer Neural Network - MNN
-\item Support Vector Machine - SVM
-\item K-Nearest Neighbors - KNN
-\item Logistic Regression - LR
+\item MNN
+\item SVM
+\item KNN
+\item LR
 \end{itemize}
 Sau khi chạy xong ta ghi nhận kết quả của các giải thuật được đề cập dưới dạng 
-các tham số đánh giá sau:\\
+các tham số đánh giá sau:
 \begin{itemize}
 \item Accuracy
 \item Recall
 \item Precision
 \end{itemize}
-\subsection{Validation - Đánh giá giải thuật}
+\subsection{Đánh giá giải thuật}
 Để có được kết quả đánh giá, chúng ta sẽ chia tập dữ liệu ra hai phần:
 \begin{itemize}
 \item Training data: chiếm 7/10 tổng số dữ liệu, dùng để chạy trong quá trình 
@@ -93,11 +92,12 @@ lỗ vì hệ thống dự đoán sai và với MNN thì ta sẽ có 4 lần ta 
 Quay lại với Recall, giá trị này không đo đạt được việc chúng ta sẽ lợi nhuận 
 hoặc thua lỗ ra sao mà thực ra là giá trị đo đạt khả năng tận dụng cơ hội của hệ 
 thống.\\\\
-Tới lúc này, ta có thể kết luận, bộ giá trị chiếm ưu tiên cao hơn sẽ là Accuracy 
+Tới lúc này, ta có thể kết luận, bộ tiêu chuẩn chiếm ưu tiên cao hơn sẽ là Accuracy 
 và Precision. Điều đó cũng có nghĩa là giải thuật Multilayer Neural Network nên 
-là lựa chọn để tiếp cận giải quyết vấn đề này.\\\\
-
-\section{Xây dựng hệ thống - Web Application}
+là lựa chọn để tiếp cận giải quyết vấn đề này.
+\section{Xây dựng hệ thống}
+Hệ thống được xây dựng với mục tiêu là một ứng dụng nền web, cung cấp công cụ hỗ 
+trợ cho việc dự đoán xu hướng giá trị BTC.
 \subsection{Tổng quan hệ thống}
 Hệ thống được xem xét và được thiết kế với 3 khối server chức năng:
 \begin{itemize}
@@ -112,7 +112,6 @@ realtime.\\
 \includegraphics[height=3.5in, keepaspectratio=true]{system.png}
 \caption{System Structure}
 \end{figure}\\
-
 \subsection{Hệ thống Machine Learning Server}
 Đây là hệ thống cốt lõi của của sản phẩm, nó đảm nhiệm khối chức năng dựa vào 
 các tham số được truyền vào để đưa ra giá trị nhãn tương ứng cho bộ tham số 

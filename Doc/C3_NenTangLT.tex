@@ -153,13 +153,13 @@ giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
-\subsection{Rate of Change}
+\subsection{Tỉ lệ thay đổi - Rate of Change}
 Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
 Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
 \[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
 Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
 Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
-\subsection{Stochastic Oscillator}
+\subsection{Độ biến động ngẫu nhiên - Stochastic Oscillator}
 Đại lượng dùng để đo xu hướng mua/bán của thị trường tại thời điểm phiên $x$ 
 thông qua $n$ phiên trước đó. Giả sử:\\\\
 \tab $L_{n} = $ giá phiên thấp nhất trong $n$ phiên\\
@@ -201,7 +201,6 @@ trúc của dữ liệu mà không cần thiết phải biết mối quan hệ c
 Chúng ta thực hiện việc này dựa trên ý tưởng gom cụm dữ liệu bằng cách xem xét
 mối quan hệ giữa các đặc trưng của dữ liệu. Các hướng tiếp cận dựa trên nhưng 
 phương pháp như vậy thường được gọi là gom cụm - clustering.
-
 \subsection{Thông số đánh giá}
 Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Máy học.
 Gọi:
@@ -333,7 +332,7 @@ Sau khi đã có xây dựng thành công một mô hình Multilayer Neural Netw
 việc cuối cùng là cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể 
 tự xây dựng mô hình và đưa ra các quyết định cụ thể.\\\\
 Cụ thể, khi nhìn lại một Multilayer Neural Network với activation function là 
-sigmoid function thì các tham sô $w, b$ là chưa biết và việc cung cấp khả năng 
+sigmoid function thì các tham số $w, b$ là chưa biết và việc cung cấp khả năng 
 tự học hỏi chính là cung cấp một giải thuật giúp mạng tìm được các tham số 
 $w, b$ với một tập kinh nghiệm - hay tập huấn luyện - ${x, y}$ cụ thể, trong 
 đó $x$ là input và $y$ là output tương ứng với từng bộ $x$. Giải thuật lan truyền 
