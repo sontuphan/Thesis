@@ -369,7 +369,7 @@ Ví dụ như hình trên, trọng số xuất phát từ perceptron thứ 4 thu
 2 và kết thúc tại perceptron thứ 2 thuộc layer thứ 3 được ký hiệu là 
 $w_{24}^3$.\\\\
 Tương tự như vậy với bias và activation function của perceptron thứ j thuộc layer 
-thứ l của mạng sẽ được kí hiệu thứ tự là $b_j^l,\,a_j^l$. Ví dụ, bias của perceptron 
+thứ l của mạng sẽ được kí hiệu thứ tự là $b_j^\ell,\,a_j^\ell$. Ví dụ, bias của perceptron 
 thứ 3 thuộc layer thứ 2 sẽ là $b_3^2$ và activation function của perceptron thứ 
 1 thuộc layer thứ 3 sẽ là $a_1^3$.\\
 \begin{figure}[h!]
@@ -379,11 +379,11 @@ thứ 3 thuộc layer thứ 2 sẽ là $b_3^2$ và activation function của per
 \end{figure}\\
 Lúc này ta có biểu diễn toán học đầy đủ của activation function:\\
 \[
-  a_j^l=\sigma(\sum_k w_{jk}^l a_k^l-1 + b_j^l)
+  a_j^\ell=\sigma(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)
 \]
 Với ký hiệu vector ta có thể tổng quát phát biểu với dạng:\\
 \[
-  a^l=\sigma(w^l a^{l-1} + b^l)
+  a^\ell=\sigma(w^\ell a^{\ell-1} + b^\ell)
 \]
 \textbf{Cost function:} Trước khi đi vào hiểu được giải thuật lan truyền ngược 
 có thể làm gì, chúng ta cần phải biết một định nghĩa cost function. Vậy cost 
@@ -397,18 +397,18 @@ và các điểm xác suất, cost function sử dụng giá trị thực tế $
 và giá trị $y=a$ là giá trị $y$ tính toán được từ $x$ với $w$ và $b$. Vậy ta 
 có thể hiểu được, cost function tính toán độ sai lệch của giá trị $a$ so với 
 $y$ kỳ vọng thực tế. Do đó, cost function càng nhỏ thì biểu diễn giá trị của 
-Multilayer Neural Network sẽ càng gần với thực tế.\\\\
+MNN sẽ càng gần với thực tế.\\\\
 Để tìm được giá trị cực tiểu cho cost function ta sẽ thực hiện vòng lặp:\\
 \[
-  w_ij^{(l)}:=w_ij^{(l)}-\eta\frac{\sigma}{\sigma w_ij^{(l)}}C(w,b)
+  w_{ij}^{(\ell)}:=w_{ij}^{(\ell)}-\eta\frac{\sigma}{\sigma w_{ij}^{(\ell)}}C(w,b)
 \]
 \[
-  b_i^{(l)}:=b_i^{(l)}-\eta\frac{\sigma}{\sigma b_i^{(l)}}C(w,b)
+  b_i^{(\ell)}:=b_i^{(\ell)}-\eta\frac{\sigma}{\sigma b_i^{(\ell)}}C(w,b)
 \]
 
-Trong đó $\eta$ là learning rate - tỉ lệ học, việc hội tụ về giá trị cực tiểu với 
+Trong đó $\eta$ là tỉ lệ học - learning rate, việc hội tụ về giá trị cực tiểu với 
 tốc độ và độ chính xác phụ thuộc vào tỉ lệ này.\\\\
-Vậy, đi qua một quá trình tìm hiểu về Multilayer Neural Network, ta có thể hiểu 
-được việc học hỏi kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ 
+Vậy, đi qua một quá trình tìm hiểu về MNN, ta có thể hiểu được việc học hỏi 
+kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ 
 tương ứng với ${x, y}$ của bộ dữ liệu luyện tập, và để tìm ra được $w$ và $b$ 
 ta có thể sử dụng giải thuật lan truyền ngược.
