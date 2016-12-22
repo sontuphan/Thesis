@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.27)  22 DEC 2016 22:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.27)  22 DEC 2016 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,19 +1486,25 @@ Package hyperref Warning: Glyph not defined in PU encoding,
 Package hyperref Warning: Glyph not defined in PU encoding,
 (hyperref)                removing `\h' on input line 97.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+
+Underfull \hbox (badness 1895) in paragraph at lines 100--101
+[]\T5/cmr/m/n/12 Wikipedia. ``Bit-coin'' In-ter-net: https://en.wikipedia.org/w
+iki/Bitcoin,
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
 [31
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
  (./thesis.aux (./LoiNoiDau.aux) (./C1_GioiThieu.aux) (./C2_CTLienQuan.aux) (./
 C3_NenTangLT.aux) (./C4_ThietKe.aux) (./C5_KLHuongPhatTrien.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 96929C60539B2AD0C1627AB318B73022;8134.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
  10963 strings out of 493304
@@ -1522,7 +1528,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/v
 ntex/vnr/vnti12.pfb>
-Output written on thesis.pdf (40 pages, 697958 bytes).
+Output written on thesis.pdf (40 pages, 697502 bytes).
 PDF statistics:
  607 PDF objects out of 1000 (max. 8388607)
  511 compressed objects within 6 object streams
