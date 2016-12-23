@@ -36,8 +36,8 @@ Trong phạm vi luận văn chúng ta chọn thời gian một phiên giao dịc
 Vậy, bài toán cần giải quyết là đi dự đoán giá trị BTC trong phiên tiếp theo sẽ tăng 
 hay giảm so với phiên hiện tại. Cụ thể, gọi $n$ là phiên hiện tại và $n_{close}$ 
 là giá đóng phiên hiện tại, $(n+1)$ là phiên tiếp theo và $(n+1)_{close}$ là giá đóng 
-phiên tiếp theo. Nếu $(n+1)_{close} > n_{close}$ thì giá tăng - $Up$, ngược lại thì 
-giá giảm - $Down$.\\\\
+phiên tiếp theo. Nếu $(n+1)_{close} > n_{close}$ thì giá tăng - $Up$, ngược lại thì, 
+$(n+1)_{close} \leq n_{close}$ thì giá giảm - $Down$.\\\\
 Sau khi cụ thể được yêu cầu bài toán, ta sẽ đi đặc tả hướng tiếp cận giải quyết 
 vấn đề. Máy học là lựa chọn của luận văn này, cụ thể phương pháp giải quyết 
 sẽ sử dụng giải thuật phân lớp để dự đoán nhãn của phiên giao dịch sẽ là $Up$ 
@@ -58,24 +58,24 @@ thể để hiện thực mục tiêu:
   \item Vận hành, khảo sát và đánh giá hệ thống trên thực tế.
   \item Xây dựng, hoàn thiện sản phẩm.
 \end{itemize} 
-Sản phẩm hoàn thiện mà người dùng được sử dụng sẽ là một Ứng dụng nền Web cung 
-cấp các thông tin, quan điểm để tham khảo cho việc đầu tư.
+Sản phẩm hoàn thiện mà người dùng được sử dụng sẽ là một ứng dụng nền web cung 
+cấp các thông tin về dự đoán và các thông số thống kê để tham khảo cho việc 
+đầu tư.
 \section{Phương pháp thực hiện đề tài}
 Vì bài toán dự đoán về xu hướng giá trị BTC hầu như chưa có bất kì 
 công trình hoặc bài báo nào được công bố công khai (theo tìm hiểu của cá nhân) 
-nên việc phải tham khảo các hướng giải quyết đã từng có là bất khả thi. Thay vào 
-đó chúng ta sẽ đi tham khảo các bài báo, công trình có mức độ liên quan khá cao 
-như dự đoán xu hướng giá vàng và giá cổ phiếu - các tài liệu này được dẫn tại 
-phần tài liệu tham khảo.
-Từ những kinh nghiệm của các bài báo, bản thân sẽ đúc kết một vài phương pháp 
-tổng quát, từ đó áp dụng ngược trở lại cho vấn đề dự đoán xu hướng giá trị 
-BTC.\\\\
-Đồng thời, ngoài việc tham khảo các công trình liên quan, bản thân còn phải 
-sử dụng chính những kinh nghiệm về khai phá dữ liệu và kiến thức Máy học, 
-để áp dụng vào nhằm đem lại kết quả tốt nhất. Việc tìm ra lời giải tốt nhất sẽ 
-tiến hành theo phương pháp so sánh các giải thuật, chúng ta sẽ đi chạy các giải 
-thuật phân lớp khác nhau từ đó đánh giá xem giải thuật nào là tốt hơn và từ đó 
-sẽ tập trung tối ưu cho giải thuật đó.\\\\
+nên việc phải tham khảo các hướng giải quyết từng công bố là bất khả thi. Thay 
+vào đó chúng ta sẽ đi tham khảo các bài báo, công trình có mức độ liên quan 
+tương đối như dự đoán xu hướng giá vàng và giá cổ phiếu - các tài liệu này được 
+dẫn tại phần tài liệu tham khảo.\\\\
+Từ những kinh nghiệm của các bài báo, bản thân sẽ đúc kết một phương pháp tổng 
+quát, từ đó áp dụng trở lại cho vấn đề dự đoán xu hướng giá trị BTC.\\\\
+Đồng thời, ngoài việc tham khảo các công trình liên quan, bản thân còn vận dụng 
+những kinh nghiệm cá nhân về khai phá dữ liệu và kiến thức Máy học, để áp dụng 
+vào quá trình nghiên cứu nhằm đem lại kết quả tốt nhất. Việc tìm ra lời giải 
+tốt nhất sẽ tiến hành theo phương pháp so sánh kết quả giữa các giải thuật, 
+chúng ta sẽ đi chạy các giải thuật phân lớp khác nhau từ đó đánh giá xem giải 
+thuật nào là tốt hơn và từ đó sẽ tập trung tối ưu cho giải thuật đó.\\\\
 Sản phẩm hoàn thiện là sản phẩm đã được chạy và khảo nghiệm trên thực tế, vì vậy 
 sau khi xây dựng hoàn chỉnh, hệ thống sẽ được chạy thực tế và đánh giá kết quả 
 trong một khoảng thời gian.

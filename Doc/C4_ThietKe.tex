@@ -69,7 +69,7 @@ Recall & 43.62\% & 0.15\% & 0\% & 29.55\% \\
 \caption{Bảng đánh giá}
 \end{table}\\
 Trước tiên theo bảng đánh giá, ta có các giải thuật LR và SVM cho kết quả Accuracy
-là gần khoảng 66\%, nhưng khi nhìn và chi tiết các giá trị Precision và Recall 
+là gần khoảng 66\%, nhưng khi nhìn vào chi tiết các giá trị Precision và Recall 
 ta nhận thấy các giải thuật này hầu như chỉ dự đoán kết quả là nhãn $Down$ cho \
 tất cả trường hợp. Điều này hoàn toàn không có ý nghĩa để dự đoán đầu tư.\\\\
 Xét đến KNN và MNN, đối với KNN ta có thể thấy giải thuật có xu hướng cân bằng 
@@ -114,8 +114,8 @@ chạy thời gian thực.\\
 các tham số được truyền vào để đưa ra giá trị nhãn tương ứng cho bộ tham số 
 đó.\\\\
 Cụ thể, để đưa ra một dự đoán, hệ thống yêu cầu các tham số đầu vào phải được 
-xây dựng theo mô tả phần 4.1.1, tổng số đặc trưng là 12.\\\\
-Hệ thống máy chủ máy học được chia thành hai phần:\\
+xây dựng theo mô tả tại phần 4.1.1, tổng số đặc trưng là 12.\\\\
+Hệ thống máy chủ máy học được chia thành hai phần:
 \begin{enumerate}
 \item Prediction: bao gồm các chức năng đọc mô hình MNN đã xây dựng, chạy mô 
 hình với tham số truyền vào và lấy các kết quả đầu ra.Kết quả đầu ra có giá 
@@ -131,7 +131,7 @@ việc lấy dữ liệu giá BTC cũng như khai phá dữ liệu nên hệ th�
 được xây dựng để thực hiện các chức năng này. Đồng thời, máy chủ backend còn là 
 cầu nối giữa trải nghiệm người dùng (hệ thống máy chủ UI frontend) và hệ thống 
 máy chủ máy học.\\\\
-Để thực hiện được công việc trên, hệ thống bao gồm được xây dựng các chức năng:\\
+Để thực hiện được công việc trên, hệ thống bao gồm được xây dựng các chức năng:
 \begin{enumerate}
 \item Cập nhật giá BTC: thông qua các public API được sàn giao dịch Poloniex 
 cung cấp, các hàm lấy giá được chạy liên tục để cập nhật giá BTC mới nhất nhằm 
@@ -152,7 +152,7 @@ cầu thống kê đúng/sai, yêu cầu dữ liệu giá cho biểu đồ...
 \end{enumerate}
 Với khả năng xử lý nhanh, được hỗ trợ tốt nên NodeJS được dùng để phát triển 
 hệ thống. Đồng thời, cơ sở dữ liệu của hệ thống là MongoDB vì tính linh hoạt 
-trong cấu trúc dữ liệu và khả năng mở rộng cao.\\\\
+trong cấu trúc dữ liệu và khả năng mở rộng cao.
 \subsection{Hệ thống máy chủ UI frontend}
 Hệ thồng UI Frontend Server là một giao diện người dùng, nó cho phép người 
 dùng có thể tiếp cận với các chức năng của toàn bộ hệ thống một cách dễ dàng. 

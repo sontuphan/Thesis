@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.12.20)  23 DEC 2016 16:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.12.20)  23 DEC 2016 17:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,27 +925,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--54
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 64--82
+Underfull \hbox (badness 10000) in paragraph at lines 65--82
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--82
+Underfull \hbox (badness 10000) in paragraph at lines 65--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--82
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 83--89
+Underfull \hbox (badness 10000) in paragraph at lines 83--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--89
+Underfull \hbox (badness 10000) in paragraph at lines 83--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--89
+Underfull \hbox (badness 10000) in paragraph at lines 83--90
 
  []
 
@@ -957,30 +962,30 @@ Ch\uhorn \ohorn ng 2.
 <longtermmodel.png, id=347, 919.435pt x 625.33624pt>
 File: longtermmodel.png Graphic file (type png)
  <use longtermmodel.png>
-Package pdftex.def Info: longtermmodel.png used on input line 62.
+Package pdftex.def Info: longtermmodel.png used on input line 63.
 (pdftex.def)             Requested size: 371.90616pt x 252.94499pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--76
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--76
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--76
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--76
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--76
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
@@ -1053,7 +1058,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--97
 
  []
 
-<merkletree.png, id=392, 692.5875pt x 275.0275pt>
+<merkletree.png, id=393, 692.5875pt x 275.0275pt>
 File: merkletree.png Graphic file (type png)
  <use merkletree.png>
 Package pdftex.def Info: merkletree.png used on input line 113.
@@ -1063,7 +1068,7 @@ Overfull \hbox (19.50023pt too wide) in paragraph at lines 113--114
  [][] 
  []
 
-<block.png, id=393, 580.1675pt x 434.62375pt>
+<block.png, id=394, 580.1675pt x 434.62375pt>
 File: block.png Graphic file (type png)
  <use block.png>
 Package pdftex.def Info: block.png used on input line 118.
@@ -1088,12 +1093,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--137
 
  []
 
-[13]
+
 Underfull \hbox (badness 10000) in paragraph at lines 157--164
 
  []
 
-
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 165--170
 
  []
@@ -1161,23 +1166,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--288
 
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [17 <./perceptron_n.png>] <exmln.png, id=444, 250.9375pt x 104.39pt>
 File: exmln.png Graphic file (type png)
 
 <use exmln.png>
 Package pdftex.def Info: exmln.png used on input line 297.
 (pdftex.def)             Requested size: 173.73671pt x 72.26999pt.
- [18 <./multilayerneuralnetwork.png> <./exmln.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 305--314
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 305--314
 
  []
 
-<sigmoid.png, id=452, 589.0005pt x 444.4605pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--314
+
+ []
+
+[18 <./multilayerneuralnetwork.png> <./exmln.png>]
+<sigmoid.png, id=453, 589.0005pt x 444.4605pt>
 File: sigmoid.png Graphic file (type png)
  <use sigmoid.png>
 Package pdftex.def Info: sigmoid.png used on input line 320.
@@ -1187,7 +1196,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 316--325
 
  []
 
-[19 <./sigmoid.png>] <step.png, id=459, 652.4375pt x 489.83pt>
+<step.png, id=454, 652.4375pt x 489.83pt>
 File: step.png Graphic file (type png)
  <use step.png>
 Package pdftex.def Info: step.png used on input line 336.
@@ -1197,13 +1206,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 327--339
 
  []
 
-<exw.png, id=460, 298.11375pt x 243.91125pt>
+[19 <./sigmoid.png>] <exw.png, id=460, 298.11375pt x 243.91125pt>
 File: exw.png Graphic file (type png)
- <use exw.png>
+
+<use exw.png>
 Package pdftex.def Info: exw.png used on input line 354.
 (pdftex.def)             Requested size: 176.65889pt x 144.54pt.
-
-<exb.png, id=461, 299.1175pt x 243.91125pt>
+ <exb.png, id=461, 299.1175pt x 243.91125pt>
 File: exb.png Graphic file (type png)
  <use exb.png>
 Package pdftex.def Info: exb.png used on input line 367.
@@ -1223,12 +1232,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--371
 
  []
 
-[20 <./step.png>] [21 <./exw.png> <./exb.png>]
+[20 <./step.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
-
+[21 <./exw.png> <./exb.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
@@ -1269,7 +1278,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 415--424
  []
 
 [22])
-Underfull \hbox (badness 10000) in paragraph at lines 431--92
+Underfull \hbox (badness 10000) in paragraph at lines 431--93
 
  []
 
@@ -1363,31 +1372,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--119
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--119
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 129--135
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--135
-
- []
-
-[27 <./system.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
-
- []
-
-<1.png, id=504, 1371.1225pt x 770.88pt>
+[27 <./system.png>] <1.png, id=504, 1371.1225pt x 770.88pt>
 File: 1.png Graphic file (type png)
  <use 1.png>
 Package pdftex.def Info: 1.png used on input line 165.
@@ -1405,21 +1394,25 @@ File: 3.png Graphic file (type png)
 Package pdftex.def Info: 3.png used on input line 175.
 (pdftex.def)             Requested size: 385.62726pt x 216.81pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 157--93
+Underfull \hbox (badness 10000) in paragraph at lines 157--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--93
+Underfull \hbox (badness 10000) in paragraph at lines 157--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--93
+Underfull \hbox (badness 10000) in paragraph at lines 157--94
 
  []
 
-[28] [29 <./1.png> <./2.png>] [30 <./3.png>]
+[28]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29 <./1.png> <./2.png>] [30 <./3.png>]
 \openout2 = `C5_KLHuongPhatTrien.aux'.
 
  (./C5_KLHuongPhatTrien.tex
@@ -1439,48 +1432,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--27
 
 
 ])
-Underfull \hbox (badness 10000) in paragraph at lines 40--94
+Underfull \hbox (badness 10000) in paragraph at lines 40--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--94
+Underfull \hbox (badness 10000) in paragraph at lines 40--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--94
+Underfull \hbox (badness 10000) in paragraph at lines 40--95
 
  []
 
 [32]
 
 Package hyperref Warning: Glyph not defined in PU encoding,
-(hyperref)                removing `\ecircumflex' on input line 97.
+(hyperref)                removing `\ecircumflex' on input line 98.
 
 
 Package hyperref Warning: Glyph not defined in PU encoding,
-(hyperref)                removing `\h' on input line 97.
+(hyperref)                removing `\h' on input line 98.
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 100--101
+Underfull \hbox (badness 1895) in paragraph at lines 101--102
 []\T5/cmr/m/n/12 Wikipedia. ``Bit-coin'' In-ter-net: https://en.wikipedia.org/w
 iki/Bitcoin,
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
 [33
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
  (./thesis.aux (./LoiNoiDau.aux) (./C1_GioiThieu.aux) (./C2_CTLienQuan.aux) (./
 C3_NenTangLT.aux) (./C4_ThietKe.aux) (./C5_KLHuongPhatTrien.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: B669BF2652C9A907C0A6171D2BA05296;8333.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+(rerunfilecheck)             Checksum: 7C80052C4E3A5E216458F34BA2BFEA0A;8333.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
  ) 
 Here is how much of TeX's memory you used:
  10965 strings out of 493304
@@ -1489,7 +1482,7 @@ Here is how much of TeX's memory you used:
  14100 multiletter control sequences out of 15000+600000
  21140 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 30i,11n,50p,402b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,11n,50p,402b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
@@ -1505,7 +1498,7 @@ bols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb
 exlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vn
 tex/vnr/vnti12.pfb>
-Output written on thesis.pdf (42 pages, 697149 bytes).
+Output written on thesis.pdf (42 pages, 697470 bytes).
 PDF statistics:
  623 PDF objects out of 1000 (max. 8388607)
  524 compressed objects within 6 object streams

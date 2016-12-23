@@ -9,16 +9,17 @@ Hai công trình cụ thể được tham khảo trong luận văn là:
 \cite{StockPriceTrendForecasting} \\\\ 
 Bài báo \cite{PredictingGoldPrices} liên quan đến ứng dụng Máy học cho việc dự đoán 
 giá vàng, tác giả đã chọn hướng tiếp cận học có giám sát và cụ thể là bài toán 
-phân lớp. Tập dữ liệu mà tác giả sử dụng là tập dữ liệu giá vàng từ năm đầu 2007 
+phân lớp. Tập dữ liệu mà tác giả sử dụng là tập dữ liệu giá vàng từ đầu năm 2007 
 đến cuối năm 2013 với khoảng 1700 mẫu và được lấy từ trang web của USA Gold, 
 đồng thời sử dụng hai giải thuật phân lớp là SVM và LR.
-Trong đó, khi gặp phải vấn đề mất cân đối trong tập dữ liệu 
-(nhãn positive lớn hơn rất nhiều sao với nhãn negative) tác giả đã sử dụng giải 
-thuật SVM với nhiều trường hợp như: sử dụng kernel RBF, sử dụng kernel tuyến tính 
-với L1,... nhưng đều cho ra kết quả thấp (Accuracy nằm trong khoảng 50\% - 51\%). 
-Với kết quả như vậy, tác giả đã quyết định sử dụng SVM như một giải thuật dùng 
-để so sánh và đánh giá với giải thuật còn lại. Với một hướng tiếp cận khác, LR 
-được sử dụng để giải quyết bài toán, kết quả được ghi nhận như bảng sau.
+Trong đó, khi gặp phải vấn đề mất cân đối trong tập dữ liệu (nhãn $positive$ 
+lớn hơn rất nhiều sao với nhãn $negative$) tác giả đã sử dụng giải thuật SVM 
+với nhiều lần điều chỉnh mô hình như: sử dụng kernel RBF, sử dụng kernel tuyến 
+tính với L1,... nhưng đều cho ra kết quả thấp (Accuracy nằm trong khoảng 50\% 
+- 51\%). Với kết quả như vậy, tác giả đã quyết định sử dụng SVM như một giải 
+thuật dùng để so sánh và đánh giá với giải thuật còn lại. Với một hướng tiếp 
+cận khác, LR được sử dụng để giải quyết bài toán, kết quả được ghi nhận như 
+bảng sau.
 \begin{table}[h]
 \centering
 \begin{tabular}{ |c|c| }
@@ -63,11 +64,11 @@ Accuracy & 44.5\% & 46.4\% & 58.2\% & 55.2\% \\
 \caption{Đồ thị đánh giá mô hình Dài hạn}
 \end{figure}\\
 Hai mô hình với hai kết quả, ta thấy ở mô hình Dài hạn hai giải thuật SVM và 
-QDA cho kết quả accuracy gần bằng 80\% với $n=44$ ngày, so sánh với mô hình 
-Ngày tiếp theo accuracy gần bằng 60\% ta có thể thấy mô hình dài hạn cho kết 
-quả có ý nghĩa hơn. Nhưng một hạn chế rất lơn của công trình này, nhóm tác giả 
-chỉ sử dụng một tham số đánh giá duy nhất là accuracy mà bỏ qua precision và 
-recall. Việc đánh giá chỉ dựa trên duy nhất một tham số sẽ không thể tổng quát 
+QDA cho kết quả Accuracy gần bằng 80\% với $n=44$ ngày, so sánh với mô hình 
+Ngày tiếp theo Accuracy gần bằng 60\% ta có thể thấy mô hình dài hạn cho kết 
+quả có ý nghĩa hơn. Nhưng một hạn chế rất lớn của công trình này, nhóm tác giả 
+chỉ sử dụng một tham số đánh giá duy nhất là Accuracy mà bỏ qua Precision và 
+Recall. Việc đánh giá chỉ dựa trên duy nhất một tham số sẽ không thể tổng quát 
 được kết quả đầu ra, vì vậy mà dẫn đến nguy cơ không phát hiện các vấn đề về 
 lệch dữ liệu hoặc overfitting.\\\\ 
 Tổng quan qua hai công trình và tham khảo một số công trình khác, nhận thấy 
@@ -82,6 +83,6 @@ SVM, LR ...
 Từ những đục kết trên, bản thân nhận thấy các bước trên cũng chính là phương pháp 
 nên dùng để tiếp cận đề tài. Ngoài ra, nhận thấy ở hai công trình trên chưa 
 hề sử dụng một giải thuật rất được phổ biến hiện nay, nó nổi lên như một đại 
-diện của Deep Learning đó là Multilayer Neural Network. Do đó mà luận văn này sẽ sử dụng 
-Multilayer Neural Network như là một giải thuật chính trong quá trình so sánh 
-và đánh giá so với các giải thuật phân lớp khác.
+diện của Học sâu - Deep Learning đó là MNN. Do đó mà luận văn này sẽ sử dụng 
+MNN như là một giải thuật bổ sung trong quá trình so sánh và đánh giá so với 
+các giải thuật phân lớp khác.
