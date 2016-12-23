@@ -11,42 +11,43 @@
 \contentsline {section}{\numberline {1.3}M\IeC {\d u}c ti\IeC {\^e}u c\IeC {\h u}a \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n \IeC {\dj }\IeC {\`\ecircumflex } t\IeC {\`a}i}{3}{section.1.4}
 \contentsline {section}{\numberline {1.5}B\IeC {\'\ocircumflex } c\IeC {\d u}c lu\IeC {\d \acircumflex }n v\IeC {\u a}n}{3}{section.1.5}
-\contentsline {chapter}{\numberline {2}Nh\IeC {\~\uhorn }ng c\IeC {\^o}ng tr\IeC {\`\i }nh li\IeC {\^e}n quan}{4}{chapter.2}
-\contentsline {chapter}{\numberline {3}N\IeC {\`\ecircumflex }n t\IeC {\h a}ng l\IeC {\'y} thuy\IeC {\'\ecircumflex }t}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Bitcoin}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}M\IeC {\'a}y ch\IeC {\h u} nh\IeC {\~a}n th\IeC {\`\ohorn }i gian - Timestamp Server}{7}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Giao d\IeC {\d i}ch - Transaction (tr\IeC {\^e}n Blockchain)}{8}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Proof-of-Work}{8}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Blockchain}{8}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}M\IeC {\d a}ng - Network}{9}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Ph\IeC {\`\acircumflex }n th\IeC {\uhorn }\IeC {\h \ohorn }ng kh\IeC {\'\i }ch l\IeC {\d \ecircumflex }}{10}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}T\IeC {\h \ocircumflex } ch\IeC {\'\uhorn }c l\IeC {\uhorn }u tr\IeC {\~\uhorn } th\IeC {\^o}ng tin giao d\IeC {\d i}ch}{10}{subsection.3.1.7}
-\contentsline {section}{\numberline {3.2}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } kh\IeC {\'a}i ni\IeC {\d \ecircumflex }m v\IeC {\`\ecircumflex } t\IeC {\`a}i ch\IeC {\'\i }nh}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Phi\IeC {\^e}n giao d\IeC {\d i}ch v\IeC {\`a} c\IeC {\'a}c gi\IeC {\'a} tr\IeC {\d i} c\IeC {\ohorn } b\IeC {\h a}n}{12}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}T\IeC {\h i} l\IeC {\d \ecircumflex } thay \IeC {\dj }\IeC {\h \ocircumflex }i - Rate of Change}{13}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}\IeC {\DJ }\IeC {\d \ocircumflex } bi\IeC {\'\ecircumflex }n \IeC {\dj }\IeC {\d \ocircumflex }ng ng\IeC {\~\acircumflex }u nhi\IeC {\^e}n - Stochastic Oscillator}{13}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}M\IeC {\'a}y h\IeC {\d o}c}{13}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Kh\IeC {\'a}i ni\IeC {\d \ecircumflex }m c\IeC {\ohorn } b\IeC {\h a}n}{13}{subsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.1.1}M\IeC {\'a}y h\IeC {\d o}c}{13}{subsubsection.3.3.1.1}
-\contentsline {subsubsection}{\numberline {3.3.1.2}H\IeC {\d o}c c\IeC {\'o} gi\IeC {\'a}m s\IeC {\'a}t - Supervised Learning}{14}{subsubsection.3.3.1.2}
-\contentsline {subsubsection}{\numberline {3.3.1.3}H\IeC {\d o}c kh\IeC {\^o}ng gi\IeC {\'a}m s\IeC {\'a}t - Unsupervised Learning}{14}{subsubsection.3.3.1.3}
-\contentsline {subsection}{\numberline {3.3.2}Th\IeC {\^o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{14}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}M\IeC {\d a}ng neural - Neural Network}{15}{subsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.1}C\IeC {\'\acircumflex }u tr\IeC {\'u}c m\IeC {\d \ocircumflex }t Perceptron}{16}{subsubsection.3.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.3.2}Multilayer Neural Network}{16}{subsubsection.3.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3.3}Sigmoid Function - H\IeC {\`a}m Sigmoid}{17}{subsubsection.3.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.4}Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t lan truy\IeC {\`\ecircumflex }n ng\IeC {\uhorn }\IeC {\d \ohorn }c}{19}{subsubsection.3.3.3.4}
-\contentsline {chapter}{\numberline {4}Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{22}{chapter.4}
-\contentsline {section}{\numberline {4.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng MNN}{22}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n t\IeC {\d \acircumflex }p}{22}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}H\IeC {\d o}c gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{23}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{23}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{24}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}T\IeC {\h \ocircumflex }ng quan h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{25}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Machine Learning Server}{25}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3} H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng Backend Server}{26}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng UI Frontend Server}{27}{subsection.4.2.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{30}{section.5.2}
-\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{31}{chapter*.5}
+\contentsline {chapter}{\numberline {2}Nh\IeC {\~\uhorn }ng c\IeC {\^o}ng tr\IeC {\`\i }nh li\IeC {\^e}n quan}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}N\IeC {\`\ecircumflex }n t\IeC {\h a}ng l\IeC {\'y} thuy\IeC {\'\ecircumflex }t}{8}{chapter.3}
+\contentsline {section}{\numberline {3.1}Bitcoin}{8}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}M\IeC {\'a}y ch\IeC {\h u} nh\IeC {\~a}n th\IeC {\`\ohorn }i gian - Timestamp Server}{8}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Giao d\IeC {\d i}ch - Transaction (tr\IeC {\^e}n Blockchain)}{9}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Proof-of-Work}{9}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Blockchain}{9}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}M\IeC {\d a}ng - Network}{10}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Ph\IeC {\`\acircumflex }n th\IeC {\uhorn }\IeC {\h \ohorn }ng kh\IeC {\'\i }ch l\IeC {\d \ecircumflex }}{11}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}T\IeC {\h \ocircumflex } ch\IeC {\'\uhorn }c l\IeC {\uhorn }u tr\IeC {\~\uhorn } th\IeC {\^o}ng tin giao d\IeC {\d i}ch}{11}{subsection.3.1.7}
+\contentsline {section}{\numberline {3.2}M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } kh\IeC {\'a}i ni\IeC {\d \ecircumflex }m v\IeC {\`\ecircumflex } t\IeC {\`a}i ch\IeC {\'\i }nh}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Phi\IeC {\^e}n giao d\IeC {\d i}ch v\IeC {\`a} c\IeC {\'a}c gi\IeC {\'a} tr\IeC {\d i} c\IeC {\ohorn } b\IeC {\h a}n}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Overboungt v\IeC {\`a} Oversold}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Ch\IeC {\h i} s\IeC {\'\ocircumflex } dao \IeC {\dj }\IeC {\d \ocircumflex }ng ng\IeC {\~\acircumflex }u nhi\IeC {\^e}n - Stochastic Oscillator}{14}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}T\IeC {\h i} l\IeC {\d \ecircumflex } thay \IeC {\dj }\IeC {\h \ocircumflex }i - Rate of Change}{14}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}M\IeC {\'a}y h\IeC {\d o}c}{15}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Kh\IeC {\'a}i ni\IeC {\d \ecircumflex }m c\IeC {\ohorn } b\IeC {\h a}n}{15}{subsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.1.1}M\IeC {\'a}y h\IeC {\d o}c}{15}{subsubsection.3.3.1.1}
+\contentsline {subsubsection}{\numberline {3.3.1.2}H\IeC {\d o}c c\IeC {\'o} gi\IeC {\'a}m s\IeC {\'a}t - Supervised Learning}{15}{subsubsection.3.3.1.2}
+\contentsline {subsubsection}{\numberline {3.3.1.3}H\IeC {\d o}c kh\IeC {\^o}ng gi\IeC {\'a}m s\IeC {\'a}t - Unsupervised Learning}{15}{subsubsection.3.3.1.3}
+\contentsline {subsection}{\numberline {3.3.2}Th\IeC {\^o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}{16}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}M\IeC {\d a}ng neural - Neural Network}{17}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}C\IeC {\'\acircumflex }u tr\IeC {\'u}c m\IeC {\d \ocircumflex }t Perceptron}{17}{subsubsection.3.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.3.2}Multilayer Neural Network}{17}{subsubsection.3.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3.3}Sigmoid Function - H\IeC {\`a}m Sigmoid}{19}{subsubsection.3.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.4}Gi\IeC {\h a}i thu\IeC {\d \acircumflex }t lan truy\IeC {\`\ecircumflex }n ng\IeC {\uhorn }\IeC {\d \ohorn }c}{20}{subsubsection.3.3.3.4}
+\contentsline {chapter}{\numberline {4}Ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng MNN}{24}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n t\IeC {\d \acircumflex }p}{24}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}H\IeC {\d o}c gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{25}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{25}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{26}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}T\IeC {\h \ocircumflex }ng quan h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{26}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng m\IeC {\'a}y ch\IeC {\h u} m\IeC {\'a}y h\IeC {\d o}c}{27}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3} H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng m\IeC {\'a}y ch\IeC {\h u} backend}{28}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}H\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng m\IeC {\'a}y ch\IeC {\h u} UI frontend}{28}{subsection.4.2.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{32}{section.5.2}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{33}{chapter*.5}

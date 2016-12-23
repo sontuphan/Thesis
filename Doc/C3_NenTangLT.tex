@@ -153,23 +153,29 @@ giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
-\subsection{Tỉ lệ thay đổi - Rate of Change}
-Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
-Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
-\[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
-Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
-Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
-\subsection{Độ biến động ngẫu nhiên - Stochastic Oscillator}
+\subsection{Overboungt và Oversold}
+Overboungt dùng để định nghĩa trường hợp thị trường có mức cầu cao hơn mức cung, 
+điều này làm đẩy giá của tài sản giao dịch lên cao vượt qua mức chính đáng. Ví 
+dụ, trên tất cả các giao dịch có hơn 80\% lệnh là đặt mua và dưới 20\% là lệnh 
+đặt bán, trường hợp này được xem là overboungt.\\\\
+Ngược lại, oversold dùng để định nghĩa trường hợp thị trường có mức cung cao hơn 
+mức cầu, điều này làm kéo giá của tài sản giao dịch xuống thấp vượt mức chính 
+đáng.
+\subsection{Chỉ số dao động ngẫu nhiên - Stochastic Oscillator}
 Đại lượng dùng để đo xu hướng mua/bán của thị trường tại thời điểm phiên $x$ 
 thông qua $n$ phiên trước đó. Giả sử:\\\\
 \tab $L_{n} = $ giá phiên thấp nhất trong $n$ phiên\\
 \tab $H_{n} = $ giá phiên cao nhất trong $n$ phiên\\
 \tab $P(x) = $ giá của ngày $x$\\
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
-Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng mua vào và nếu lớn hơn 
-80 thì thị trường đang có xu hướng bán ra.
-
-
+Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng oversold vào và nếu lớn 
+hơn 80 thì thị trường đang có xu hướng overboungt.
+\subsection{Tỉ lệ thay đổi - Rate of Change}
+Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
+Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
+\[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
+Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
+Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
 \section{Máy học}
 \subsection{Khái niệm cơ bản}
 \subsubsection{Máy học}
@@ -203,14 +209,14 @@ mối quan hệ giữa các đặc trưng của dữ liệu. Các hướng tiế
 phương pháp như vậy thường được gọi là gom cụm - clustering.
 \subsection{Thông số đánh giá}
 Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Máy học.
-Gọi:
+Ký hiệu:
 \begin{itemize}
 \item True positive là $TP$
 \item False positive là $FP$
 \item True negative là $TN$
 \item False negative là $FN$
 \end{itemize}
-Thì:\\
+Ta có:\\
 \[
   Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
 \]
@@ -219,10 +225,10 @@ Thì:\\
 \]
 \[
   Recall = \frac{TP}{TP+FN}
-\]\\
+\]
 \begin{figure}[h!]
 \centering
-\includegraphics[height=4.3in, keepaspectratio=true]{precision_recall.png}
+\includegraphics[height=4in, keepaspectratio=true]{precision_recall.png}
 \caption{Thông số đánh giá}
 \end{figure}\\
 \subsection{Mạng neural - Neural Network}
@@ -236,17 +242,17 @@ nhiều phần tử nhỏ hơn. Mỗi phần tử bên trong đi giải quyết 
 thể giải quyết các bài toán phức tạp hơn rất nhiều, điều này hoàn toàn tương tự 
 với các hoạt động của bộ não người. \cite{NeuralNetworksandDeepLearning} 
 \subsubsection{Cấu trúc một Perceptron}
-Một perceptron sẽ có các input $x_1, x_2, ...$ và output sẽ là một giá trị 
-nhị phân.\\
+Một perceptron sẽ có các giá trị đầu vào $x_1, x_2, ...$, giá trị đầu ra sẽ 
+là kết quả toán học của các giá trị đầu vào và là một giá trị nhị phân.\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=1.5in, keepaspectratio=true]{perceptron.png}
+\includegraphics[height=1.5in, keepaspectratio=true]{perceptron_n.png}
 \caption{Perceptron}
 \end{figure}\\
-Một ví dụ đơn giản dựa vào hình trên, ta thấy perceptron này có 3 input là 
+Một ví dụ, dựa vào hình trên, ta thấy perceptron này có 3 input là 
 $x_1, x_2, x_3$ , giả sử đi kèm với mỗi input sẽ có một giá trị trọng 
 số $w_1, w_2, w_3$. Output được định nghĩa là 0 và 1, nhận giá trị 0 
-khi $\sum_j w_j x_j$ nhỏ hơn giá trị ngưỡng và 1 khi lớn gơn giá trị ngưỡng.\\\\
+khi $\sum_j w_j x_j$ nhỏ hơn giá trị ngưỡng và 1 khi lớn hơn giá trị ngưỡng.\\\\
 Biểu diễn đại số:\\
 \[
   output = 
@@ -254,34 +260,36 @@ Biểu diễn đại số:\\
     _{0 \quad if \, \sum_j w_j x_j \, \leq \, threshold}
     ^{1 \quad if \, \sum_j w_j x_j \, > \, threshold}
 \]
-Các hàm số như trên được gọi là activation function, có nhiều loại activation
- function khác nhau như: $sigmoid , tang ...$ 
+Các hàm số như trên được gọi là hàm hoạt động - activation function, có nhiều 
+loại hàm hoạt động khác nhau như: $sigmoid , tang ...$ 
 
 \subsubsection{Multilayer Neural Network}
-Hiển nhiên, một perceptron không thể mô phỏng nên được một bộ não người, để 
-có thể đưa ra một quyết định tương tự như bộ não người các perceptron này cần 
-được kết nối với nhau thành một mạng lưới - Multilayer Neural Network.\\
+Với một perceptron đơn lẻ, tự thân nó không thể giái quyết được một bài toán 
+phức tạp như yêu cầu của mạng neural, vì thế để giải quyết bài toán phức tạp 
+hơn, các perceptron được kết nối với nhau tạo thành một mạng neural.
 \begin{figure}[h!]
 \centering
 \includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
 \caption{MNN}
 \end{figure}\\
-Multilayer Neural Network được cấu thành bằng cách sắp xếp các perceptron thành 
+MNN được cấu thành bằng cách sắp xếp các perceptron thành 
 từng lớp. Các perceptron ở mỗi lớp sẽ kết nối với tất cả các perceptron ở các 
-lớp liền kề, cột những perceptron đầu tiên được gọi là input layer, chúng có 
-chức năng tiếp nhận các input để cho ra các output. Các output ở lớp trước sẽ chính là 
-input cho các perceptron ở lớp tiếp theo. Các perceptron ở lớp cuối cùng được gọi là 
-output layer, trong trường hợp này đặc biệt chỉ có duy nhất một perceptron. Còn 
-lại các lớp perceptron khác được gọi là hidden layer.\\\\
-Giả sử input của perceptron là $x_1, x_2, ...$ tương ứng là đó là các trọng 
-số $w_1, w_2, ...$. Thêm vào đó định nghĩa về bias, ở đây bias là một giá trị 
-đại diện độ lệch của từng perceptron và được ký hiệu $b_1, b_2, ...$. Ta có biểu diễn của activation 
-function:\\
+lớp liền kề, lớp những perceptron đầu tiên được gọi là lớp đầu vào - input layer, 
+chúng có chức năng tiếp nhận các giá trị đầu vào để cung cấp cho các lớp tiếp 
+theo. Các giá trị đầu ra ở lớp trước sẽ chính là các giá trị đầu vào cho 
+các perceptron ở lớp tiếp theo. Các perceptron ở lớp cuối cùng được gọi là lớp 
+đầu ra - output layer, trong trường hợp này đặc biệt chỉ có duy nhất một 
+perceptron ở lớp đầu ra. Còn lại các lớp perceptron khác được gọi là lớp ẩn 
+- hidden layer.\\\\
+Giả sử đầu vào của perceptron là $x_1, x_2, ...$ tương ứng là đó là các trọng 
+số $w_1, w_2, ...$. Thêm vào định nghĩa về $bias$, ở đây $bias$ là một giá trị 
+đại diện độ lệch của từng perceptron và được ký hiệu $b_1, b_2, ...$. Ta có 
+biểu diễn của hàm hoạt động với $bias$:\\
 \[
   output = 
   \bigg\{
     _{0 \quad if \, \sum_j w_j x_j + b_i\, \leq \, 0}
-    ^{1 \quad if \, \sum_j w_j x_j + b_i\, > \, 1}
+    ^{1 \quad if \, \sum_j w_j x_j + b_i\, > \, 0}
 \]
 Ví dụ:\\
 \begin{figure}[h!]
@@ -294,110 +302,125 @@ w_1*x_1+w_2*x_2+b=(-2)*1+(-2)*0+3=1$, ta có thể chọn $threshold=0$ vì $1>0
 nên $output=1$.
 
 \subsubsection{Sigmoid Function - Hàm Sigmoid}
-Với dạng activation function được định nghĩa ở trên, giá trị của activation 
-function gần như không có giới hạn. Vậy tại sao việc không có giới hạn lại 
-cần được quan tâm. Trong một trường hợp cụ thể, với việc sử dụng activation 
-function như trên có thể dẫn đến trường hợp đầu ra của một perceptron sẽ nhận 
-giá trị rất lớn - giả sử là 1000, những một perceptron khác sẽ nhận giá trị rất 
-bé - giả sử 0.001. Vì thế khi đến lớp tiếp theo thì gần như perceptron cho kết 
-quả đầu ra là giá trị bé sẽ mất đi độ ảnh hưởng và làm mất cân đối cho toàn mạng.\\\\
-Do đó để giới hạn giá trị của activation function chúng ta sẽ sử dụng hàm sigmoid. 
-Sigmoid function được định nghĩa như sau:\\
+Với hàm hoạt động được định nghĩa như trên, giá trị của hàm hoạt động trên lý 
+thuyết là không có giới hạn, nghĩa là $output\in\mathbb{R}$. Trong một trường 
+hợp cụ thể, với việc sử dụng hàm hoạt động như trên có thể dẫn đến trường hợp 
+đầu ra của một perceptron sẽ nhận giá trị rất lớn - giả sử là 1000, những một 
+perceptron khác sẽ nhận giá trị rất bé - giả sử 0.001. Vì thế khi đến lớp tiếp 
+theo thì gần như perceptron cho kết quả đầu ra là giá trị bé sẽ mất đi độ ảnh 
+hưởng và làm mất cân đối cho toàn mạng.\\\\
+Do đó để giới hạn giá trị đầu ra của hàm hoạt động chúng ta sẽ sử dụng hàm 
+sigmoid. Hàm sigmoid được định nghĩa như sau:\\
 \[
   \sigma(z)=\frac{1}{1+e^{-z}}
 \]
-Áp dụng Sigmoid function vào activation function ta có activation function dạng
-sigmoid và khi đó activation function của chúng ta sẽ có dạng:\\
-\[
-  \frac{1}{1+exp(-\sum_j w_j x_j -b)}
-\]
-Lúc này ta có một activation function có giá trị được giới hạn trong khoảng 
-từ 0 đến 1. Nhưng chú ý, giá trị của activation function là liên tục, để rời 
-rạc hóa giá trị của activation function ta có thể sử dụng một phương pháp 
-quen thuộc - sử dụng threshold. Điển hình ta chọn threshold = 0.5, nếu lớn hơn 
-thì activation function sẽ nhận 1 và ngược lại sẽ nhận 0.\\
+Với biễu diễn đồ thị:
 \begin{figure}[h!]
 \centering
 \includegraphics[height=3.85in, keepaspectratio=true]{sigmoid.png}
 \caption{Đồ thị hàm sigmoid}
 \end{figure}\\
+Áp dụng hàm sigmoid vào hàm hoạt động ta có một hàm hoạt động dạng sigmoid và 
+khi đó hàm hoạt động của chúng ta của chúng ta sẽ có dạng:\\
+\[
+  \frac{1}{1+exp(-\sum_j w_j x_j -b)}
+\]
+Lúc này ta có một hàm hoạt động có giá trị được giới hạn trong khoảng từ 0 đến 
+1. Nhưng chú ý, giá trị đầu ra của hàm hoạt động vẫn là giá trị liên tục, để 
+rời rạc hóa giá trị đầu ra của hàm hoạt động ta có thể sử dụng một phương pháp 
+quen thuộc - sử dụng ngưỡng. Điển hình ta chọn ngưỡng $threshold = 0.5$, nếu 
+lớn hơn ngưỡng thì giá trị đầu ra của hàm hoạt động sẽ nhận 1 và ngược lại sẽ 
+nhận 0.
 \begin{figure}[h!]
 \centering
 \includegraphics[height=3.5in, keepaspectratio=true]{step.png}
 \caption{Đồ thị rời rác hóa hàm sigmoid}
 \end{figure}\\
-
 \subsubsection{Giải thuật lan truyền ngược}
-Sau khi đã có xây dựng thành công một mô hình Multilayer Neural Network, công 
-việc cuối cùng là cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể 
-tự xây dựng mô hình và đưa ra các quyết định cụ thể.\\\\
-Cụ thể, khi nhìn lại một Multilayer Neural Network với activation function là 
-sigmoid function thì các tham số $w, b$ là chưa biết và việc cung cấp khả năng 
-tự học hỏi chính là cung cấp một giải thuật giúp mạng tìm được các tham số 
-$w, b$ với một tập kinh nghiệm - hay tập huấn luyện - ${x, y}$ cụ thể, trong 
-đó $x$ là input và $y$ là output tương ứng với từng bộ $x$. Giải thuật lan truyền 
-ngược là một trong nhưng giải thuật chúng ta cần tìm.\\\\
-Trước tiên chúng ta cần đi qua một số ký hiệu:
+Sau khi đã có xây dựng thành công một mô hình MNN, công việc tiếp theo sẽ là 
+cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể tự xây dựng mô hình 
+quyết định và đưa ra các giá trị đầu ra tương ứng với từng trường hợp đầu vào 
+cụ thể.\\\\
+Cụ thể, khi nhìn lại một MNN với hàm hoạt động là một hàm hoạt động có dạng
+sigmoid và các tham số $w, b$, các tham số này chưa có giá trị.  Việc cung 
+cấp khả năng tự học hỏi cho mạng chính là cung cấp một giải thuật giúp mạng 
+tìm được các tham số $w, b$ với một tập kinh nghiệm - hay tập huấn luyện - 
+${x, y}$ cụ thể, trong đó $x$ là giá trị đầu vào và $y$ là giá trị đầu ra 
+tương ứng với từng bộ $x$. Giải thuật lan truyền ngược là một giải thuật giúp 
+giải quyết vấn đề trên.\\\\
+Biểu diễn trọng số, $bias$ và hàm hoạt động:\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2in, keepaspectratio=true]{exw.png}
+\caption{Ký hiệu trọng số}
+\end{figure}\\
+Trọng số $w_{jk}^\ell$ là trọng số từ lớp perceptron thứ $k$ của lớp $(\ell-1)$ 
+đến perceptron thứ j thuộc lớp thứ $\ell$.
+Như hình trên, trọng số xuất phát từ perceptron thứ 4 thuộc lớp thứ 2 và kết 
+thúc tại perceptron thứ 2 thuộc lớp thứ 3 được ký hiệu là $w_{24}^3$.\\\\
+Tương tự như vậy với $bias$ và hàm hoạt động của perceptron thứ $j$ thuộc lớp 
+thứ $\ell$ của mạng sẽ được kí hiệu thứ tự là $b_j^\ell,\,a_j^\ell$. Ví dụ, $bias$ 
+của perceptron thứ 3 thuộc lớp thứ 2 sẽ là $b_3^2$ và hàm hoạt động của 
+perceptron thứ 1 thuộc lớp thứ 3 sẽ là $a_1^3$.\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2in, keepaspectratio=true]{exb.png}
+\caption{Ký hiệu $bias$}
+\end{figure}\\
+Biễu diễn ma trận trọng số và vector $bias$:
 \begin{itemize}
-\item $w$ là vector của các giá trị trọng số\\ 
+\item $w$ là ma trận của các giá trị trọng số\\ 
 \[ w =
 \begin{bmatrix}
-w_1\\
-\vdots\\
-w_n
+w_{11} & \ldots & w_{1k} \\
+\vdots & \ddots & \vdots\\
+w_{j1} & \ldots & w_{jk}
 \end{bmatrix}
 \]
-\item $b$ là vector của các giá trị bias\\ 
+\item $b$ là vector của các giá trị $bias$\\ 
 \[ b =
 \begin{bmatrix}
 b_1\\
 \vdots\\
-b_m
+b_k
 \end{bmatrix}
 \]
-\item $\sigma$ là sigmoid function
-\item $a(\sigma)$ là activation function có dạng sigmoid
+\item $\sigma$ là hàm sigmoid
+\item $a(\sigma)$ là hàm hoạt động có dạng sigmoid, $a$ là vector của các hàm 
+hoạt động\\
+\[ a =
+\begin{bmatrix}
+a_1\\
+\vdots\\
+a_k
+\end{bmatrix}
+\]
 \end{itemize}
-Biểu diễn activation function:\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=2in, keepaspectratio=true]{exw.png}
-\caption{Weight Notation example}
-\end{figure}\\
-Ví dụ như hình trên, trọng số xuất phát từ perceptron thứ 4 thuộc layer thứ 
-2 và kết thúc tại perceptron thứ 2 thuộc layer thứ 3 được ký hiệu là 
-$w_{24}^3$.\\\\
-Tương tự như vậy với bias và activation function của perceptron thứ j thuộc layer 
-thứ l của mạng sẽ được kí hiệu thứ tự là $b_j^\ell,\,a_j^\ell$. Ví dụ, bias của perceptron 
-thứ 3 thuộc layer thứ 2 sẽ là $b_3^2$ và activation function của perceptron thứ 
-1 thuộc layer thứ 3 sẽ là $a_1^3$.\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=2in, keepaspectratio=true]{exb.png}
-\caption{Bias Notation example}
-\end{figure}\\
-Lúc này ta có biểu diễn toán học đầy đủ của activation function:\\
+Lúc này ta có biểu diễn toán học đầy đủ của hàm hoạt động:\\
 \[
   a_j^\ell=\sigma(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)
 \]
-Với ký hiệu vector ta có thể tổng quát phát biểu với dạng:\\
+Tổng quát phát biểu với dạng:\\
 \[
   a^\ell=\sigma(w^\ell a^{\ell-1} + b^\ell)
 \]
-\textbf{Cost function:} Trước khi đi vào hiểu được giải thuật lan truyền ngược 
-có thể làm gì, chúng ta cần phải biết một định nghĩa cost function. Vậy cost 
-function là gì? Đúng theo tên của hàm, nó dùng để đo lường chi phí của thuật toán. Chi tiết:\\
+Để có thể tìm được giá trị của các biến $w$ và $b$, giải thuật lan truyền ngược 
+thực hiện bằng cách xuất phát $w$ và $b$ từ các giá trị ngẫu nhiên, thực hiện 
+các phép lặp để đưa $w$ và $b$ về giá trị đúng, mỗi lần lặp sẽ có một hàm chi 
+phí - cost function - đo đạc độ lệch của giá trị tính toán và giá trị thực tế 
+để giúp giải thuật tìm được giá trị hội tụ.\\\\
+Biễu diễn hàm chi phí:\\
 \[
   C=\frac{1}{2n}\sum_x\|y(x)-a^L(x)\|^2
 \]
-Ta có thể thấy, dạng hàm số trên hết sức quen thuộc với định nghĩa độ lệch chuẩn 
-trong xác suất thống kê nhưng đã được biến đổi một chút. Thay vì giá trị kỳ vọng 
-và các điểm xác suất, cost function sử dụng giá trị thực tế $y$ của tập dữ liệu 
-và giá trị $y=a$ là giá trị $y$ tính toán được từ $x$ với $w$ và $b$. Vậy ta 
-có thể hiểu được, cost function tính toán độ sai lệch của giá trị $a$ so với 
-$y$ kỳ vọng thực tế. Do đó, cost function càng nhỏ thì biểu diễn giá trị của 
+Ta có thể thấy, dạng hàm số trên tương đồng với định nghĩa độ lệch chuẩn trong 
+xác suất thống kê nhưng có một số biến đổi khác biệt. Thay vì giá trị kỳ vọng 
+và các giá trị xác suất, hàm chi phí sử dụng giá trị thực tế $y$ của tập dữ 
+liệu và giá trị $y=a$ là giá trị $y$ tính toán được từ $x$ với $w$ và $b$. Vậy 
+ta có thể hiểu được, hàm chi phí tính toán độ sai lệch của giá trị $a$ so với 
+$y$ kỳ vọng thực tế. Do đó, hàm chi phí càng nhỏ thì biểu diễn giá trị của 
 MNN sẽ càng gần với thực tế.\\\\
-Để tìm được giá trị cực tiểu cho cost function ta sẽ thực hiện vòng lặp:\\
+Để tìm được giá trị cực tiểu cho hàm chi phí ta sẽ thực hiện vòng lặp:\\
 \[
   w_{ij}^{(\ell)}:=w_{ij}^{(\ell)}-\eta\frac{\sigma}{\sigma w_{ij}^{(\ell)}}C(w,b)
 \]
@@ -405,9 +428,9 @@ MNN sẽ càng gần với thực tế.\\\\
   b_i^{(\ell)}:=b_i^{(\ell)}-\eta\frac{\sigma}{\sigma b_i^{(\ell)}}C(w,b)
 \]
 
-Trong đó $\eta$ là tỉ lệ học - learning rate, việc hội tụ về giá trị cực tiểu với 
-tốc độ và độ chính xác phụ thuộc vào tỉ lệ này.\\\\
+Trong đó $\eta$ là tỉ lệ học - learning rate, việc hội tụ về giá trị cực tiểu 
+với tốc độ và độ chính xác phụ thuộc vào tỉ lệ này.\\\\
 Vậy, đi qua một quá trình tìm hiểu về MNN, ta có thể hiểu được việc học hỏi 
-kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ 
-tương ứng với ${x, y}$ của bộ dữ liệu luyện tập, và để tìm ra được $w$ và $b$ 
-ta có thể sử dụng giải thuật lan truyền ngược.
+kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ tương ứng với 
+${x, y}$ của bộ dữ liệu luyện tập, và để tìm ra được $w$ và $b$ ta có thể sử 
+dụng giải thuật lan truyền ngược.
