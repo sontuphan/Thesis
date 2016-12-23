@@ -17,7 +17,7 @@ chuỗi xác định.\\
 \centering
 \includegraphics[height=1.45in, keepaspectratio=true]{timestampserver.png}
 \caption{Máy chủ nhãn thời gian}
-\end{figure}\\
+\end{figure}
 \subsection{Giao dịch - Transaction (trên Blockchain)}
 Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
 địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
@@ -28,7 +28,7 @@ của tổ hợp giá trị băm giao dịch trước với địa chỉ ngườ
 \centering
 \includegraphics[height=2.45in, keepaspectratio=true]{transaction.png}
 \caption{Giao dịch}
-\end{figure}\\
+\end{figure}
 \subsection{Proof-of-Work}
 Proof-of-Work được hiểu là bằng chứng để chứng minh quá trình lao động, nó dùng 
 để kiểm tra quá trình tạo ra kết quả hợp lệ là một quá trình ``lao động'' có 
@@ -230,7 +230,7 @@ Ta có:\\
 \centering
 \includegraphics[height=4in, keepaspectratio=true]{precision_recall.png}
 \caption{Thông số đánh giá}
-\end{figure}\\
+\end{figure}
 \subsection{Mạng neural - Neural Network}
 Học sâu - Deep Learning - là một nhánh của Máy học, đại diện cho hướng tiếp 
 cận gần với cái nhìn thực tế, học nhiều cấp và học từ bản chất dữ liệu. Học 
@@ -266,12 +266,7 @@ loại hàm hoạt động khác nhau như: $sigmoid , tang ...$
 \subsubsection{Multilayer Neural Network}
 Với một perceptron đơn lẻ, tự thân nó không thể giải quyết được một bài toán 
 phức tạp như yêu cầu của mạng neural, vì thế, để giải quyết bài toán phức tạp 
-hơn, các perceptron được kết nối với nhau tạo thành một mạng neural.
-\begin{figure}[h!]
-\centering
-\includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
-\caption{MNN}
-\end{figure}\\
+hơn, các perceptron được kết nối với nhau tạo thành một mạng neural.\\\\
 MNN được cấu thành bằng cách sắp xếp các perceptron thành 
 từng lớp. Các perceptron ở mỗi lớp sẽ kết nối với tất cả các perceptron ở các 
 lớp liền kề, lớp những perceptron đầu tiên được gọi là lớp đầu vào (input layer), 
@@ -280,7 +275,12 @@ theo. Các giá trị đầu ra ở lớp trước sẽ chính là các giá tr�
 các perceptron ở lớp tiếp theo. Các perceptron ở lớp cuối cùng được gọi là lớp 
 đầu ra (output layer), trong trường hợp này đặc biệt chỉ có duy nhất một 
 perceptron ở lớp đầu ra. Còn lại các lớp perceptron khác được gọi là lớp ẩn 
-(hidden layer).\\\\
+(hidden layer).\\
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
+\caption{MNN}
+\end{figure}\\
 Giả sử đầu vào của perceptron là $x_1, x_2, ...$ tương ứng là đó là các trọng 
 số $w_1, w_2, ...$. Thêm vào định nghĩa về $bias$, ở đây $bias$ là một giá trị 
 đại diện độ lệch của từng perceptron và được ký hiệu $b_1, b_2, ...$. Ta có 
@@ -335,7 +335,7 @@ nhận 0.
 \centering
 \includegraphics[height=3.5in, keepaspectratio=true]{step.png}
 \caption{Đồ thị rời rác hóa hàm sigmoid}
-\end{figure}\\
+\end{figure}
 \subsubsection{Giải thuật lan truyền ngược}
 Sau khi đã có xây dựng thành công một mô hình MNN, công việc tiếp theo sẽ là 
 cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể tự xây dựng mô hình 
@@ -348,16 +348,16 @@ tìm được các tham số $w, b$ với một tập kinh nghiệm - hay tập 
 ${x, y}$ cụ thể, trong đó $x$ là giá trị đầu vào và $y$ là giá trị đầu ra 
 tương ứng với từng bộ $x$. Giải thuật lan truyền ngược là một giải thuật giúp 
 giải quyết vấn đề trên.\\\\
-Biểu diễn trọng số, $bias$ và hàm hoạt động:\\
+Biểu diễn trọng số, $bias$ và hàm hoạt động:\\\\
+Trọng số $w_{jk}^\ell$ là trọng số từ lớp perceptron thứ $k$ của lớp $(\ell-1)$ 
+đến perceptron thứ j thuộc lớp thứ $\ell$.
+Như hình trên, trọng số xuất phát từ perceptron thứ 4 thuộc lớp thứ 2 và kết 
+thúc tại perceptron thứ 2 thuộc lớp thứ 3 được ký hiệu là $w_{24}^3$.\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=2in, keepaspectratio=true]{exw.png}
 \caption{Ký hiệu trọng số}
 \end{figure}\\
-Trọng số $w_{jk}^\ell$ là trọng số từ lớp perceptron thứ $k$ của lớp $(\ell-1)$ 
-đến perceptron thứ j thuộc lớp thứ $\ell$.
-Như hình trên, trọng số xuất phát từ perceptron thứ 4 thuộc lớp thứ 2 và kết 
-thúc tại perceptron thứ 2 thuộc lớp thứ 3 được ký hiệu là $w_{24}^3$.\\\\
 Tương tự như vậy với $bias$ và hàm hoạt động của perceptron thứ $j$ thuộc lớp 
 thứ $\ell$ của mạng sẽ được kí hiệu thứ tự là $b_j^\ell,\,a_j^\ell$. Ví dụ, $bias$ 
 của perceptron thứ 3 thuộc lớp thứ 2 sẽ là $b_3^2$ và hàm hoạt động của 
