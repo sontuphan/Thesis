@@ -7,6 +7,37 @@ an toàn nhưng đa số vẫn còn tồn tại những điểm yếu: không th
 tranh chấp, phí trung gian, đòi hòi phải cung cấp các thông tin cá nhân... Và 
 Bitcoin - hệ thống tiền điện tử ngang hàng (A Peer-to-Peer Electronic Cash System) 
 được sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.
+\subsection{Sơ lược thông tin về Bitcoin}
+Khi so sánh với tiền tệ truyền thống, Bitcoin có hình thức và cách thức hoạt 
+động khác biệt. Bitcoin không hề có bất kỳ một tổ chức tập trung nào để quản 
+lý, thay vào đó, Bitcoin sử dụng mạng ngang hàng để hoạt động \cite{Bitcoin1}.
+\\\\
+Trong cách viết, Bitcoin được hiểu như một hệ thống, giao thức hoặc một cộng 
+động, cụ thể trong phạm vi luận văn này, Bitcoin được hiểu là một hệ thống. Còn 
+BTC được hiểu là một tài sản hoặc một đơn vị tiền tệ.\\\\
+BTC được sinh ra bằng cách sử dụng các tài nguyên phần cứng và năng lượng (CPU, 
+GPU, phần cứng ASIC, điện năng...) để đi giải một ``câu đố mã hóa'', phần thưởng 
+cho người chiến thắng chính là BTC. Trong thời gian đầu (210.000 block đầu tiên) 
+(tham khảo về block ở mục 3.1.5), phần thưởng là 50 BTC và các giai đoạn sau sẽ giảm 
+dần đi một nửa (25 BTC, 12.5 BTC ...) cứ sau khoảng 210.000 block. Đặc biệt, số 
+lượng BTC là hữu hạn và chính xác là 21 triệu BTC, ước tính đến năm 2140 lượng 
+BTC khai thác sẽ cạn kiệt \cite{Bitcoin2}. Cũng chính tính chất này là một trong 
+những yếu tố tạo nên giá trị của BTC, vì bị giới hạn số lượng nên BTC có tính 
+khan hiếm và không bị lạm phát, các tính chất này khác biệt so với tiền tệ 
+truyền thống và được ví như vàng 2.0 - vàng của mạng Internet.\\\\
+Ngoài các yếu tố vượt trội trên, Bitcoin còn được xây dựng là một hệ thống có 
+tính chất ẩn danh, các địa chỉ chứa BTC đều là những dãy ký tự trừu tượng, không 
+có ý nghĩa về mặt xác minh cá nhân và rất khó để biết ai là chủ nhân thật sự của 
+một địa chỉ. Mặc dù, Bitcoin có tính ẩn danh nhưng tất cả những giao dịch trên 
+hệ thống đều được công khai, điều đó có nghĩa là một giao dịch phải được sự xác 
+minh về tính hợp lệ của đa số các thành viên trong mạng. Việc xác minh dựa vào các 
+quan hệ, cấu trúc liên quan đến toán học, mật mã... \cite{Bitcoin1, BitcoinPaper}\\\\
+Tính công khai của Bitcoin được thể hiện ở quá trình xác minh các giao dịch, 
+ngoài ra nó còn được thể hiện ở phương diện kỹ thuật, các mã nguồn lập trình 
+và các đoạn lập trình đều được công khai.\\\\
+Đơn vị giao dịch, BTC có thể được chia thành nhiều đơn vị nhỏ hơn, tối thiểu 
+là đơn vị $Satoshi$. Cụ thể $1 \, Satoshi = 100 \, \mu BTC = 0.00000001 \, BTC$ 
+hoặc $1 \, BTC = 100.000.000 \, BTC$ \cite{Bitcoin3}.
 \subsection{Máy chủ nhãn thời gian - Timestamp Server}
 Máy chủ nhãn thời gian hoạt động bằng cách lấy giá trị băm (hash) của block 
 liền trước và thông tin của block hiện tại, cho qua hàm băm để được một giá trị 
@@ -86,11 +117,12 @@ block không nhất thiết phải được truyền đến tất cả các node
 và yêu cầu các node khác trong mạng gửi cho node này block bị thiếu sót.
 \subsection{Phần thưởng khích lệ}
 Trong tập các giao dịch được đóng trong một block sẽ luôn tồn tại một giao dịch 
-đặc biệt, giao dịch khác với các giao dịch bình thường, nó không có người chủ 
+đặc biệt, giao dịch này khác với các giao dịch bình thường, nó không có người chủ 
 sở hữu mà chỉ có người thụ hưởng. Điều này giải thích cách mà BTC mới được sinh 
 ra, cứ mỗi block được tìm ra nhờ quá trình proof-of-work sẽ có một lượng BTC 
-được sinh ra và chính là phần thưởng cho người tạo ra block, điều này đồng nghĩa 
-địa chỉ người thụ hưởng chính là địa chỉ của người tạo ra block.\\\\
+được sinh ra và chính là phần thưởng cho người tạo ra block - người tạo ra block 
+này cần được toàn mạng xác minh proof-of-work và công nhận là hợp lệ, địa chỉ 
+người thụ hưởng chính là địa chỉ của người tạo ra block.\\\\
 Ngoài ra, phần thưởng khích lệ khi tạo ra được một block còn bao gồm cả phí giao 
 dịch từ các giao dịch đã được đóng trong block. Phí giao dịch thường rất nhỏ và
 không đáng kể ở thời điểm hiện tại.
@@ -169,7 +201,7 @@ thông qua $n$ phiên trước đó. Giả sử:\\\\
 \tab $P(x) = $ giá của ngày $x$\\
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
 Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng oversold vào và nếu lớn 
-hơn 80 thì thị trường đang có xu hướng overboungt.
+hơn 80 thì thị trường đang có xu hướng overbought.
 \subsection{Tỉ lệ thay đổi - Rate of Change}
 Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
 Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
