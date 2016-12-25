@@ -38,22 +38,22 @@ và các đoạn lập trình đều được công bố công khai.\\\\
 Đơn vị giao dịch, BTC có thể được chia thành nhiều đơn vị nhỏ hơn, tối thiểu 
 là đơn vị $Satoshi$. Cụ thể $1 \, Satoshi = 100 \, \mu BTC = 0.00000001 \, BTC$ 
 hoặc $1 \, BTC = 100.000.000 \, Satoshi$ \cite{Bitcoin3}.
-\subsection{Máy chủ nhãn thời gian - Timestamp Server}
-Máy chủ nhãn thời gian hoạt động bằng cách lấy giá trị băm (hash) của block 
-liền trước và thông tin của block hiện tại, cho qua hàm băm để được một giá trị 
-băm mới. Giá trị băm sau khi được tính toán sẽ được công bố rộng rãi và giá trị 
-băm này chứng minh rằng block tồn tại, các block được nối với nhau thành một 
-chuỗi xác định.\\
+\subsection{Máy chủ nhãn thời gian}
+Máy chủ nhãn thời gian (Timestamp Server) hoạt động bằng cách lấy giá trị băm 
+(hash) của block liền trước và thông tin của block hiện tại, cho qua hàm băm 
+để được một giá trị băm mới. Giá trị băm sau khi được tính toán sẽ được công 
+bố rộng rãi và giá trị băm này chứng minh rằng block tồn tại, các block được 
+nối với nhau thành một chuỗi xác định.\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1.45in, keepaspectratio=true]{timestampserver.png}
 \caption{Máy chủ nhãn thời gian}
 \end{figure}
-\subsection{Giao dịch - Transaction (trên Blockchain)}
+\subsection{Giao dịch (trên Blockchain)}
 Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
 địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
 chuyển một lượng BTC cho một chủ sở hữu khác - người thụ hưởng - bằng cách ký 
-lên giá trị băm, trong đó giá trị băm là kết quả sau khi đi qua hàm băm
+lên giá trị băm, trong đó giá trị băm là kết quả sau khi đi qua hàm băm 
 của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ hưởng.\\
 \begin{figure}[h!]
 \centering
@@ -92,7 +92,7 @@ nhất mới được xem là blockchain hợp lệ. Đồng thời để kiểm
 block mới, hệ thống sẽ quy định một độ khó, nếu toàn mạng có tốc độ sinh block 
 (số block được sinh ra trong một giờ đồng hồ) cao hơn mức quy định, độ khó sẽ tăng lên 
 để điều chỉnh lại tốc độ của toàn mạng.
-\subsection{Mạng - Network}
+\subsection{Mạng}
 Mỗi thành viên (máy tính, phần cứng ASIC, thiết bị di dộng... ) khi tham gia vào quá 
 trình tính toán của toàn mạng thì sẽ được xem như một node. Toàn mạng sẽ hiện thực hệ 
 thống bằng cách thực hiện các bước như sau:
@@ -158,6 +158,69 @@ bảo được tính toàn vẹn, khi muốn xác minh bất kỳ giao dịch n�
 yêu cầu các giao dịch trong block và tính toán lại giá trị băm gốc, nếu giá trị 
 băm nào giống với giá trị băm gốc được lưu nghĩa là các giao dịch hoàn toàn hợp 
 lệ.
+\section{Sàn giao dịch Poloniex}
+\subsection{Giới thiệu về sàn giao dịch}
+Sàn giao dịch là một thị trường có tính tổ chức cao, nơi các tài sản giao dịch 
+có thể trao đổi bằng vật ngang giá (tiền tệ, hợp đồng, ...). Trong phạm vi luận 
+văn này khi nhắc đến sàn giao dịch ta hiểu rằng đây là sàn giao dịch với tài 
+sản giao dịch là BTC và vật ngang giá là USD.\\\\
+Hiện nay, có rất nhiều sàn giao dịch trong đó, Poloniex là một sàn giao dịch 
+tương đối nổi tiếng trong cộng đồng Bitcoin bên cạnh các sàn khác như BTCMarkets, 
+AltaPolis, Remitano...
+Bảng so sánh các sàn giao dịch:
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{ |l|X|X|X|X|X| }
+\hline
+Tên sàn giao dịch & Thời gian hình thành & Quy mô & Tính đa dạng & Tính thanh khoản & API Dữ liệu \\
+\hline
+Poloniex & 01/2014 & Rất lớn & Cao & Cao & Có \\
+\hline 
+BTCMarkets & 07/2013 & Lớn & Trung bình & Trung bình & Có \\
+\hline
+AltaPolis & 10/2016 & Nhỏ & Trung bình & Thấp & Không \\
+\hline
+Remitano & Chưa rõ & Nhỏ & Thấp & Thấp & Không \\
+\hline
+\end{tabularx}
+\caption{Bảng so sánh sàn giao dịch}
+\end{table}
+Vì Poloniex là một sàn lớn và cung cấp đầy đủ các API cho việc thu thập dữ liệu, 
+cung như là lịch sử giao dịch với số lượng lớn nên Poloniex được chọn là sàn 
+giao dịch đặc trưng dùng để phân tích trung luận văn này.
+\subsection{Giao dịch (trên sàn giao dịch)}
+Quá trình mua/bán BTC được thực hiện trên sàn giao dịch Poloniex được diễn ra 
+bằng quá trình đặt cọc đầu tiên. Người dùng cần phải chuyển một lượng BTC hoặc 
+USD vào một địa chỉ mà Poloniex cung cấp khi đăng ký tài khoản giao dịch. Khi 
+đã chuyển một lượng BTC hoặc USD vào địa chỉ này, người dùng có thể bắt đầu 
+giao dịch.\\\\
+Quá trình mua/bán được mô tả bằng một lệnh mua/bán của người dùng trên Poloniex, 
+nếu lệnh này thành công, Poloniex là bên trung gian đại diện thực hiện việc chuyển 
+USD từ tài khoản người mua sang tài khoản người bán và đồng thời, chuyển tài BTC 
+từ tài khoản người bán sang tài khoản người mua. Quá trình chuyển BTC phức tạp 
+hơn so với quá trình chuyển USD, lượng BTC cần chuyển được ghi vào một giao dịch 
+(trên Blockchain), giao dịch này được truyền đi cho toàn mạng và chờ quá trình 
+xác nhận từ các node - được ghi vào một block. Quá trình mua/bán thật sự hoàn 
+tất khi giao dịch (trên Blockchain) được đóng trong block thuộc blockchain dài 
+nhất.
+\subsection{Bitcoin và sự công nhận của pháp luật}
+Hiện tại, Bitcoin đang dần dần được thông qua ở nhiều quốc gia, nó được xem là 
+hợp pháp và là tương lai của kinh tế. Bắt đầu từ các nước châu Âu, từ khoảng 
+tháng 10 năm 2015, các nước châu Âu chính thức công nhận đồng tiền này và chính 
+thức công nhận thông qua giao dịch hàng hóa, dịch vụ và chuyển khoản \cite{LawBitcoin}.
+Nổi bật nhất, Hoa Kỳ và Vương quốc Anh là một trong những nước lớn thể hiện thái 
+độ tích cực và công nhận Bitcoin.\\\\
+Ngoài những sự ủng hộ, đối với một số quốc gia, việc công nhận Bitcoin trở thành 
+một rủi ro, nhà nước lo sợ các hành vi rửa tiền, mua bán vũ khí, chất cấm... 
+Đồng thời, còn cân nhắc ảnh hưởng tới nền kinh tế vì thế nhiều quốc gia đang 
+đặt ra lệnh cấm đối với Bitcoin, đáng kể nhất có thể liệt kê là Nga, Trung Quốc.\\\\
+Đối với Viêt Nam, vào tháng 2/2014, Ngân hàng Nhà nước đã cho biết trong một 
+tuyên bố: ``Việc sở hữu, mua bán, sử dụng tiền ảo như là một loại tài sản tiềm 
+ẩn rất nhiều rủi ro cho người dân và không được pháp luật bảo vệ. Ngân hàng Nhà 
+nước khuyến cáo các tổ chức, các nhân không nên đầu tư, nắm giữ, thực hiện các 
+giao dịch liên quan đến bitcoin và các loại tiền ảo tương tự khác''. Ngân hàng 
+Nhà nước thể hiện rõ quan điểm không ủng hộ Bitcoin, nhưng trong tình trạng đặt 
+ngoài vòng pháp luật, điều đó có nghĩa là không ủng hộ cũng như không cấm.
 \section{Một số khái niệm về tài chính}
 \subsection{Phiên giao dịch và các giá trị cơ bản}
 Gọi $T$ là một mốc thời gian bất kỳ, $P$ là khoảng thời gian được chọn là một 
@@ -185,26 +248,27 @@ giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
-\subsection{Overbought và Oversold}
-Overbought dùng để định nghĩa trường hợp thị trường có mức cầu cao hơn mức cung, 
-điều này làm đẩy giá của tài sản giao dịch lên cao vượt qua mức chính đáng. Ví 
-dụ, trên tất cả các giao dịch có hơn 80\% lệnh là đặt mua và dưới 20\% là lệnh 
-đặt bán, trường hợp này được xem là overbought.\\\\
-Ngược lại, oversold dùng để định nghĩa trường hợp thị trường có mức cung cao hơn 
-mức cầu, điều này làm kéo giá của tài sản giao dịch xuống thấp vượt mức chính 
-đáng.
-\subsection{Chỉ số dao động ngẫu nhiên - Stochastic Oscillator}
-Đại lượng dùng để đo xu hướng mua/bán của thị trường tại thời điểm phiên $x$ 
-thông qua $n$ phiên trước đó. Giả sử:\\\\
+\subsection{Quá mua và Quá bán}
+Quá mua (Overbought) dùng để định nghĩa trường hợp thị trường có mức cầu cao hơn 
+mức cung, điều này làm đẩy giá của tài sản giao dịch lên cao vượt qua mức chính 
+đáng. Ví dụ, trên tất cả các giao dịch có hơn 80\% lệnh là đặt mua và dưới 20\% 
+là lệnh đặt bán, trường hợp này được xem là quá mua.\\\\
+Ngược lại, quá bán (Oversold) dùng để định nghĩa trường hợp thị trường có mức 
+cung cao hơn mức cầu, điều này làm kéo giá của tài sản giao dịch xuống thấp vượt 
+mức chính đáng.
+\subsection{Chỉ số dao động ngẫu nhiên}
+Chỉ số dao động ngẫu nhiên (Stochastic Oscillator) là đại lượng dùng để đo xu 
+hướng mua/bán của thị trường tại thời điểm phiên $x$ thông qua $n$ phiên trước 
+đó. Giả sử:\\\\
 \tab $L_{n} = $ giá phiên thấp nhất trong $n$ phiên\\
 \tab $H_{n} = $ giá phiên cao nhất trong $n$ phiên\\
 \tab $P(x) = $ giá của ngày $x$\\
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
-Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng oversold vào và nếu lớn 
-hơn 80 thì thị trường đang có xu hướng overbought.
-\subsection{Tỉ lệ thay đổi - Rate of Change}
-Đại lượng đo sự khác nhau của giá tại phiên thứ $x$ so với $n$ phiên trước đó. 
-Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
+Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng quá bán và nếu lớn hơn 
+80 thì thị trường đang có xu hướng quá mua.
+\subsection{Tỉ lệ thay đổi}
+Tỉ lệ thay đổi (Rate of Change) là đại lượng đo sự khác nhau của giá tại phiên 
+thứ $x$ so với $n$ phiên trước đó. Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
 \[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
 Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
 Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
@@ -213,32 +277,33 @@ Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng 
 \subsubsection{Máy học}
 Máy học có hai cách định nghĩa chính và đang được chấp nhận phổ biến:
 \begin{itemize}
-  \item Theo Arthur Samuel: \textit{``Là một lĩnh vực nghiên cứu mà nó cung cấp cho
-  máy tính khả năng học hỏi mà không cần lập trình một cách tường minh.''}
-  \item Theo Tom Mitchell: \textit{``Một chương trình máy tính được chấp nhận
-  là học hỏi được kinh nghiệm E bằng cách thực hiện một vài tác vụ T theo phép đo hiệu
-  năng P, nếu và chỉ nếu việc thực thi các tác vụ trong T được đo bởi phép đo P
-  đem lại kết quả là kinh nghiệm E được cải thiện.''}
+\item Theo Arthur Samuel: \textit{``Là một lĩnh vực nghiên cứu mà nó cung cấp 
+cho máy tính khả năng học hỏi mà không cần lập trình một cách tường minh.''}
+\item Theo Tom Mitchell: \textit{``Một chương trình máy tính được chấp nhận là 
+học hỏi được kinh nghiệm E bằng cách thực hiện một vài tác vụ T theo phép đo hiệu
+năng P, nếu và chỉ nếu việc thực thi các tác vụ trong T được đo bởi phép đo P
+đem lại kết quả là kinh nghiệm E được cải thiện.''}
 \end{itemize}
-\subsubsection{Học có giám sát - Supervised Learning}
-Chúng ta được cho một tập dữ liệu đã biết với các đầu vào và đầu ra tương ứng
-nhau. Ý tưởng là chúng ta sẽ đi tìm mối quan hệ giữa đầu vào và đầu ra, đó 
-chính là học có giám sát.\\\\
+\subsubsection{Học có giám sát}
+Học có giám sát (Supervised Learning) được định nghĩa, chúng ta được cho một 
+tập dữ liệu đã biết với các đầu vào và đầu ra tương ứng nhau. Ý tưởng là chúng 
+ta sẽ đi tìm mối quan hệ giữa đầu vào và đầu ra, đó chính là học có giám sát.\\\\
 Vấn đề của học có giám sát được phân loại thành hai
-vấn đề chính là hồi quy - regression và phân lớp - classification. Trong vấn đề 
+vấn đề chính là hồi quy (Regression) và phân lớp (Classification). Trong vấn đề 
 hồi quy, chúng ta sẽ cố gắng dự đoán kết quả đầu ra tiếp theo một cách liên tục, 
 nghĩa là chúng ta đi tìm ra một hàm đầu ra liên tục tổng quát với biến là các 
 đặc trưng đầu vào. Còn với vấn đề phân lớp, chúng ta thay vì cố gắng dự đoán kết
 quả liên tục thì ta sẽ đi dự đoán chúng theo hướng rời rạc, hiểu theo một cách
 khác là chúng ta đi tìm một phép phân loại rời rạc cho các biến đầu ra với các 
 biến đầu vào.
-\subsubsection{Học không giám sát - Unsupervised Learning}
-Học không giám sát cho phép chúng ta tiếp cận các vấn đề mà ta chưa hề hoặc biết
-rất ít kết quả của chúng ta sẽ trông như thế nào. Chúng ta có thể xây dựng cấu
-trúc của dữ liệu mà không cần thiết phải biết mối quan hệ của các biến đó.\\\\
+\subsubsection{Học không giám sát}
+Học không giám sát (Unsupervised Learning) cho phép chúng ta tiếp cận các vấn 
+đề mà ta chưa hề hoặc biết rất ít kết quả của chúng ta sẽ trông như thế nào. 
+Chúng ta có thể xây dựng cấu trúc của dữ liệu mà không cần thiết phải biết mối 
+quan hệ của các biến đó.\\\\
 Chúng ta thực hiện việc này dựa trên ý tưởng gom cụm dữ liệu bằng cách xem xét
 mối quan hệ giữa các đặc trưng của dữ liệu. Các hướng tiếp cận dựa trên nhưng 
-phương pháp như vậy thường được gọi là gom cụm - clustering.
+phương pháp như vậy thường được gọi là gom cụm (Clustering).
 \subsection{Thông số đánh giá}
 Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Máy học.
 Ký hiệu:
@@ -263,17 +328,17 @@ Ta có:\\
 \includegraphics[height=4in, keepaspectratio=true]{precision_recall.png}
 \caption{Thông số đánh giá}
 \end{figure}
-\subsection{Mạng neural - Neural Network}
-Học sâu - Deep Learning - là một nhánh của Máy học, đại diện cho hướng tiếp 
-cận gần với cái nhìn thực tế, học nhiều cấp và học từ bản chất dữ liệu. Học 
-sâu thường giải quyết rất tốt với các loại dữ liệu mang tính ``con người'' 
-như hình ảnh, âm thanh ... Để có được những tính chất này, Học sâu đã đưa ra 
-các giải thuật mạng neural với cấu tạo nhiều lớp, mỗi lớp lại được cấu tạo từ 
-nhiều phần tử nhỏ hơn. Mỗi phần tử bên trong đi giải quyết các phép toán rất 
-đơn giản, nhưng khi được ghép nối lại thành một mạng neural hoàn chỉnh chúng có 
-thể giải quyết các bài toán phức tạp hơn rất nhiều, điều này hoàn toàn tương tự 
-với các hoạt động của bộ não người. \cite{NeuralNetworksandDeepLearning} 
-\subsubsection{Cấu trúc một Perceptron}
+\subsection{Mạng neural}
+Học sâu là một nhánh của Máy học, đại diện cho hướng tiếp cận gần với cái nhìn 
+thực tế, học nhiều cấp và học từ bản chất dữ liệu. Học sâu thường giải quyết 
+rất tốt với các loại dữ liệu mang tính ``con người'' như hình ảnh, âm thanh ... 
+Để có được những tính chất này, Học sâu đã đưa ra các giải thuật mạng neural 
+với cấu tạo nhiều lớp, mỗi lớp lại được cấu tạo từ nhiều phần tử nhỏ hơn. Mỗi 
+phần tử bên trong đi giải quyết các phép toán rất đơn giản, nhưng khi được ghép 
+nối lại thành một mạng neural hoàn chỉnh chúng có thể giải quyết các bài toán 
+phức tạp hơn rất nhiều, điều này hoàn toàn tương tự với các hoạt động của bộ 
+não người. \cite{NeuralNetworksandDeepLearning} 
+\subsubsection{Cấu trúc một perceptron}
 Một perceptron sẽ có các giá trị đầu vào $x_1, x_2, ...$, giá trị đầu ra sẽ 
 là kết quả toán học của các giá trị đầu vào và là một giá trị nhị phân.\\
 \begin{figure}[h!]
@@ -293,9 +358,8 @@ Biểu diễn đại số:\\
     ^{1 \quad if \, \sum_j w_j x_j \, > \, threshold}
 \]
 Các hàm số như trên được gọi là hàm hoạt động - activation function, có nhiều 
-loại hàm hoạt động khác nhau như: $sigmoid , tang ...$ 
-
-\subsubsection{Multilayer Neural Network}
+loại hàm hoạt động khác nhau như: $sigmoid , tang ...$
+\subsubsection{MNN}
 Với một perceptron đơn lẻ, tự thân nó không thể giải quyết được một bài toán 
 phức tạp như yêu cầu của mạng neural, vì thế, để giải quyết bài toán phức tạp 
 hơn, các perceptron được kết nối với nhau tạo thành một mạng neural.\\\\
@@ -332,8 +396,7 @@ Ví dụ:\\
 Ta có $w_1=w_2=-2$ và $b=3$, khi đó nếu input $x_1=1,\, x_2=0$ suy ra $ 
 w_1*x_1+w_2*x_2+b=(-2)*1+(-2)*0+3=1$, ta có thể chọn $threshold=0$ vì $1>0$
 nên $output=1$.
-
-\subsubsection{Hàm sigmoid - Sigmoid Function}
+\subsubsection{Hàm sigmoid}
 Với hàm hoạt động được định nghĩa như trên, giá trị của hàm hoạt động trên lý 
 thuyết là không có giới hạn, nghĩa là $output\in\mathbb{R}$. Trong một trường 
 hợp cụ thể, với việc sử dụng hàm hoạt động như trên có thể dẫn đến trường hợp 

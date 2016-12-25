@@ -7,17 +7,17 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Blockchain}}{13}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces C\IeC {\^a}y Merkle}}{15}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces C\IeC {\'\acircumflex }u tr\IeC {\'u}c t\IeC {\h \ocircumflex } ch\IeC {\'\uhorn }c giao d\IeC {\d i}ch trong m\IeC {\d \ocircumflex }t block}}{15}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Th\IeC {\^o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}}{19}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Perceptron}}{20}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces MNN}}{21}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces V\IeC {\'\i } d\IeC {\d u} perceptron v\IeC {\'\ohorn }i gi\IeC {\'a} tr\IeC {\d i} bias}}{21}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces \IeC {\DJ }\IeC {\`\ocircumflex } th\IeC {\d i} h\IeC {\`a}m sigmoid}}{22}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces \IeC {\DJ }\IeC {\`\ocircumflex } th\IeC {\d i} r\IeC {\`\ohorn }i r\IeC {\'a}c h\IeC {\'o}a h\IeC {\`a}m sigmoid}}{23}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces K\IeC {\'y} hi\IeC {\d \ecircumflex }u tr\IeC {\d o}ng s\IeC {\'\ocircumflex }}}{24}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces K\IeC {\'y} hi\IeC {\d \ecircumflex }u $bias$}}{24}{figure.3.13}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Th\IeC {\^o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a}}}{21}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Perceptron}}{22}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces MNN}}{23}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces V\IeC {\'\i } d\IeC {\d u} perceptron v\IeC {\'\ohorn }i gi\IeC {\'a} tr\IeC {\d i} bias}}{23}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces \IeC {\DJ }\IeC {\`\ocircumflex } th\IeC {\d i} h\IeC {\`a}m sigmoid}}{24}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces \IeC {\DJ }\IeC {\`\ocircumflex } th\IeC {\d i} r\IeC {\`\ohorn }i r\IeC {\'a}c h\IeC {\'o}a h\IeC {\`a}m sigmoid}}{25}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces K\IeC {\'y} hi\IeC {\d \ecircumflex }u tr\IeC {\d o}ng s\IeC {\'\ocircumflex }}}{26}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces K\IeC {\'y} hi\IeC {\d \ecircumflex }u $bias$}}{26}{figure.3.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces C\IeC {\'\acircumflex }u tr\IeC {\'u}c quan h\IeC {\d \ecircumflex } v\IeC {\`a} ch\IeC {\'\uhorn }c n\IeC {\u a}ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}}{32}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 1 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{34}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 2 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{34}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 3 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{35}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces C\IeC {\'\acircumflex }u tr\IeC {\'u}c quan h\IeC {\d \ecircumflex } v\IeC {\`a} ch\IeC {\'\uhorn }c n\IeC {\u a}ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}}{34}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 1 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{36}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 2 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{36}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Giao di\IeC {\d \ecircumflex }n 3 m\IeC {\'a}y ch\IeC {\h u} UI frontend}}{37}{figure.4.4}
 \addvspace {10\p@ }
