@@ -172,7 +172,7 @@ Bảng so sánh các sàn giao dịch:
 \centering
 \begin{tabularx}{\textwidth}{ |l|X|X|X|X|X| }
 \hline
-Tên sàn giao dịch & Thời gian hình thành & Quy mô & Tính đa dạng & Tính thanh khoản & API Dữ liệu \\
+Tên sàn & Thời gian hình thành & Quy mô & Tính đa dạng & Tính thanh khoản & API Dữ liệu \\
 \hline
 Poloniex & 01/2014 & Rất lớn & Cao & Cao & Có \\
 \hline 
@@ -186,7 +186,7 @@ Remitano & Chưa rõ & Nhỏ & Thấp & Thấp & Không \\
 \caption{Bảng so sánh sàn giao dịch}
 \end{table}
 Vì Poloniex là một sàn lớn và cung cấp đầy đủ các API cho việc thu thập dữ liệu, 
-cung như là lịch sử giao dịch với số lượng lớn nên Poloniex được chọn là sàn 
+cũng như là lịch sử giao dịch với số lượng lớn nên Poloniex được chọn là sàn 
 giao dịch đặc trưng dùng để phân tích trung luận văn này.
 \subsection{Giao dịch (trên sàn giao dịch)}
 Quá trình mua/bán BTC được thực hiện trên sàn giao dịch Poloniex được diễn ra 
@@ -202,7 +202,11 @@ hơn so với quá trình chuyển USD, lượng BTC cần chuyển được ghi
 (trên Blockchain), giao dịch này được truyền đi cho toàn mạng và chờ quá trình 
 xác nhận từ các node - được ghi vào một block. Quá trình mua/bán thật sự hoàn 
 tất khi giao dịch (trên Blockchain) được đóng trong block thuộc blockchain dài 
-nhất.
+nhất.\\\\
+Trên mỗi giao dịch, Poloniex tính phí dựa theo vai trò người dùng trung giao 
+dịch đó, đối với người đặt lệnh phí là 0.15\%, đối với người khớp lệnh (người 
+đặt lệnh bán/mua để khớp với lệnh mua/bán đã có sẵn) phí là 0.25\%. Phí này có 
+thể giảm theo tổng số lượng BTC người dùng đã giao dịch trong lịch sử.
 \subsection{Bitcoin và sự công nhận của pháp luật}
 Hiện tại, Bitcoin đang dần dần được thông qua ở nhiều quốc gia, nó được xem là 
 hợp pháp và là tương lai của kinh tế. Bắt đầu từ các nước châu Âu, từ khoảng 
@@ -346,9 +350,9 @@ là kết quả toán học của các giá trị đầu vào và là một giá
 \includegraphics[height=1.5in, keepaspectratio=true]{perceptron_n.png}
 \caption{Perceptron}
 \end{figure}\\
-Một ví dụ, dựa vào hình trên, ta thấy perceptron này có 3 input là 
-$x_1, x_2, x_3$ , giả sử đi kèm với mỗi input sẽ có một giá trị trọng 
-số $w_1, w_2, w_3$. Output được định nghĩa là 0 và 1, nhận giá trị 0 
+Một ví dụ, dựa vào hình trên, ta thấy perceptron này có 3 giá trị đầu vào là 
+$x_1, x_2, x_3$ , giả sử đi kèm với mỗi giá trị đầu vào sẽ có một giá trị trọng 
+số $w_1, w_2, w_3$. Giá trị đầu ra được định nghĩa là 0 và 1, nhận giá trị 0 
 khi $\sum_j w_j x_j$ nhỏ hơn giá trị ngưỡng và 1 khi lớn hơn giá trị ngưỡng.\\\\
 Biểu diễn đại số:\\
 \[
@@ -391,7 +395,7 @@ Ví dụ:\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1in, keepaspectratio=true]{exmln.png}
-\caption{Ví dụ perceptron với giá trị bias}
+\caption{Ví dụ perceptron với giá trị $bias$}
 \end{figure}\\
 Ta có $w_1=w_2=-2$ và $b=3$, khi đó nếu input $x_1=1,\, x_2=0$ suy ra $ 
 w_1*x_1+w_2*x_2+b=(-2)*1+(-2)*0+3=1$, ta có thể chọn $threshold=0$ vì $1>0$
