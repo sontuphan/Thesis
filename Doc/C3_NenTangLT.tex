@@ -36,25 +36,26 @@ Tính công khai của Bitcoin được thể hiện ở quá trình xác minh c
 ngoài ra nó còn được thể hiện ở phương diện kỹ thuật, các mã nguồn lập trình 
 và các đoạn lập trình đều được công bố công khai.\\\\
 Đơn vị giao dịch, BTC có thể được chia thành nhiều đơn vị nhỏ hơn, tối thiểu 
-là đơn vị $Satoshi$. Cụ thể $1 \, Satoshi = 100 \, \mu BTC = 0.00000001 \, BTC$ 
+là đơn vị $Satoshi$. Cụ thể $1 \, Satoshi = 0.01 \, \mu BTC = 0.00000001 \, BTC$ 
 hoặc $1 \, BTC = 100.000.000 \, Satoshi$ \cite{Bitcoin3}.
 \subsection{Máy chủ nhãn thời gian}
 Máy chủ nhãn thời gian (Timestamp Server) hoạt động bằng cách lấy giá trị băm 
 (hash) của block liền trước và thông tin của block hiện tại, cho qua hàm băm 
-để được một giá trị băm mới. Giá trị băm sau khi được tính toán sẽ được công 
-bố rộng rãi và giá trị băm này chứng minh rằng block tồn tại, các block được 
-nối với nhau thành một chuỗi xác định.\\
+để được một giá trị băm mới. Giá trị băm sau tính toán sẽ được công bố rộng rãi, 
+nó mang ý nghĩa, giá trị băm này chứng minh rằng block thật sự tồn tại. Các 
+block được nối với nhau thành một chuỗi xác định.\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1.45in, keepaspectratio=true]{timestampserver.png}
 \caption{Máy chủ nhãn thời gian}
 \end{figure}
 \subsection{Giao dịch (trên Blockchain)}
-Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi các chữ ký số. Một 
-địa chỉ có chứa một lượng BTC được gọi là một chủ sở hữu, một chủ sở hữu 
-chuyển một lượng BTC cho một chủ sở hữu khác - người thụ hưởng - bằng cách ký 
-lên giá trị băm, trong đó giá trị băm là kết quả sau khi đi qua hàm băm 
-của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ hưởng.\\
+Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi thông tin được đảm 
+bảo bởi các chữ ký số. Một địa chỉ có chứa một lượng BTC được gọi là một chủ 
+sở hữu, một chủ sở hữu chuyển một lượng BTC cho một chủ sở hữu khác - người thụ 
+hưởng - bằng cách ký lên giá trị băm, trong đó giá trị băm là kết quả sau khi 
+đi qua hàm băm của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ 
+hưởng.\\
 \begin{figure}[h!]
 \centering
 \includegraphics[height=2.45in, keepaspectratio=true]{transaction.png}
@@ -101,12 +102,12 @@ thống bằng cách thực hiện các bước như sau:
 \item Mỗi node sẽ lựa chọn và thu thập các giao dịch để đưa vào block.
 \item Mỗi node sẽ thực hiện proof-of-work, tìm ra số $nonce$.
 \item Khi một node hoàn thành proof-of-work, node này sẽ đóng block và truyền 
-đi toàn tất cả các node khác.
+thông tin của block này cho tất cả các node khác trên toàn mạng.
 \item Các node khác sẽ kiểm tra thông tin của block nhận được (thông tin các 
 giao dịch, thông tin proof-of-work...) và chấp nhận block này nếu tất cả 
 các thông tin đều được kiểm tra chính xác.
 \item Các node sẽ thể hiện sự chấp nhận của mình bằng cách thực hiện proof-of-work 
-để sinh ra block mới block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
+để sinh ra block mới và block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
 (thêm giá trị băm của block trước mà node chấp nhận vào trong block mới sinh ra).
 \end{enumerate}
 Lưu ý, một giao dịch mới không nhất thiết phải được truyền đến tất cả các node. 
@@ -164,7 +165,7 @@ Sàn giao dịch là một thị trường có tính tổ chức cao, nơi các 
 có thể trao đổi bằng vật ngang giá (tiền tệ, hợp đồng, ...). Trong phạm vi luận 
 văn này khi nhắc đến sàn giao dịch ta hiểu rằng đây là sàn giao dịch với tài 
 sản giao dịch là BTC và vật ngang giá là USD.\\\\
-Hiện nay, có rất nhiều sàn giao dịch trong đó, Poloniex là một sàn giao dịch 
+Hiện nay, có rất nhiều sàn giao dịch, trong đó, Poloniex là một sàn giao dịch 
 tương đối nổi tiếng trong cộng đồng Bitcoin bên cạnh các sàn khác như BTCMarkets, 
 AltaPolis, Remitano...
 Bảng so sánh các sàn giao dịch:
@@ -185,11 +186,11 @@ Remitano & Chưa rõ & Nhỏ & Thấp & Thấp & Không \\
 \end{tabularx}
 \caption{Bảng so sánh sàn giao dịch}
 \end{table}\\
-(Tính đa dạng là biểu diễn của nhiều loại tài sản giao dịch khác nhau mà sàn 
-giao dịch hỗ trợ, tính thanh khoản tham khảo mục 3.3.2)\\\\
+(Tính đa dạng biểu diễn số lượng nhiều hay ít các loại tài sản giao dịch khác 
+nhau được sàn giao dịch hỗ trợ, tính thanh khoản tham khảo mục 3.3.2)\\\\
 Vì Poloniex là một sàn lớn và cung cấp đầy đủ các API cho việc thu thập dữ liệu, 
-cũng như là lịch sử giao dịch với số lượng lớn nên Poloniex được chọn là sàn 
-giao dịch đặc trưng dùng để phân tích trung luận văn này.
+ngoài ra, dữ liệu lịch sử giao dịch với số lượng lớn, nên Poloniex được chọn là sàn 
+giao dịch đặc trưng dùng để phân tích trong luận văn này.
 \subsection{Giao dịch (trên sàn giao dịch)}
 Quá trình mua/bán BTC được thực hiện trên sàn giao dịch Poloniex được diễn ra 
 bằng quá trình đặt cọc đầu tiên. Người dùng cần phải chuyển một lượng BTC hoặc 
@@ -205,7 +206,7 @@ hơn so với quá trình chuyển USD, lượng BTC cần chuyển được ghi
 xác nhận từ các node - được ghi vào một block. Quá trình mua/bán thật sự hoàn 
 tất khi giao dịch (trên Blockchain) được đóng trong block thuộc blockchain dài 
 nhất.\\\\
-Trên mỗi giao dịch, Poloniex tính phí dựa theo vai trò người dùng trung giao 
+Trên mỗi giao dịch, Poloniex tính phí dựa theo vai trò người dùng trong giao 
 dịch đó, đối với người đặt lệnh phí là 0.15\%, đối với người khớp lệnh (người 
 đặt lệnh bán/mua để khớp với lệnh mua/bán đã có sẵn) phí là 0.25\%. Phí này có 
 thể giảm theo tổng số lượng BTC người dùng đã giao dịch trong lịch sử.
@@ -403,7 +404,7 @@ biểu diễn của hàm hoạt động với $bias$:\\
     _{0 \quad if \, \sum_j w_j x_j + b_i\, \leq \, 0}
     ^{1 \quad if \, \sum_j w_j x_j + b_i\, > \, 0}
 \]
-Ví dụ:\\
+Ví dụ:
 \begin{figure}[h!]
 \centering
 \includegraphics[height=1in, keepaspectratio=true]{exmln.png}

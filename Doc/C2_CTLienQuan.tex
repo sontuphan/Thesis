@@ -64,7 +64,7 @@ như là một giải thuật dùng để so sánh với giải thuật chính. 
 dữ đoán chuỗi thời gian phổ biến, tuy nhiên, mô hình này lại phụ thuộc vào giả 
 định tập dữ liệu là tuyến tính về thời gian và điều này không phù hợp với tập 
 dữ liệu đang được sử dụng - tập dữ liệu được sử dụng là phi tuyến tính.\\\\
-Đi vào chi tiết, giải thuật học sâu được sử dụng đó là RNN một biến thể của 
+Đi vào chi tiết, giải thuật học sâu được sử dụng đó là RNN một dạng của 
 mạng neural (xem phần 3.3.3), RNN có khả năng sử dụng cả hai giải thuật lan 
 truyền là lan truyền thuận và lan truyền ngược. Ngoài ra, tác giả còn sử dụng 
 một biến thể khác của RNN, đó là LSTM, ở RNN các tham số mạng được tìm bằng 
@@ -92,7 +92,7 @@ Ngoài hai công trình trên, chúng ta sẽ tiếp tục tham khảo các vấ
 khác như là dự đoán xu hướng giá trị vàng và dự đoán xu hướng giá trị cổ phiếu.
 Mặc dù các công trình này không đi giải quyết vấn đề dự đoán giá trị BTC, nhưng 
 với cách nhìn tổng quát, vấn đề chung vẫn là sử dụng Máy học để dự đoán giá trị 
-các tài sản giao dịch. Vàng và cổ phiếu là hai tài sản giao dịch đặc trưng và lâu 
+các tài sản giao dịch. Vàng, cổ phiếu là hai tài sản giao dịch đặc trưng và lâu 
 đời, vì thế các vấn đề về dự đoán của hai tài sản giao dịch này cũng đã được 
 khai thác và phát triển từ lâu. Hai công trình cụ thể được tham khảo trong luận văn là: 
 ``Predicting Gold Prices'' \cite{PredictingGoldPrices} và 
@@ -131,11 +131,11 @@ dự đoán giá trị cổ phiếu (cụ thể là công ty 3M), nguồn dữ l
 Bloomberg Data Terminal với khoảng 1400 mẫu. Nhóm tác giả đã sử dụng bốn 
 giải thuật trong quá trình phân tích và giải quyết bài toán đó là: GDA, LR, SVM, 
 QDA.\\\\
-Ngoài ra, tìm ra một hướng giải quyết tối ưu, nhóm tác giả tiếp cận vấn đề dựa 
-trên hai mô hình. Thứ nhất, mô hình Ngày tiếp theo (Next-Day Model) với mục 
-tiêu đi dự đoán xu hướng giá trị của cổ phiếu trong ngày tiếp theo. Và thứ hai, 
-mô hình Dài hạn (Long-Term Model) với mục tiêu đi dự đoán xu hướng giá trị của 
-$n$ ngày tiếp theo.\\\\
+Ngoài ra, để có thể tìm ra một hướng giải quyết tối ưu, nhóm tác giả tiếp cận 
+vấn đề dựa trên hai mô hình khác nhau. Thứ nhất, mô hình Ngày tiếp theo (Next-Day 
+Model) với mục tiêu đi dự đoán xu hướng giá trị của cổ phiếu trong ngày tiếp 
+theo. Và thứ hai, mô hình Dài hạn (Long-Term Model) với mục tiêu đi dự đoán xu 
+hướng giá trị của $n$ ngày tiếp theo.\\\\
 Kết quả đánh giá của 4 giải thuật cho mô hình Ngày tiếp theo:
 \begin{table}[h]
 \centering
@@ -166,7 +166,7 @@ Tổng quan qua các công trình trên và tham khảo một số công trình 
 đa số các hướng tiếp cận đều đi theo một phương pháp tổng quát chung, nó bao gồm các bước 
 cơ bản như:
 \begin{enumerate}
-\item Xây dựng không gian vector thuộc tính phù hợp với tính chất bài toán
+\item Xây dựng không gian vector đặc trưng phù hợp với tính chất bài toán
 \item Lựa chọn mô hình phân tích
 \item Sử dụng các giải thuật phân lớp điển hình trong Máy học như là 
 SVM, LR ...
