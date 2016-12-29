@@ -534,10 +534,10 @@ $y$ kỳ vọng thực tế. Do đó, hàm chi phí càng nhỏ thì biểu di�
 MNN sẽ càng gần với thực tế.\\\\
 Để tìm được giá trị cực tiểu cho hàm chi phí ta sẽ thực hiện vòng lặp:\\
 \[
-  w_{ij}^{(\ell)}:=w_{ij}^{(\ell)}-\eta\frac{\delta}{\delta w_{ij}^{(\ell)}}C(w,b)
+  w_{ij}^{(\ell)}:=w_{ij}^{(\ell)}-\eta\frac{\partial}{\partial w_{ij}^{(\ell)}}C(w,b)
 \]
 \[
-  b_i^{(\ell)}:=b_i^{(\ell)}-\eta\frac{\delta}{\delta b_i^{(\ell)}}C(w,b)
+  b_i^{(\ell)}:=b_i^{(\ell)}-\eta\frac{\partial}{\partial b_i^{(\ell)}}C(w,b)
 \]
 
 Trong đó $\eta$ là tỉ lệ học (learning rate), việc hội tụ về giá trị cực tiểu 
