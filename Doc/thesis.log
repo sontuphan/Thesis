@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.12.20)  30 DEC 2016 12:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.27)  1 JAN 2017 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1629,13 +1629,13 @@ C3_NenTangLT.aux) (./C4_ThietKe.aux) (./C5_KLHuongPhatTrien.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CF81C8EED4BF13B7413F76B654183C8C;9526.
+(rerunfilecheck)             Checksum: A43E88909BF816776F67183E163018DF;9526.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
  12702 strings out of 493304
  170254 string characters out of 6139870
- 253121 words of memory out of 5000000
+ 254121 words of memory out of 5000000
  15776 multiletter control sequences out of 15000+600000
  21451 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1656,7 +1656,7 @@ exlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vn
 tex/vnr/vnti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.
 pfb>
-Output written on thesis.pdf (49 pages, 732442 bytes).
+Output written on thesis.pdf (49 pages, 732441 bytes).
 PDF statistics:
  751 PDF objects out of 1000 (max. 8388607)
  643 compressed objects within 7 object streams

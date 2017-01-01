@@ -32,13 +32,13 @@ $close$ là dữ liệu sẽ được sử dụng, các giá trị như: $date$,
 $open$, $volume$, $quoteVolume$, $weightedAverage$ sẽ được lược bỏ.
 \section{Xây dựng MNN}
 \subsection{Xây dựng dữ liệu luyện tập}
-Một trong những yếu tố hết sức quan trọng trong Máy học đó chính đặc trưng 
+Một trong những yếu tố hết sức quan trọng trong Học máy đó chính đặc trưng 
 - feature. Đặc trưng chính là các giá trị thuộc tính đại diện cho tập dữ liệu 
 luyện tập, ví dụ chúng ta có tập dữ liệu về loài chim thì có thể nói đặc trưng 
 chính là các thông số như: độ dài sải cánh, màu lông, vùng sinh sống... Một 
 giải thuật có thể học được ``kinh nghiệm'' nhanh hay chậm, chính xác hay sai lệch 
 phụ thuộc rất nhiều vào yếu tố đặc trưng. Vì vậy quá trình khai phá dữ liệu 
-chính là đi tìm kiếm các đặc trưng có ý nghĩa cho giải thuật máy học và là 
+chính là đi tìm kiếm các đặc trưng có ý nghĩa cho giải thuật học máy và là 
 công việc hết sức quan trọng.\\\\
 Gọi $S$ là đại diện cho một phiên giao dịch, các đặc trưng được xây dựng như 
 sau:
@@ -110,7 +110,7 @@ học của giải thuật.
 đánh giá giải thuật.
 \end{itemize}
 Mô hình đánh giá giải thuật được mô tả bằng cách, dùng tập huấn luyện để tạo 
-ra mô hình máy học của các giải thuật, sau đó sử dụng tập đánh giá để làm đầu 
+ra mô hình học máy của các giải thuật, sau đó sử dụng tập đánh giá để làm đầu 
 vào cho từng mô hình, kết quả dự đoán sẽ được so sánh với kết quả thực tế của 
 từng vector đặc trưng đầu vào. Kết quả so sánh được ghi nhận lại.\\\\
 Kết quả chạy giải thuật được xuất ra dưới dạng ma trận nhầm lẫn - confusion 
@@ -166,7 +166,7 @@ diện cho một khối chức năng riêng biệt. Cấu trúc hệ thống nh�
 cho các hoạt động về quản lý hệ thống như phân phối tải, bảo trì và mở rộng sau 
 này được thực hiện dễ dàng và tiết kiệm thời gian. Chi tiết các hệ thống máy chủ:
 \begin{itemize}
-\item Hệ thống máy chủ máy học - Machine Learning server
+\item Hệ thống máy chủ học máy - Machine Learning server
 \item Hệ thống máy chủ backend - Backend server
 \item Hệ thống máy chủ UI frontend - UI Frontend server
 \end{itemize}
@@ -177,14 +177,14 @@ chạy thời gian thực.\\
 \includegraphics[height=3.5in, keepaspectratio=true]{system.png}
 \caption{Cấu trúc quan hệ và chức năng hệ thống}
 \end{figure}
-\subsection{Hệ thống máy chủ máy học}
+\subsection{Hệ thống máy chủ học máy}
 Đây là hệ thống cốt lõi của của sản phẩm, nó đảm nhiệm khối chức năng chính 
-liên quan đến các tác vụ máy học, cụ thể, dựa vào các tham số được truyền vào 
+liên quan đến các tác vụ học máy, cụ thể, dựa vào các tham số được truyền vào 
 để thực hiện quá trình chạy giải thuật dự đoán từ đó đưa ra giá trị nhãn dự 
 đoán tương ứng cho bộ tham số đó.\\\\
 Lưu ý, để đưa ra một kết quả dự đoán, hệ thống yêu cầu các tham số đầu vào phải 
 được xây dựng theo mô tả tại mục 4.1.1 với tổng số đặc trưng là 12.\\\\
-Hệ thống máy chủ máy học được chia thành hai phần:
+Hệ thống máy chủ học máy được chia thành hai phần:
 \begin{enumerate}
 \item Prediction: bao gồm các chức năng đọc mô hình MNN đã xây dựng, chạy mô 
 hình với tham số truyền vào và lấy các kết quả đầu ra.Kết quả đầu ra có giá 
@@ -193,14 +193,14 @@ trị nhãn $Up-Down$ và xác suất dự đoán.
 qua API, các chức năng có thể ví dụ như tiếp nhận các yêu cầu thông qua API, 
 phản hồi các yêu cầu dưới dạng các kết quả JSON...
 \end{enumerate}
-Vì tính chất hỗ trợ tốt cho Máy học nên Python được lựa chọn là ngôn ngữ để 
+Vì tính chất hỗ trợ tốt cho Học máy nên Python được lựa chọn là ngôn ngữ để 
 phát triển hệ thống này.
 \subsection{ Hệ thống máy chủ backend}
-Vì bản thân hệ thống máy chủ máy học không có các khối chức năng liên quan đến 
+Vì bản thân hệ thống máy chủ học máy không có các khối chức năng liên quan đến 
 việc lấy dữ liệu giá BTC cũng như khai phá dữ liệu, nên hệ thống máy chủ backend 
 được xây dựng để thực hiện các chức năng này. Đồng thời, máy chủ backend còn là 
 cầu nối giữa trải nghiệm người dùng (hệ thống máy chủ UI frontend) và hệ thống 
-máy chủ máy học.\\\\
+máy chủ học máy.\\\\
 Để thực hiện được công việc trên, hệ thống bao gồm được xây dựng các chức năng:
 \begin{enumerate}
 \item Cập nhật giá BTC: thông qua các public API được sàn giao dịch Poloniex 
@@ -208,10 +208,10 @@ cung cấp, các hàm lấy giá được chạy liên tục để cập nhật 
 phục vụ cho quá trình dự đoán (trung bình 20 giây).
 \item Khai phá dữ liệu: dữ liệu được các hàm cập nhật giá BTC lấy được vẫn 
 còn ở dạng thô, chưa qua xử lý. Khai phá dữ liệu là biến đổi các dữ liệu này 
-về các bộ tham số có ý nghĩa với Máy học, các giá trị này mới đích thực 
+về các bộ tham số có ý nghĩa với Học máy, các giá trị này mới đích thực 
 dùng để làm đầu vào dự đoán xu hướng giá trị BTC.
-\item Giao tiếp với hệ thống máy chủ máy học: truyền tham số đi và nhận 
-kết quả trả về từ hệ thống máy chủ máy học thông qua API.
+\item Giao tiếp với hệ thống máy chủ học máy: truyền tham số đi và nhận 
+kết quả trả về từ hệ thống máy chủ học máy thông qua API.
 \item Lưu trữ và thống kê dữ liệu: thực hiện việc lưu trữ dữ liệu, từ đó tạo 
 nên một hệ thống các dữ liệu phục vụ cho việc phân tích, thống kê để cung cấp 
 cho người dùng đầu cuối. Đó là các thông tin hết sức quý giá phục vụ cho các 
