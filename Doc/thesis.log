@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.27)  1 JAN 2017 23:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.11.27)  2 JAN 2017 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1596,7 +1596,7 @@ exlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vn
 tex/vnr/vnti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt10.
 pfb>
-Output written on thesis.pdf (50 pages, 739015 bytes).
+Output written on thesis.pdf (50 pages, 739017 bytes).
 PDF statistics:
  766 PDF objects out of 1000 (max. 8388607)
  657 compressed objects within 7 object streams
