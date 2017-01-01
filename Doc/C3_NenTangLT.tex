@@ -600,7 +600,7 @@ $\frac{\partial}{\partial b_j^\ell}C(w,b)$ được mô tả các bước như s
 và $a^\ell=\sigma(z^\ell)$.
 \item Tính giá trị của vector $\delta^L=\nabla_aC\odot\sigma'(z^L)$.
 \item Từ giá trị của $\delta^L$ ta có thể tính được giá trị của các tham số lỗi 
-còn lại, với mỗi $\ell=L-1,L-2,...,2$ ta thực hiện $\delta^\ell=((w^(\ell+1))^T\delta^{\ell+1})\odot\sigma'(z\ell)$.
-\item Kết thúc quá trình tính toán với $\frac{\partial C}{\partial w_{jk}^\ell}=a_k^{\ell-1}$ và 
+còn lại, với mỗi $\ell=L-1,L-2,...,2$ ta thực hiện $\delta^\ell=((w^{\ell+1})^T\delta^{\ell+1})\odot\sigma'(z^\ell)$.
+\item Kết thúc quá trình tính toán với $\frac{\partial C}{\partial w_{jk}^\ell}=a_k^{\ell-1}\delta_j^\ell$ và 
 $\frac{\partial C}{\partial b_j^\ell}=\delta_j^\ell$.
 \end{enumerate}
