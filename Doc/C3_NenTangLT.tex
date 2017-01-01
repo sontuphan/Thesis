@@ -279,7 +279,7 @@ hướng mua/bán của thị trường tại thời điểm phiên $x$ thông q
 đó. Giả sử:\\\\
 \tab $L_{n} = $ giá phiên thấp nhất trong $n$ phiên\\
 \tab $H_{n} = $ giá phiên cao nhất trong $n$ phiên\\
-\tab $P(x) = $ giá của ngày $x$\\
+\tab $P(x) = $ giá của ngày $x$
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
 Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng quá bán và nếu lớn hơn 
 80 thì thị trường đang có xu hướng quá mua.
@@ -330,7 +330,7 @@ Ký hiệu:
 \item True negative là $TN$
 \item False negative là $FN$
 \end{itemize}
-Ta có:\\
+Ta có:
 \[
   Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
 \]
@@ -367,7 +367,7 @@ Một ví dụ, dựa vào hình trên, ta thấy perceptron này có 3 giá tr�
 $x_1, x_2, x_3$ , giả sử đi kèm với mỗi giá trị đầu vào sẽ có một giá trị trọng 
 số $w_1, w_2, w_3$. Giá trị đầu ra được định nghĩa là 0 và 1, nhận giá trị 0 
 khi $\sum_j w_j x_j$ nhỏ hơn giá trị ngưỡng và 1 khi lớn hơn giá trị ngưỡng.\\\\
-Biểu diễn đại số:\\
+Biểu diễn đại số:
 \[
   output = 
   \bigg\{
@@ -397,7 +397,7 @@ perceptron ở lớp đầu ra. Còn lại các lớp perceptron khác được 
 Giả sử đầu vào của perceptron là $x_1, x_2, ...$ tương ứng là đó là các trọng 
 số $w_1, w_2, ...$. Thêm vào định nghĩa về $bias$, ở đây $bias$ là một giá trị 
 đại diện độ lệch của từng perceptron và được ký hiệu $b_1, b_2, ...$. Ta có 
-biểu diễn của hàm hoạt động với $bias$:\\
+biểu diễn của hàm hoạt động với $bias$:
 \[
   output = 
   \bigg\{
@@ -422,7 +422,7 @@ perceptron khác sẽ nhận giá trị rất bé - giả sử 0.001. Vì thế 
 theo thì gần như perceptron cho kết quả đầu ra là giá trị bé sẽ mất đi độ ảnh 
 hưởng và làm mất cân đối cho toàn mạng.\\\\
 Do đó để giới hạn giá trị đầu ra của hàm hoạt động chúng ta sẽ sử dụng hàm 
-sigmoid. Hàm sigmoid được định nghĩa như sau:\\
+sigmoid. Hàm sigmoid được định nghĩa như sau:
 \[
   \sigma(z)=\frac{1}{1+e^{-z}}
 \]
@@ -433,7 +433,7 @@ Với biễu diễn đồ thị:
 \caption{Đồ thị hàm sigmoid}
 \end{figure}\\
 Áp dụng hàm sigmoid vào hàm hoạt động ta có một hàm hoạt động dạng sigmoid và 
-khi đó hàm hoạt động của chúng ta của chúng ta sẽ có dạng:\\
+khi đó hàm hoạt động của chúng ta của chúng ta sẽ có dạng:
 \[
   \frac{1}{1+exp(-\sum_j w_j x_j -b)}
 \]
@@ -481,7 +481,7 @@ perceptron thứ 1 thuộc lớp thứ 3 sẽ là $a_1^3$.\\
 \end{figure}\\
 Biễu diễn ma trận trọng số và vector $bias$:
 \begin{itemize}
-\item $w$ là ma trận của các giá trị trọng số\\ 
+\item $w$ là ma trận của các giá trị trọng số.
 \[ w =
 \begin{bmatrix}
 w_{11} & \ldots & w_{1k} \\
@@ -489,7 +489,7 @@ w_{11} & \ldots & w_{1k} \\
 w_{j1} & \ldots & w_{jk}
 \end{bmatrix}
 \]
-\item $b$ là vector của các giá trị $bias$\\ 
+\item $b$ là vector của các giá trị $bias$.
 \[ b =
 \begin{bmatrix}
 b_1\\
@@ -497,9 +497,9 @@ b_1\\
 b_k
 \end{bmatrix}
 \]
-\item $\sigma$ là hàm sigmoid
+\item $\sigma$ là hàm sigmoid.
 \item $a_j=\sigma$ là hàm hoạt động có dạng sigmoid, $a$ là vector của các hàm 
-hoạt động\\
+hoạt động.
 \[ a =
 \begin{bmatrix}
 a_1\\
@@ -508,20 +508,23 @@ a_k
 \end{bmatrix}
 \]
 \end{itemize}
-Lúc này ta có biểu diễn toán học đầy đủ của hàm hoạt động:\\
+Lúc này ta có biểu diễn toán học đầy đủ của hàm hoạt động:
 \[
-  a_j^\ell=\sigma(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)
+  a_j^\ell=\sigma(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)=\sigma(z _j^\ell)
+\]
+\[
+  z _j^\ell=\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell
 \]
 Tổng quát phát biểu với dạng:\\
 \[
-  a^\ell=\sigma(w^\ell a^{\ell-1} + b^\ell)
+  a^\ell=\sigma(w^\ell a^{\ell-1} + b^\ell)=\sigma(z^\ell)
 \]
 Để có thể tìm được giá trị của các biến $w$ và $b$, giải thuật lan truyền ngược 
 thực hiện bằng cách xuất phát $w$ và $b$ từ các giá trị ngẫu nhiên, thực hiện 
 các phép lặp để đưa $w$ và $b$ về giá trị đúng, mỗi lần lặp sẽ có một hàm chi 
 phí (cost function) đo đạc độ lệch của giá trị tính toán và giá trị thực tế 
 để giúp giải thuật tìm được giá trị hội tụ.\\\\
-Biễu diễn hàm chi phí:\\
+Biễu diễn hàm chi phí với $L$ lớp:
 \[
   C=\frac{1}{2n}\sum_x\|y(x)-a^L(x)\|^2
 \]
@@ -532,17 +535,72 @@ liệu và giá trị $y=a$ là giá trị $y$ tính toán được từ $x$ v�
 ta có thể hiểu được, hàm chi phí tính toán độ sai lệch của giá trị $a$ so với 
 $y$ kỳ vọng thực tế. Do đó, hàm chi phí càng nhỏ thì biểu diễn giá trị của 
 MNN sẽ càng gần với thực tế.\\\\
-Để tìm được giá trị cực tiểu cho hàm chi phí ta sẽ thực hiện vòng lặp:\\
+Để tìm được giá trị cực tiểu cho hàm chi phí ta sẽ thực hiện vòng lặp:
 \[
-  w_{ij}^{(\ell)}:=w_{ij}^{(\ell)}-\eta\frac{\partial}{\partial w_{ij}^{(\ell)}}C(w,b)
+  w_{jk}^\ell:=w_{jk}^\ell-\eta\frac{\partial}{\partial w_{jk}^\ell}C(w,b)
 \]
 \[
-  b_i^{(\ell)}:=b_i^{(\ell)}-\eta\frac{\partial}{\partial b_i^{(\ell)}}C(w,b)
+  b_j^\ell:=b_j^\ell-\eta\frac{\partial}{\partial b_j^\ell}C(w,b)
 \]
-
 Trong đó $\eta$ là tỉ lệ học (learning rate), việc hội tụ về giá trị cực tiểu 
-với tốc độ và độ chính xác phụ thuộc vào tỉ lệ này.\\\\
-Vậy, đi qua một quá trình tìm hiểu về MNN, ta có thể hiểu được việc học hỏi 
-kinh nghiệm của mạng cốt lõi vẫn là việc tìm ra bộ $w$ và $b$ tương ứng với 
-${x, y}$ của bộ dữ liệu luyện tập, và để tìm ra được $w$ và $b$ ta có thể sử 
-dụng giải thuật lan truyền ngược.
+với tốc độ và độ chính xác phụ thuộc vào tỉ lệ này. Thực hiện được hai vòng lặp 
+trên, ta sử dụng giải thuật lan truyền ngược để tính toán 
+$\frac{\partial}{\partial w_{jk}^\ell}C(w,b)$ và 
+$\frac{\partial}{\partial b_j^\ell}C(w,b)$.\\\\
+Tham số lỗi $\delta_j^\ell$ của neural thứ $j$ thuộc lớp $\ell$ là biểu diễn 
+của:
+\[
+  \delta_j^\ell \equiv \frac{\partial C}{\partial z_j^\ell}
+\]
+Từ biểu diễn trên ta có:
+\[
+  \delta_j^L = \frac{\partial C}{\partial a_j^L} \sigma'(z_j^L)
+\]
+Mặc khác $\partial C/\partial a_j^L = (a_j^L-y_j)$, suy ra:
+\[
+  \delta^L=\nabla_aC\odot\sigma'(z^L)=(a^L-y)\odot\sigma'(z^L)
+\]
+Trong đó $\odot$ là tích Hadamard, ta gọi biểu thức trên là biểu thức (3.1).
+Ngoài ra, ta có biểu diễn khác của $\delta_j^L$:
+\begin{align*}
+  \delta_j^L=\frac{\partial C}{\partial z_j^L}
+  &=\sum_k\frac{\partial C}{\partial z_k^{\ell+1}}\frac{\partial z_k^{\ell+1}}{\partial z_j^\ell}\\
+  &=\sum_k\frac{\partial z_k^{\ell+1}}{\partial z_j^\ell}\delta_k^{\ell+1}\\
+  &=\sum_k\frac{\partial(\sum_j w_{kj}^{\ell+1}a_j^\ell+b_k^{\ell+1})}{\partial z_j^\ell}\delta_k^{\ell+1}\\
+  &=\sum_k\frac{\partial(\sum_j w_{kj}^{\ell+1}\sigma(z_j^\ell)+b_k^{\ell+1})}{\partial z_j^\ell}\delta_k^{\ell+1}\\
+  &=\sum_k w_{kj}^{\ell+1}\delta_k^{\ell+1}\sigma'(z_j^\ell)
+\end{align*}
+Gọi biểu thức trên là biểu thức (3.2). Với hướng tiếp cận tương tự ta có các 
+biểu thức khác:
+\begin{align*}
+  \frac{\partial C}{\partial b_j^\ell}&=\frac{\partial C}{\partial z_j^\ell}\frac{\partial z_j^\ell}{\partial b_j^\ell}\\
+  &=\delta_j^\ell\frac{\partial z_j^\ell}{\partial b_j^\ell}\\
+  &=\delta_j^\ell\frac{\partial(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)}{\partial b_j^\ell}\\
+  &=\delta_j^\ell
+\end{align*}
+Ta có biểu thức trên là biểu thức (3.3).
+\begin{align*}
+  \frac{\partial C}{\partial w_{jk}^\ell}&=\frac{\partial C}{\partial z_j^\ell}\frac{\partial z_j^\ell}{\partial w_{jk}^\ell}\\
+  &=\delta_j^\ell\frac{\partial(\sum_k w_{jk}^\ell a_k^{\ell-1} + b_j^\ell)}{\partial w_{jk}^\ell}\\
+  &=\delta_j^\ell a_k^{\ell-1}
+\end{align*}
+Và biểu thức (3.4). Từ (3.1), (3.2), (3.3) và (3.4) ta có tổng kết sau:
+\begin{align}
+  \delta^L =& \: \nabla_aC\odot\sigma'(z^L) \\
+  \delta^\ell =& \: ((w^{\ell+1})^T\delta^{\ell+1})\odot\sigma'(z^\ell) \\
+  \frac{\partial C}{\partial b_j^\ell} =& \: \delta_j^\ell \\
+  \frac{\partial C}{\partial w_{jk}^\ell} =& \: a_k^{\ell-1}\delta_j^\ell
+\end{align}
+Sử dụng các biểu thức này, giải thuật lan truyền ngược dùng để tính toán 
+$\frac{\partial}{\partial w_{jk}^\ell}C(w,b)$ và 
+$\frac{\partial}{\partial b_j^\ell}C(w,b)$ được mô tả các bước như sau:
+\begin{enumerate}
+\item Cho giá trị đầu vào $x$, tính toán giá trị $a^1$ tương ứng với $x$.
+\item Với mỗi $\ell=2,3,..,L$, ta lần lượt tính được $z^\ell=w^\ell a^{\ell-1}+b^\ell$ 
+và $a^\ell=\sigma(z^\ell)$.
+\item Tính giá trị của vector $\delta^L=\nabla_aC\odot\sigma'(z^L)$.
+\item Từ giá trị của $\delta^L$ ta có thể tính được giá trị của các tham số lỗi 
+còn lại, với mỗi $\ell=L-1,L-2,...,2$ ta thực hiện $\delta^\ell=((w^(\ell+1))^T\delta^{\ell+1})\odot\sigma'(z\ell)$.
+\item Kết thúc quá trình tính toán với $\frac{\partial C}{\partial w_{jk}^\ell}=a_k^{\ell-1}$ và 
+$\frac{\partial C}{\partial b_j^\ell}=\delta_j^\ell$.
+\end{enumerate}
