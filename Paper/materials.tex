@@ -1,4 +1,4 @@
-\chapter{Những công trình liên quan}
+\section{Công trình liên quan}
 Hai công trình được công bố công khai có đề tài tương đồng với đề tài của bài dự thi này đó là 
 ``Automated Bitcoin Trading via Machine Learning Algorithms'' \cite{AutomatedBitcoinTrading}
 và ``Predicting the price of Bitcoin using Machine Learning'' \cite{PredictingThePriceOfBitcoin}.
@@ -19,6 +19,7 @@ lại, tập dữ liệu thứ hai được sử dụng như một tập dữ li
 Kết quả chi tiết của các giải thuật LR, SVM và RF:
 \begin{table}[h]
 \centering
+\fontsize{8}{9}\selectfont
 \begin{tabular}{ |c|c|c|c| }
 \hline
 Tham số đánh giá & 10 giây - LR & 10 phút - SVM & 10 phút - RF \\
@@ -38,6 +39,7 @@ Lưu ý, nhóm tác giả ký hiệu giải thuật LR là Binomial GLM và tham
 Recall là Sensitivity.
 \begin{table}[h]
 \centering
+\fontsize{8}{9}\selectfont
 \begin{tabular}{ |c|c|c|c| }
 \hline
 Tham số đánh giá & LR & SVM & RF \\
@@ -74,6 +76,7 @@ giải thuật di truyền (Genetic Algorithm), khác với LSTM sử dụng gi�
 chạy giải thuật:
 \begin{table}[h]
 \centering
+\fontsize{8}{9}\selectfont
 \begin{tabular}{ |c|c|c|c| }
 \hline
 Tham số đánh giá & LSTM & RNN & ARIMA \\
@@ -114,6 +117,7 @@ cận khác, LR được sử dụng để giải quyết bài toán, kết qu�
 bảng sau.
 \begin{table}[h]
 \centering
+\fontsize{8}{9}\selectfont
 \begin{tabular}{ |c|c| }
 \hline
 Precision & 69.90\% \\
@@ -140,6 +144,7 @@ hướng giá trị của $n$ ngày tiếp theo.\\\\
 Kết quả đánh giá của 4 giải thuật cho mô hình Ngày tiếp theo:
 \begin{table}[h]
 \centering
+\fontsize{8}{9}\selectfont
 \begin{tabular}{ |c|c|c|c|c| }
 \hline
 Model & LR & GDA & QDA & SVM \\
@@ -152,7 +157,7 @@ Accuracy & 44.5\% & 46.4\% & 58.2\% & 55.2\% \\
 Đồ thị đánh giá của 4 giải thuật cho mô hình Dài hạn:
 \begin{figure}[h!]
 \centering
-\includegraphics[height=3.5in, keepaspectratio=true]{longtermmodel.png}
+\includegraphics[height=2.15in, keepaspectratio=true]{longtermmodel.png}
 \caption{Đồ thị đánh giá mô hình Dài hạn}
 \end{figure}\\
 Hai mô hình với hai kết quả, ta thấy ở mô hình Dài hạn hai giải thuật SVM và 
@@ -164,8 +169,8 @@ Recall. Việc đánh giá chỉ dựa trên duy nhất một tham số sẽ kh�
 được kết quả đầu ra, vì vậy mà dẫn đến nguy cơ không phát hiện các vấn đề về 
 lệch dữ liệu hoặc overfitting.\\\\ 
 Tổng quan qua các công trình trên và tham khảo một số công trình khác, nhận thấy 
-đa số các hướng tiếp cận đều đi theo một phương pháp tổng quát chung, nó bao gồm các bước 
-cơ bản như:
+đa số các hướng tiếp cận đều đi theo một phương pháp tổng quát chung và bao gồm 
+các bước cơ bản như:
 \begin{enumerate}
 \item Xây dựng không gian vector đặc trưng phù hợp với tính chất bài toán
 \item Lựa chọn mô hình phân tích
@@ -173,9 +178,3 @@ cơ bản như:
 SVM, LR ...
 \item Đánh giá giải thuật bằng các tham số Accuracy, Recall, Precision.
 \end{enumerate}
-Từ những đục kết trên, bản thân nhận thấy các bước trên cũng chính là phương pháp 
-nên dùng để tiếp cận đề tài. Ngoài ra, nhận thấy ở hai công trình trên chưa đề 
-cập đến việc sử dụng một giải thuật rất được phổ biến hiện nay, nó nổi lên như 
-một đại diện của Học sâu đó là MNN. Do đó mà đề tài này sẽ sử dụng MNN như là 
-một giải thuật bổ sung trong quá trình so sánh và đánh giá so với các giải thuật 
-phân lớp khác.

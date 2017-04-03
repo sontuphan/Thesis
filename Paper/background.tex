@@ -1,13 +1,13 @@
-\chapter{Nền tảng lý thuyết}
-\section{Bitcoin}
+\section{Nền tảng lý thuyết}
+
+\subsection{Sơ lược về Bitcoin}
 Các hình thức thương mại trên Internet ngày nay hầu như đều dựa vào một tổ chức 
 bên thứ ba đáng tin cậy để xử lý các hoạt động thanh toán điện tử. Tuy rằng sau 
 nhiều năm phát triển, các tổ chức bên thứ ba này đều đã nâng cao mức độ tin cậy, 
 an toàn nhưng đa số vẫn còn tồn tại những điểm yếu: không thể tránh khỏi những 
 tranh chấp, phí trung gian, đòi hòi phải cung cấp các thông tin cá nhân... Và 
 Bitcoin - hệ thống tiền điện tử ngang hàng (A Peer-to-Peer Electronic Cash System) 
-được sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.
-\subsection{Sơ lược thông tin về Bitcoin}
+được sinh ra để giải quyết các vấn đề trên \cite{BitcoinPaper}.\\\\
 Khi so sánh với tiền tệ truyền thống, Bitcoin có hình thức và cách thức hoạt 
 động khác biệt. Bitcoin không hề có bất kỳ một tổ chức tập trung nào để quản 
 lý, thay vào đó, Bitcoin sử dụng mạng ngang hàng để hoạt động \cite{Bitcoin1}.
@@ -38,198 +38,14 @@ và các đoạn lập trình đều được công bố công khai.\\\\
 Đơn vị giao dịch, BTC có thể được chia thành nhiều đơn vị nhỏ hơn, tối thiểu 
 là đơn vị $Satoshi$. Cụ thể $1 \, Satoshi = 0.01 \, \mu BTC = 0.00000001 \, BTC$ 
 hoặc $1 \, BTC = 100.000.000 \, Satoshi$ \cite{Bitcoin3}.
-\subsection{Máy chủ nhãn thời gian}
-Máy chủ nhãn thời gian (Timestamp Server) hoạt động bằng cách lấy giá trị băm 
-(hash) của block liền trước và thông tin của block hiện tại, cho qua hàm băm 
-để được một giá trị băm mới. Giá trị băm sau tính toán sẽ được công bố rộng rãi, 
-nó mang ý nghĩa, giá trị băm này chứng minh rằng block thật sự tồn tại. Các 
-block được nối với nhau thành một chuỗi xác định.\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=1.45in, keepaspectratio=true]{timestampserver.png}
-\caption{Máy chủ nhãn thời gian}
-\end{figure}
-\subsection{Giao dịch (trên Blockchain)}
-Bitcoin tổ chức các giao dịch bằng cách xây dựng một chuỗi thông tin được đảm 
-bảo bởi các chữ ký số. Một địa chỉ có chứa một lượng BTC được gọi là một chủ 
-sở hữu, một chủ sở hữu chuyển một lượng BTC cho một chủ sở hữu khác - người thụ 
-hưởng - bằng cách ký lên giá trị băm, trong đó giá trị băm là kết quả sau khi 
-đi qua hàm băm của tổ hợp giá trị băm giao dịch trước với địa chỉ người thụ 
-hưởng.\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=2.45in, keepaspectratio=true]{transaction.png}
-\caption{Giao dịch}
-\end{figure}
-\subsection{Proof-of-Work}
-Proof-of-Work được hiểu là bằng chứng để chứng minh quá trình lao động, nó dùng 
-để kiểm tra quá trình tạo ra kết quả hợp lệ là một quá trình ``lao động'' có 
-sử dụng và tiêu tốn tài nguyên.\\\\
-Proof-of-Work được sử dụng trong Bitcoin có cơ chế dựa trên hàm băm, ví dụ như 
-SHA-256. Quá trình proof-of-work là quá trình đi tăng một con số - gọi là số 
-$nonce$ - sao cho giá trị băm của số $nonce$ này cho kết quả đầu ra phải thỏa 
-mãn tồn tại $n$ bit 0 ở vị trí đầu, với $n$ xác định và được gọi là số bit 0 
-yêu cầu.
-\subsection{Blockchain}
-Blockchain được hình thành dựa trên sự kết hợp giữa máy chủ nhãn thời gian và 
-proof-of-work. Blockchain là một chuỗi các block được kết nối một cách luận lý 
-với nhau thông qua các mỗi quan hệ toán học và mật mã, các quan hệ này đảm bảo 
-cho hệ thống luôn đúng đắn, không thể sửa và dễ dàng để kiểm tra. Block mới được 
-sinh ra phải dựa trên quá trình proof-of-work.\\\\
-Quá trình hình thành blockchain được bắt đầu bằng proof-of-work, các peer sẽ đi
-tìm số $nonce$ sao cho sau khi cho qua hàm băm kết quả đạt được là một giá trị 
-băm thỏa mãn số bit 0 yêu cầu. Số $nonce$ vừa được tìm ra sẽ được đưa và block
-mới cùng với các thông tin khác như: thông tin các giao dịch, giá trị băm của 
-block kề trước... Tiếp tục như vậy, các block mới được sinh ra và được kết nối 
-với block cuối cùng của chuỗi.\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=1.5in, keepaspectratio=true]{blockchain.png}
-\caption{Blockchain}
-\end{figure}\\
-Vì hệ thống có tính phân tán nên trên toàn mạng sẽ có nhiều phiên bản của blockchain,
-cũng chính vì thế để giải quyết tính đồng nhất, chỉ blockchain có độ dài lớn 
-nhất mới được xem là blockchain hợp lệ. Đồng thời để kiểm soát được tốc độ sinh
-block mới, hệ thống sẽ quy định một độ khó, nếu toàn mạng có tốc độ sinh block 
-(số block được sinh ra trong một giờ đồng hồ) cao hơn mức quy định, độ khó sẽ tăng lên 
-để điều chỉnh lại tốc độ của toàn mạng.
-\subsection{Mạng}
-Mỗi thành viên (máy tính, phần cứng ASIC, thiết bị di dộng... ) khi tham gia vào quá 
-trình tính toán của toàn mạng thì sẽ được xem như một node. Toàn mạng sẽ hiện thực hệ 
-thống bằng cách thực hiện các bước như sau:
-\begin{enumerate}
-\item Một giao dịch mới được truyền đi cho tất cả các node (broadcast).
-\item Mỗi node sẽ lựa chọn và thu thập các giao dịch để đưa vào block.
-\item Mỗi node sẽ thực hiện proof-of-work, tìm ra số $nonce$.
-\item Khi một node hoàn thành proof-of-work, node này sẽ đóng block và truyền 
-thông tin của block này cho tất cả các node khác trên toàn mạng.
-\item Các node khác sẽ kiểm tra thông tin của block nhận được (thông tin các 
-giao dịch, thông tin proof-of-work...) và chấp nhận block này nếu tất cả 
-các thông tin đều được kiểm tra chính xác.
-\item Các node sẽ thể hiện sự chấp nhận của mình bằng cách thực hiện proof-of-work 
-để sinh ra block mới và block này sẽ được gắn vào liền sau block mà node đã chấp nhận 
-(thêm giá trị băm của block trước mà node chấp nhận vào trong block mới sinh ra).
-\end{enumerate}
-Lưu ý, một giao dịch mới không nhất thiết phải được truyền đến tất cả các node. 
-Chỉ cần việc truyền đến số node đủ nhiều để đảm bảo việc sẽ được đưa vào một block 
-và được đóng trong blockchain với độ dài lớn nhất. Cũng như vậy đối với block, 
-block không nhất thiết phải được truyền đến tất cả các node, khi một node nhận 
-được một block kế block bị thiếu, bằng quá trình kiểm tra node có thể biết được 
-và yêu cầu các node khác trong mạng gửi cho node này block bị thiếu sót.
-\subsection{Phần thưởng khích lệ}
-Trong tập các giao dịch được đóng trong một block sẽ luôn tồn tại một giao dịch 
-đặc biệt, giao dịch này khác với các giao dịch bình thường, nó không có người chủ 
-sở hữu mà chỉ có người thụ hưởng. Điều này giải thích cách mà BTC mới được sinh 
-ra, cứ mỗi block được tìm ra nhờ quá trình proof-of-work sẽ có một lượng BTC 
-được sinh ra và chính là phần thưởng cho người tạo ra block - người tạo ra block 
-này cần được toàn mạng xác minh proof-of-work và công nhận là hợp lệ, địa chỉ 
-người thụ hưởng chính là địa chỉ của người tạo ra block.\\\\
-Ngoài ra, phần thưởng khích lệ khi tạo ra được một block còn bao gồm cả phí giao 
-dịch từ các giao dịch đã được đóng trong block. Phí giao dịch thường rất nhỏ và
-không đáng kể ở thời điểm hiện tại.
-\subsection{Tổ chức lưu trữ thông tin giao dịch}
-Đối với các node là các hệ thống máy tính lớn, khả năng lưu trữ và xử lý mạnh thì 
-việc lưu một block với đầy đủ các thông tin không gặp nhiều vấn đề. Nhưng đối 
-với các thiết bị di động hoặc các thiết bị khác với tài nguyên lưu trữ và xử lý 
-tương đối hạn hẹp thì việc lưu một blockchain đầy đủ là khá khó khăn.\\\\
-Cây Merkle là một cấu trúc tổ chức dữ liệu, trong đó giá trị của node cha sẽ 
-là kết quả hàm băm tất cả các giá trị (nhãn hoặc dữ liệu) của nốt con. Các nốt 
-không phải lá thì giá trị sẽ là nhãn - kết quả hàm băm, các nốt lá sẽ có giá trị 
-là dữ liệu cần được tổ chức.\\\\
-Bitcoin sử dụng cây Merkle để tổ chức các giao dịch, nốt cao nhất của cây được 
-gọi là giá trị băm gốc (Root hash) và giá trị này sẽ được lưu vào block. Ở đây,
-ta thấy việc thay đổi bất kỳ một giá trị nào trong cây cũng sẽ dẫn đến việc thay 
-đổi giá trị băm gốc, vì thế giá trị băm gốc khi được lưu vào block nó có chức 
-năng dùng để kiểm tra lại các giao dịch trong block đó là toàn vẹn hay không.\\
-\begin{figure}[h!]
-\centering
-\includegraphics[height=2.25in, keepaspectratio=true]{merkletree.png}
-\caption{Cây Merkle}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\includegraphics[height=3.75in, keepaspectratio=true]{block.png}
-\caption{Cấu trúc tổ chức giao dịch trong một block}
-\end{figure}\\
-Một node với tài nguyên hạn chế khi muốn lưu blockchain không nhất thiết phải 
-lưu đầy đủ thông tin của từng block trong blockchain, thay vào đó node có thể 
-lược bỏ các thông tin về giao dịch được đóng trong block và chỉ lưu giá trị băm 
-gốc của các giao dịch này. Điều này làm giảm chi phí về lưu trữ nhưng vẫn đảm 
-bảo được tính toàn vẹn, khi muốn xác minh bất kỳ giao dịch nào, node chỉ cần 
-yêu cầu các giao dịch trong block và tính toán lại giá trị băm gốc, nếu giá trị 
-băm nào giống với giá trị băm gốc được lưu nghĩa là các giao dịch hoàn toàn hợp 
-lệ.
-\section{Sàn giao dịch Poloniex}
-\subsection{Giới thiệu về sàn giao dịch}
+
+\subsection{Một số khái niệm về tài chính}
+\subsubsection{Giới thiệu về sàn giao dịch}
 Sàn giao dịch là một thị trường có tính tổ chức cao, nơi các tài sản giao dịch 
 có thể trao đổi bằng vật ngang giá (tiền tệ, hợp đồng, ...). Trong phạm vi đề 
 tài này khi nhắc đến sàn giao dịch ta hiểu rằng đây là sàn giao dịch với tài 
-sản giao dịch là BTC và vật ngang giá là USD.\\\\
-Hiện nay, có rất nhiều sàn giao dịch, trong đó, Poloniex là một sàn giao dịch 
-tương đối nổi tiếng trong cộng đồng Bitcoin bên cạnh các sàn khác như BTCMarkets, 
-AltaPolis, Remitano...
-Bảng so sánh các sàn giao dịch:
-\begin{table}[h]
-\centering
-\begin{tabularx}{\textwidth}{ |l|X|X|X|X|X| }
-\hline
-Tên sàn & Thời gian hình thành & Quy mô & Tính đa dạng & Tính thanh khoản & API Dữ liệu \\
-\hline
-Poloniex & 01/2014 & Rất lớn & Cao & Cao & Có \\
-\hline 
-BTCMarkets & 07/2013 & Lớn & Trung bình & Trung bình & Có \\
-\hline
-AltaPolis & 10/2016 & Nhỏ & Trung bình & Thấp & Không \\
-\hline
-Remitano & Chưa rõ & Nhỏ & Thấp & Thấp & Không \\
-\hline
-\end{tabularx}
-\caption{Bảng so sánh sàn giao dịch}
-\end{table}\\
-(Tính đa dạng biểu diễn số lượng nhiều hay ít các loại tài sản giao dịch khác 
-nhau được sàn giao dịch hỗ trợ, tính thanh khoản tham khảo mục 3.3.2)\\\\
-Vì Poloniex là một sàn lớn và cung cấp đầy đủ các API cho việc thu thập dữ liệu, 
-ngoài ra, dữ liệu lịch sử giao dịch với số lượng lớn, nên Poloniex được chọn là sàn 
-giao dịch đặc trưng dùng để phân tích trong bài dự thi này.
-\subsection{Giao dịch (trên sàn giao dịch)}
-Quá trình mua/bán BTC được thực hiện trên sàn giao dịch Poloniex được diễn ra 
-bằng quá trình đặt cọc đầu tiên. Người dùng cần phải chuyển một lượng BTC hoặc 
-USD vào một địa chỉ mà Poloniex cung cấp khi đăng ký tài khoản giao dịch. Khi 
-đã chuyển một lượng BTC hoặc USD vào địa chỉ này, người dùng có thể bắt đầu 
-giao dịch.\\\\
-Quá trình mua/bán được mô tả bằng một lệnh mua/bán của người dùng trên Poloniex, 
-nếu lệnh này thành công, Poloniex là bên trung gian đại diện thực hiện việc chuyển 
-USD từ tài khoản người mua sang tài khoản người bán và đồng thời, chuyển tài BTC 
-từ tài khoản người bán sang tài khoản người mua. Quá trình chuyển BTC phức tạp 
-hơn so với quá trình chuyển USD, lượng BTC cần chuyển được ghi vào một giao dịch 
-(trên Blockchain), giao dịch này được truyền đi cho toàn mạng và chờ quá trình 
-xác nhận từ các node - được ghi vào một block. Quá trình mua/bán thật sự hoàn 
-tất khi giao dịch (trên Blockchain) được đóng trong block thuộc blockchain dài 
-nhất.\\\\
-Trên mỗi giao dịch, Poloniex tính phí dựa theo vai trò người dùng trong giao 
-dịch đó, đối với người đặt lệnh phí là 0.15\%, đối với người khớp lệnh (người 
-đặt lệnh bán/mua để khớp với lệnh mua/bán đã có sẵn) phí là 0.25\%. Phí này có 
-thể giảm theo tổng số lượng BTC người dùng đã giao dịch trong lịch sử.
-\subsection{Bitcoin và sự công nhận của pháp luật}
-Hiện tại, Bitcoin đang dần dần được thông qua ở nhiều quốc gia, nó được xem là 
-hợp pháp và là tương lai của kinh tế. Bắt đầu từ các nước châu Âu, từ khoảng 
-tháng 10 năm 2015, các nước châu Âu chính thức công nhận đồng tiền này và chính 
-thức công nhận thông qua giao dịch hàng hóa, dịch vụ và chuyển khoản \cite{LawBitcoin}.
-Nổi bật nhất, Hoa Kỳ và Vương quốc Anh là một trong những nước lớn thể hiện thái 
-độ tích cực và công nhận Bitcoin.\\\\
-Ngoài những sự ủng hộ, đối với một số quốc gia, việc công nhận Bitcoin trở thành 
-một rủi ro, nhà nước lo sợ các hành vi rửa tiền, mua bán vũ khí, chất cấm... 
-Đồng thời, còn cân nhắc ảnh hưởng tới nền kinh tế vì thế nhiều quốc gia đang 
-đặt ra lệnh cấm đối với Bitcoin, đáng kể nhất có thể liệt kê là Nga, Trung Quốc.\\\\
-Đối với Viêt Nam, vào tháng 2/2014, Ngân hàng Nhà nước đã cho biết trong một 
-tuyên bố: ``Việc sở hữu, mua bán, sử dụng tiền ảo như là một loại tài sản tiềm 
-ẩn rất nhiều rủi ro cho người dân và không được pháp luật bảo vệ. Ngân hàng Nhà 
-nước khuyến cáo các tổ chức, các nhân không nên đầu tư, nắm giữ, thực hiện các 
-giao dịch liên quan đến bitcoin và các loại tiền ảo tương tự khác''. Ngân hàng 
-Nhà nước thể hiện rõ quan điểm không ủng hộ Bitcoin, nhưng trong tình trạng đặt 
-ngoài vòng pháp luật, điều đó có nghĩa là không ủng hộ cũng như không cấm.
-\section{Một số khái niệm về tài chính}
-\subsection{Phiên giao dịch và các giá trị cơ bản}
+sản giao dịch là BTC và vật ngang giá là USD.
+\subsubsection{Phiên giao dịch và các giá trị cơ bản}
 Gọi $T$ là một mốc thời gian bất kỳ, $P$ là khoảng thời gian được chọn là một 
 phiên giao dịch. Ta có thể nói một cách đơn giản là phiên giao dịch được mở tại 
 thời điểm $T$ và được kết thúc tại thời điểm $T + P$.\\\\
@@ -255,7 +71,7 @@ giao dịch.
 \item Trung bình giao dịch: giá trị USD trung bình của tất cả các giao dịch diễn 
 ra trong khoảng thời gian một phiên giao dịch.
 \end{itemize}
-\subsection{Tính thanh khoản}
+\subsubsection{Tính thanh khoản}
 Tính thanh khoản là đặc trưng chỉ mức độ mà một tài sản bất kì có thể được mua 
 hoặc bán trên thị trường mà không làm ảnh hưởng đến giá thị trường của tài sản 
 đó. Một tài sản có tính thanh khoản cao nếu có thể được bán nhanh chóng mà giá 
@@ -265,7 +81,7 @@ loại và được sắp xếp theo tính thanh khoản từ cao đến thấp 
 tiền mặt có tính thanh khoản cao nhất vì luôn luôn dùng được trực tiếp để thanh 
 toán, lưu thông, tích trữ.\\\\
 Cách gọi thay thế khác cho tính thanh khoản đó là tính lỏng hoặc tính lưu động.
-\subsection{Quá mua và Quá bán}
+\subsubsection{Quá mua và Quá bán}
 Quá mua (Overbought) dùng để định nghĩa trường hợp thị trường có mức cầu cao hơn 
 mức cung, điều này làm đẩy giá của tài sản giao dịch lên cao vượt qua mức chính 
 đáng. Ví dụ, trên tất cả các giao dịch có hơn 80\% lệnh là đặt mua và dưới 20\% 
@@ -273,7 +89,7 @@ là lệnh đặt bán, trường hợp này được xem là quá mua.\\\\
 Ngược lại, quá bán (Oversold) dùng để định nghĩa trường hợp thị trường có mức 
 cung cao hơn mức cầu, điều này làm kéo giá của tài sản giao dịch xuống thấp vượt 
 mức chính đáng.
-\subsection{Chỉ số dao động ngẫu nhiên}
+\subsubsection{Chỉ số dao động ngẫu nhiên}
 Chỉ số dao động ngẫu nhiên (Stochastic Oscillator) là đại lượng dùng để đo xu 
 hướng mua/bán của thị trường tại thời điểm phiên $x$ thông qua $n$ phiên trước 
 đó. Giả sử:\\\\
@@ -283,90 +99,26 @@ hướng mua/bán của thị trường tại thời điểm phiên $x$ thông q
 \[\%K=\frac{P(x)-L_{n}}{H_{n}-L_{n}}\]
 Nếu $ \%K $ nhỏ hơn 20 thì thị trường đang có xu hướng quá bán và nếu lớn hơn 
 80 thì thị trường đang có xu hướng quá mua.
-\subsection{Tỉ lệ thay đổi}
+\subsubsection{Tỉ lệ thay đổi}
 Tỉ lệ thay đổi (Rate of Change) là đại lượng đo sự khác nhau của giá tại phiên 
 thứ $x$ so với $n$ phiên trước đó. Giá sử $P(x)$ là giá của phiên thứ $x$ thì:
 \[ ROC_{n}(x)=\frac{P(x)-P(x-n)}{P(x-n)}\]
 Nếu $ROC > 0$ thì giá thị trường đang có xu hướng đi lên (tăng giá).
 Ngược lại, với $ROC < 0$ thì giá thị trường đang có xu hướng giảm xuống.
-\section{Học máy}
-\subsection{Khái niệm cơ bản}
-\subsubsection{Học máy}
-Học máy có hai cách định nghĩa chính và đang được chấp nhận phổ biến:
-\begin{itemize}
-\item Theo Arthur Samuel: \textit{``Là một lĩnh vực nghiên cứu mà nó cung cấp 
-cho máy tính khả năng học hỏi mà không cần lập trình một cách tường minh.''}
-\item Theo Tom Mitchell: \textit{``Một chương trình máy tính được chấp nhận là 
-học hỏi được kinh nghiệm E bằng cách thực hiện một vài tác vụ T theo phép đo hiệu
-năng P, nếu và chỉ nếu việc thực thi các tác vụ trong T được đo bởi phép đo P
-đem lại kết quả là kinh nghiệm E được cải thiện.''}
-\end{itemize}
-\subsubsection{Học có giám sát}
-Học có giám sát (Supervised Learning) được định nghĩa, chúng ta được cho một 
-tập dữ liệu đã biết với các đầu vào và đầu ra tương ứng nhau. Ý tưởng là chúng 
-ta sẽ đi tìm mối quan hệ giữa đầu vào và đầu ra, đó chính là học có giám sát.\\\\
-Vấn đề của học có giám sát được phân loại thành hai
-vấn đề chính là hồi quy (Regression) và phân lớp (Classification). Trong vấn đề 
-hồi quy, chúng ta sẽ cố gắng dự đoán kết quả đầu ra tiếp theo một cách liên tục, 
-nghĩa là chúng ta đi tìm ra một hàm đầu ra liên tục tổng quát với biến là các 
-đặc trưng đầu vào. Còn với vấn đề phân lớp, chúng ta thay vì cố gắng dự đoán kết
-quả liên tục thì ta sẽ đi dự đoán chúng theo hướng rời rạc, hiểu theo một cách
-khác là chúng ta đi tìm một phép phân loại rời rạc cho các biến đầu ra với các 
-biến đầu vào.
-\subsubsection{Học không giám sát}
-Học không giám sát (Unsupervised Learning) cho phép chúng ta tiếp cận các vấn 
-đề mà ta chưa hề hoặc biết rất ít kết quả của chúng ta sẽ trông như thế nào. 
-Chúng ta có thể xây dựng cấu trúc của dữ liệu mà không cần thiết phải biết mối 
-quan hệ của các biến đó.\\\\
-Chúng ta thực hiện việc này dựa trên ý tưởng gom cụm dữ liệu bằng cách xem xét
-mối quan hệ giữa các đặc trưng của dữ liệu. Các hướng tiếp cận dựa trên nhưng 
-phương pháp như vậy thường được gọi là gom cụm (Clustering).
-\subsection{Thông số đánh giá}
-Có ba tham số cơ bản dùng để xem xét và đánh giá giải thuật trong Học máy.
-Ký hiệu:
-\begin{itemize}
-\item True positive là $TP$
-\item False positive là $FP$
-\item True negative là $TN$
-\item False negative là $FN$
-\end{itemize}
-Ta có:
-\[
-  Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
-\]
-\[
-  Precision = \frac{TP}{TP+FP}
-\]
-\[
-  Recall = \frac{TP}{TP+FN}
-\]
-\begin{figure}[h!]
-\centering
-\includegraphics[height=4in, keepaspectratio=true]{precision_recall.png}
-\caption{Thông số đánh giá}
-\end{figure}
-\subsection{Mạng neural}
+
+\subsection{Mạng neural (Học máy)}
 Học sâu là một nhánh của Học máy, đại diện cho hướng tiếp cận gần với cái nhìn 
 thực tế, học nhiều cấp và học từ bản chất dữ liệu. Học sâu thường giải quyết 
 rất tốt với các loại dữ liệu mang tính ``con người'' như hình ảnh, âm thanh ... 
-Để có được những tính chất này, Học sâu đã đưa ra các giải thuật mạng neural 
-với cấu tạo nhiều lớp, mỗi lớp lại được cấu tạo từ nhiều phần tử nhỏ hơn. Mỗi 
-phần tử bên trong đi giải quyết các phép toán rất đơn giản, nhưng khi được ghép 
-nối lại thành một mạng neural hoàn chỉnh chúng có thể giải quyết các bài toán 
-phức tạp hơn rất nhiều, điều này hoàn toàn tương tự với các hoạt động của bộ 
-não người. \cite{NeuralNetworksandDeepLearning} 
+\cite{NeuralNetworksandDeepLearning} 
 \subsubsection{Cấu trúc một perceptron}
 Một perceptron sẽ có các giá trị đầu vào $x_1, x_2, ...$, giá trị đầu ra sẽ 
 là kết quả toán học của các giá trị đầu vào và là một giá trị nhị phân.\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=1.5in, keepaspectratio=true]{perceptron_n.png}
+\includegraphics[height=1in, keepaspectratio=true]{perceptron_n.png}
 \caption{Perceptron}
 \end{figure}\\
-Một ví dụ, dựa vào hình trên, ta thấy perceptron này có 3 giá trị đầu vào là 
-$x_1, x_2, x_3$ , giả sử đi kèm với mỗi giá trị đầu vào sẽ có một giá trị trọng 
-số $w_1, w_2, w_3$. Giá trị đầu ra được định nghĩa là 0 và 1, nhận giá trị 0 
-khi $\sum_j w_j x_j$ nhỏ hơn giá trị ngưỡng và 1 khi lớn hơn giá trị ngưỡng.\\\\
 Biểu diễn đại số:
 \[
   output = 
@@ -376,10 +128,7 @@ Biểu diễn đại số:
 \]
 Các hàm số như trên được gọi là hàm hoạt động - activation function, có nhiều 
 loại hàm hoạt động khác nhau như: $sigmoid , tang ...$
-\subsubsection{MNN}
-Với một perceptron đơn lẻ, tự thân nó không thể giải quyết được một bài toán 
-phức tạp như yêu cầu của mạng neural, vì thế, để giải quyết bài toán phức tạp 
-hơn, các perceptron được kết nối với nhau tạo thành một mạng neural.\\\\
+\subsubsection{MNN (Multilayer Neural Network)}
 MNN được cấu thành bằng cách sắp xếp các perceptron thành 
 từng lớp. Các perceptron ở mỗi lớp sẽ kết nối với tất cả các perceptron ở các 
 lớp liền kề, lớp những perceptron đầu tiên được gọi là lớp đầu vào (input layer), 
@@ -391,7 +140,7 @@ perceptron ở lớp đầu ra. Còn lại các lớp perceptron khác được 
 (hidden layer).\\
 \begin{figure}[h!]
 \centering
-\includegraphics[height=2in, keepaspectratio=true]{multilayerneuralnetwork.png}
+\includegraphics[height=1.25in, keepaspectratio=true]{multilayerneuralnetwork.png}
 \caption{MNN}
 \end{figure}\\
 Giả sử đầu vào của perceptron là $x_1, x_2, ...$ tương ứng là đó là các trọng 
@@ -404,15 +153,6 @@ biểu diễn của hàm hoạt động với $bias$:
     _{0 \quad if \, \sum_j w_j x_j + b_i\, \leq \, 0}
     ^{1 \quad if \, \sum_j w_j x_j + b_i\, > \, 0}
 \]
-Ví dụ:
-\begin{figure}[h!]
-\centering
-\includegraphics[height=1in, keepaspectratio=true]{exmln.png}
-\caption{Ví dụ perceptron với giá trị $bias$}
-\end{figure}\\
-Ta có $w_1=w_2=-2$ và $b=3$, khi đó nếu input $x_1=1,\, x_2=0$ suy ra $ 
-w_1*x_1+w_2*x_2+b=(-2)*1+(-2)*0+3=1$, ta có thể chọn $threshold=0$ vì $1>0$
-nên $output=1$.
 \subsubsection{Hàm sigmoid}
 Với hàm hoạt động được định nghĩa như trên, giá trị của hàm hoạt động trên lý 
 thuyết là không có giới hạn, nghĩa là $output\in\mathbb{R}$. Trong một trường 
@@ -429,7 +169,7 @@ sigmoid. Hàm sigmoid được định nghĩa như sau:
 Với biễu diễn đồ thị:
 \begin{figure}[h!]
 \centering
-\includegraphics[height=3.85in, keepaspectratio=true]{sigmoid.png}
+\includegraphics[height=2in, keepaspectratio=true]{sigmoid.png}
 \caption{Đồ thị hàm sigmoid}
 \end{figure}\\
 Áp dụng hàm sigmoid vào hàm hoạt động ta có một hàm hoạt động dạng sigmoid và 
@@ -443,17 +183,12 @@ rời rạc hóa giá trị đầu ra của hàm hoạt động ta có thể s�
 quen thuộc - sử dụng ngưỡng. Điển hình ta chọn ngưỡng $threshold = 0.5$, nếu 
 lớn hơn ngưỡng thì giá trị đầu ra của hàm hoạt động sẽ nhận 1 và ngược lại sẽ 
 nhận 0.
-\begin{figure}[h!]
-\centering
-\includegraphics[height=3.5in, keepaspectratio=true]{step.png}
-\caption{Đồ thị rời rác hóa hàm sigmoid}
-\end{figure}
 \subsubsection{Giải thuật lan truyền ngược}
-Sau khi đã có xây dựng thành công một mô hình MNN, công việc tiếp theo sẽ là 
-cung cấp khả năng tự học hỏi từ đó để bản thân mạng có thể tự xây dựng mô hình 
+Giải thuật lan truyền ngược cung cấp cho mạng neural khả năng tự học hỏi từ 
+đó để bản thân mạng có thể tự xây dựng mô hình 
 quyết định và đưa ra các giá trị đầu ra tương ứng với từng trường hợp đầu vào 
 cụ thể.\\\\
-Cụ thể, khi nhìn lại một MNN với hàm hoạt động là một hàm hoạt động có dạng
+Cụ thể, MNN với hàm hoạt động có dạng
 sigmoid và các tham số $w, b$, các tham số này chưa có giá trị.  Việc cung 
 cấp khả năng tự học hỏi cho mạng chính là cung cấp một giải thuật giúp mạng 
 tìm được các tham số $w, b$ với một tập kinh nghiệm - hay tập huấn luyện - 
@@ -604,3 +339,22 @@ còn lại, với mỗi $\ell=L-1,L-2,...,2$ ta thực hiện $\delta^\ell=((w^{
 \item Kết thúc quá trình tính toán với $\frac{\partial C}{\partial w_{jk}^\ell}=a_k^{\ell-1}\delta_j^\ell$ và 
 $\frac{\partial C}{\partial b_j^\ell}=\delta_j^\ell$.
 \end{enumerate}
+\subsubsection{Thông số đánh giá}
+Có ba tham số cơ bản dùng để xem xét và đánh giá kết quả giải thuật trong Học máy.
+Ký hiệu: \textbf{True positive} là $TP$, \textbf{False positive} là $FP$, 
+\textbf{True negative} là $TN$, \textbf{False negative} là $FN$.\\\\
+Ta có:
+\[
+  Accuracy = \frac{TP+TN}{TP+FP+TN+FN}
+\]
+\[
+  Precision = \frac{TP}{TP+FP}
+\]
+\[
+  Recall = \frac{TP}{TP+FN}
+\]
+\begin{figure}[h!]
+\centering
+\includegraphics[height=2.5in, keepaspectratio=true]{precision_recall.png}
+\caption{Thông số đánh giá}
+\end{figure}

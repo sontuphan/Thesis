@@ -1,0 +1,124 @@
+\section{Thu thập dữ liệu và lựa chọn giải thuật}
+\subsection{Thu thập dữ liệu}
+\subsubsection{Nguồn dữ liệu}
+Poloniex là một sàn giao dịch tiền mã hóa trực tuyến và có trụ sở tại Mỹ. Được 
+thành lập vào tháng 1 năm 2014, khi đi vào hoạt động, Poloniex định hướng cung 
+cấp một môi trường thương mại an toàn, đồng thời còn cung cấp các dữ liệu về 
+thị trường như biểu đồ, bảng xếp hạng và các công cụ phân tích dữ liệu để hỗ 
+trợ khách hàng. Ngoài ra, Poloniex còn cung cấp một số lượng dữ liệu liên quan 
+đến các thống kê mua/bán của sàn giao dịch, các dữ liệu này được cung cấp thông qua API.\\\\ 
+Nguồn dữ liệu được lấy thông qua API dữ liệu biểu đồ thị trường của sàn giao 
+dịch Poloniex. Cụ thể API:
+\begin{lstlisting}
+https://poloniex.com/public?command=returnChartData&currencyPair=BTC_XMR&start=1405699200&end=9999999999&period=14400
+\end{lstlisting}
+Tập dữ liệu về các phiên giao dịch Bitcoin được thu thập từ ngày 20/2/2015 đến 
+ngày 29/10/2016 và có tổng cộng 29634 mẫu (mỗi mẫu là đại diện của một phiên 
+giao dịch).
+Dữ liệu trả về là một mảng các phần tử JSON có dạng như sau:
+\begin{lstlisting}
+[
+    {"date":1424372400,"high":225,"low":225,"open":225,"close":225,"volume":0.999999,"quoteVolume":0.00444444,"weightedAverage":225},
+    {"date":1424374200,"high":225,"low":225,"open":225,"close":225,"volume":0,"quoteVolume":0,"weightedAverage":225},
+    ...,
+    {"date":1482575400,"high":900.79862142,"low":894.98864451,"open":900.79862142,"close":895.56277339,"volume":2427.10998126,"quoteVolume":2.70065724,"weightedAverage":898.71085649}
+]
+\end{lstlisting}
+Sau khi thu thập, dữ liệu được tiền xử lý để loại bỏ các thông tin không được 
+sử dụng trong quá trình phân tích và xây dựng giải thuật. Giá trị có khóa là 
+$close$ là dữ liệu sẽ được sử dụng, các giá trị như: $date$, $high$, $low$, 
+$open$, $volume$, $quoteVolume$, $weightedAverage$ sẽ được lược bỏ.
+\subsubsection{Xây dựng dữ liệu luyện tập}
+Gọi $S$ là đại diện cho một phiên giao dịch, các đặc trưng được xây dựng như 
+sau:
+\begin{itemize}
+    \item 10 feature RDP: $\{ \: loop\{ RDP_1(S_{i+j})\}_i \: \}_j$ Với 
+    $i \in [0:9], \: j \in [0:29634]$
+    \item 1 feature SO. Với $ j \in [0:29625] $:\\
+    \[
+        \{ \%K_j = \frac{P(j+9)-L_{10}}{H_{10}-L_{10}} \}_j
+    \]
+    \item 1 feature ROC. Với $ j \in [0:29625] $:\\ 
+    \[
+        \{ ROC_{10}(j)= \frac{P(j+9) - P(j)}{P(j)} \}_j
+    \]
+\end{itemize}
+Ở đây, chúng ta chọn mỗi vector đặc trưng được hình thành bởi 10 phiên giao 
+dịch. Các giá trị SO và ROC đều được tính trong thời gian là 10 phiên giao dịch.
+Sau khi đã có tập luyện tập (tập hợp các vector đặc trưng), ta cần nhãn - label 
+để phân lớp tập luyện tập. Nhãn được định nghĩa như sau, nếu giá BTC ở phiên 
+thứ 11 lớn hơn phiên thứ 10 thì nhãn sẽ là 1, ngược lại sẽ là 0 (Phiên 11 chính 
+là phiên thứ 1 của nhóm 10 phiên liền sau nhóm 10 phiên hiện đang xét).\\
+\[
+    label_i = \bigg \{ _{0 \quad if \: P_i(10) \: \leq \: P_{i+1}(1)} ^{1 \quad if \: P_i(10) \: > \: P_{i+1}(1)}
+\]
+Kết quả dữ liệu luyện tập:
+\begin{lstlisting}
+0 0.06666666666666667 0.016666666666666666 0 0 0 0 0 0 0 0.08444444444444445 1 0
+0.06666666666666667 0.016666666666666666 0 0 0 0 0 0 0 0 0.016666666666666666 1 0
+...
+0.002400968290280231 3.9565217470358025e-9 0.003910087158215986 -0.00045140752064857115 -0.0013329209110243738 0.0008262923440509297 0.018429551716218056 0.003236901952232515 -0.004644611078085971 -0.0016267310238298762 0.018318840535169866 0.7405268424216611 0
+\end{lstlisting}
+Mỗi hàng đại diện cho một vector đặc trưng và nhãn, chi tiết ở một vector đặc 
+trưng 10 giá trị đầu sẽ là 10 đặc trưng $RDP$, 1 giá trị tiếp theo là đặc trưng 
+$ROC$, 1 giá trị tiếp theo là đặc trưng $SO$ và 1 giá trị cuối cùng là nhãn.
+
+\subsection{Lựa chọn giải thuật}
+Bên cạnh chạy giải thuật MNN, chúng ta sẽ chạy các giải thuật khác nhằm so sánh 
+và đánh giá giải thuật chính. Các giải thuật được chọn để so sánh với giải thuật 
+chính: SVM (Support Vetor Machines), KNN (K-Nearest Neighbors), LR (Logistic Regression).\\\\
+Để đánh giá mức độ ý nghĩa của từng giải thuật, chúng ta sẽ sử dụng 3 tham số 
+đánh giá là Accuracy, Recall, Precision. Tập dữ liệu sẽ được chia ra thành hai phần:
+\begin{itemize}
+\item Tập huấn luyện: chiếm 7/10 tổng số dữ liệu, dùng để chạy trong quá trình 
+học của giải thuật.
+\item Tập đánh giá: chiếm 3/10 tổng số dữ liệu, dùng để chạy trong quá trình 
+đánh giá giải thuật.
+\end{itemize}
+Mô hình đánh giá giải thuật được mô tả bằng cách, dùng tập huấn luyện để tạo 
+ra mô hình học máy của các giải thuật, sau đó sử dụng tập đánh giá để làm đầu 
+vào cho từng mô hình, kết quả dự đoán sẽ được so sánh với kết quả thực tế của 
+từng vector đặc trưng đầu vào. Cụ thể, kết quả của 4 giải thuật được ghi nhận 
+như sau:
+\begin{table}[h]
+\centering
+\fontsize{8}{9}\selectfont
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+ & KNN & LR & SVM & MNN \\
+\hline
+Accuracy & 62.93\% & 66.24\% & 66.40\% & 69.86\% \\
+\hline
+Precision & 44.69\% & 18.18\% & 0\% & 60.50\% \\
+\hline
+Recall & 43.62\% & 0.15\% & 0\% & 29.55\% \\
+\hline
+\end{tabular}
+\caption{Bảng đánh giá}
+\end{table}\\
+Trước tiên theo bảng đánh giá, ta có các giải thuật LR và SVM cho kết quả Accuracy
+là gần khoảng 66\%, nhưng khi nhìn vào chi tiết các giá trị Precision và Recall 
+ta nhận thấy kết quả điều cho ra rất thấp. Kết quả này cho thấy giải thuật LR 
+và SVM đều có số lần True Positive là xấp xỉ bằng 0, đồng nghĩa với việc các 
+giải thuật này hầu như chỉ dự đoán kết quả là nhãn $Down$ cho tất cả trường hợp. 
+Điều này hoàn toàn không có ý nghĩa trong dự đoán đầu tư.\\\\
+Xét đến KNN và MNN, đối với KNN ta có thể thấy giải thuật có xu hướng cân bằng 
+các giá trị Accuracy, Precision và Recall. Nhưng đối với MNN, giải thuật có xu 
+hướng tối ưu hóa bộ thiêu chuẩn Accuracy và Precision. Vậy câu hỏi đặt ra ở đây 
+là kết quả nào có giá trị đầu tư hơn?\\\\
+Chú ý đến Recall, dựa theo định nghĩa thì Recall có thể hiểu nếu trong thực tế 
+có 10 phiên là $Up$ thì KNN sẽ dự đoán đúng khoảng 4 lần và MNN sẽ dự đoán đúng 
+khoảng 3 lần. Điều này có nghĩa là KNN sẽ chiếm ưu thế so MNN khi sử dụng tiêu 
+chuẩn là Recall.\\\\
+Xét đến Precision, ta có thể hiểu Precision như sau, với 10 lần dự đoán sẽ có 
+phiên $Up$ thì KNN sẽ đúng khoảng 4 lần và MNN sẽ dự đoán đúng 6 lần. Giả sử, 
+mức độ tin tưởng của chúng ta vào hệ thống là 100\%, cứ mỗi lần hệ thống dự 
+đoán có phiên $Up$ thì ta sẽ quyết định đầu tư. Điều đó đồng nghĩa, nếu theo 
+KNN sẽ có 6 lần ta chịu lỗ vì hệ thống dự đoán sai và với MNN thì ta sẽ có 4 
+lần ta chịu lỗ.\\\\
+Quay lại với Recall, giá trị này không đo đạt được việc chúng ta sẽ lợi nhuận 
+hoặc thua lỗ ra sao mà thực ra là giá trị đo đạt khả năng tận dụng cơ hội của 
+hệ thống.\\\\
+Tới lúc này, ta có thể kết luận, bộ tiêu chuẩn chiếm ưu thế cao hơn sẽ là Accuracy 
+và Precision. Điều đó cũng có nghĩa là giải thuật MNN cho kết quả ý nghĩa hơn so 
+với KNN và sẽ được lựa chọn để giải quyết bài toán dự đoán xu hướng giá trị BTC.

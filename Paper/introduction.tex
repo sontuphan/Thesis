@@ -1,0 +1,35 @@
+\section{Giới thiệu đề tài}
+Bitcoin - một hệ thống tiền mã hóa (hay tiền điện tử) được xuất hiện lần đầu tiên 
+vào năm 2009 bởi Satoshi Nakamoto \cite{BitcoinPaper}, với những đặc tính ưu việt hơn cả tiền tệ 
+truyền thống hiện nay đã khiến cho sự tăng lên nhanh chóng về giá trị. Nhận thấy 
+được sức mạnh của tiền mã hóa có thể sẽ là tương lai của kinh tế và chính trị 
+nên việc hiểu rõ cũng như đầu tư vào Bitcoin là việc đáng để quan tâm.\\\\
+Trong giai đoạn hiện nay, đối với nước ta, Bitcoin là một khái niệm mới vì thế 
+mà việc đầu tư khi chưa có nền tảng kiến thức hoặc kinh nghiệm đầu tư là hết 
+sức rủi ro. Nhận thấy vấn đề này, bản thân xây dựng một công cụ để cho nhà đầu 
+tư có thể dựa vào như một yếu tố tham khảo tin cậy.\\\\
+Trên một sàn giao dịch tiền mã hóa điển hình, quá trình mua bán BTC được chia ra 
+thành các giai đoạn thời gian và được gọi là phiên giao dịch. Một phiên giao dịch 
+được diễn tả bởi các giá trị điển hình như sau:
+\begin{itemize}
+\item Giá mở phiên: giá bán (mua) BTC của (các) giao dịch ngay tại thời 
+điểm mở phiên.
+\item Giá đóng phiên: giá bán (mua) BTC của (các) giao dịch tại thời điểm 
+kết thúc phiên.
+\item Giá cao nhất: giá bán (mua) BTC cao nhất của giao dịch trong khoảng 
+thời gian mở phiên đến kết thúc phiên.
+\item Giá thấp nhất: giá bán (mua) BTC thấp nhất của giao dịch trong khoảng 
+thời gian mở phiên đến kết thúc phiên.
+\end{itemize}
+Thời gian của một phiên giao dịch thường được chọn là 5 phút, 30 phút, 1 tiếng, 2 tiếng, 
+4 tiếng hoặc 1 ngày, ... 
+Trong phạm vi đề tài chúng ta chọn thời gian một phiên giao dịch là 30 phút.\\\\
+Vậy, bài toán cần giải quyết là đi dự đoán giá trị BTC trong phiên tiếp theo sẽ tăng 
+hay giảm so với phiên hiện tại. Cụ thể, gọi $n$ là phiên hiện tại và $n_{close}$ 
+là giá đóng phiên hiện tại, $(n+1)$ là phiên tiếp theo và $(n+1)_{close}$ là giá đóng 
+phiên tiếp theo. Nếu $(n+1)_{close} > n_{close}$ thì giá tăng - $Up$, ngược lại thì, 
+$(n+1)_{close} \leq n_{close}$ thì giá giảm - $Down$.\\\\
+Sau khi cụ thể được yêu cầu bài toán, ta sẽ đi đặc tả hướng tiếp cận giải quyết 
+vấn đề. Học máy là lựa chọn của đề tài này, cụ thể phương pháp giải quyết 
+sẽ sử dụng giải thuật phân lớp để dự đoán nhãn của phiên giao dịch sẽ là $Up$ 
+hay $Down$.
